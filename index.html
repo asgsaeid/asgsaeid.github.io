@@ -1,735 +1,874 @@
-<!DOCTYPE HTML>
-<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <title>Saeid A. Taghanaki</title>
-  
-  <meta name="author" content="Saeid A. Taghanaki">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  
-  <link rel="stylesheet" type="text/css" href="stylesheet.css">
-  <link rel="icon" type="image/png" href="images/web_icon_.png">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-  
-  <style>
-      a {
-        color: #4E2A84;
-      }
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Saeid A. Taghanaki</title>
+<meta name="author" content="Saeid A. Taghanaki">
+<meta name="description" content="Saeid A. Taghanaki — Principal Applied Scientist & Manager at Microsoft, working on agentic evaluations, reliability, and interpretability of generative models.">
+<link rel="icon" type="image/png" href="images/web_icon_.png">
 
-      .paper-link {
-          display: inline-flex;
-          align-items: center;
-          padding: 5px 10px;
-          background: #f5f5f5;
-          border-radius: 4px;
-          margin-right: 8px;
-          text-decoration: none;
-          color: #4E2A84;
-          transition: all 0.2s ease;
-      }
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;0,8..60,600;0,8..60,700;1,8..60,400&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 
-      .paper-link:hover {
-          background: #e5e5e5;
-          transform: translateY(-1px);
-      }
+<style>
+  :root {
+    --bg: #ffffff;
+    --surface: #faf9f7;
+    --surface-2: #f4f2ed;
+    --ink: #18181b;
+    --ink-2: #2a2a2e;
+    --text: #3f3f46;
+    --muted: #71717a;
+    --line: #e7e5e0;
+    --line-2: #d4d2cc;
+    --accent: #0f5969;
+    --accent-2: #156474;
+    --accent-soft: #e0eef1;
+    --gold: #b45309;
+    --link: #0f5969;
+    --sans: 'Source Sans 3', system-ui, -apple-system, sans-serif;
+    --serif: 'Source Serif 4', 'Source Serif Pro', Georgia, serif;
+    --mono: 'JetBrains Mono', ui-monospace, monospace;
+  }
 
-      .paper-link i {
-          margin-right: 5px;
-      }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
 
-    .social-link {
-          font-size: 1.5rem;
-          margin: 0 10px;
-          color: #4E2A84;
-          transition: transform 0.2s ease, color 0.2s ease;
-      }
+  body {
+    font-family: var(--sans);
+    background: var(--bg);
+    color: var(--text);
+    font-size: 15.5px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
 
-      .social-link:hover {
-          transform: translateY(-2px);
-          color: #2a1b4a;
-      }
-    
-  </style>
+  .top-accent {
+    height: 3px;
+    background: linear-gradient(90deg, var(--accent) 0%, var(--accent-2) 35%, var(--gold) 100%);
+  }
+
+  a { color: var(--link); text-decoration: none; transition: color .15s ease; }
+  a:hover { color: var(--accent-2); text-decoration: underline; text-underline-offset: 3px; text-decoration-thickness: 1px; }
+
+  main {
+    max-width: 940px;
+    margin: 0 auto;
+    padding: 56px 36px 80px;
+  }
+
+  /* === HERO === */
+  .hero {
+    display: grid;
+    grid-template-columns: 1fr 220px;
+    gap: 44px;
+    align-items: start;
+    padding-bottom: 36px;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .hero-name {
+    font-family: var(--serif);
+    font-size: 36px;
+    font-weight: 600;
+    letter-spacing: -0.018em;
+    margin-bottom: 6px;
+    line-height: 1.1;
+    color: var(--ink);
+  }
+
+  .hero-affil {
+    color: var(--ink-2);
+    font-size: 15px;
+    margin-bottom: 22px;
+    line-height: 1.55;
+  }
+  .hero-affil .role {
+    display: block;
+    color: var(--ink);
+  }
+  .hero-affil .role strong { font-weight: 600; }
+  .hero-affil .role-2 {
+    display: block;
+    color: var(--muted);
+    font-size: 14.5px;
+    margin-top: 2px;
+  }
+
+  .hero p {
+    margin-bottom: 12px;
+    color: var(--text);
+    max-width: 64ch;
+  }
+  .hero p:last-of-type { margin-bottom: 22px; }
+  .hero p strong.bio-key { color: var(--ink); font-weight: 600; }
+
+  .hero-social {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+  }
+  .hero-social a {
+    color: var(--ink-2);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    background: var(--bg);
+    transition: all .18s ease;
+  }
+  .hero-social a:hover {
+    color: var(--accent);
+    border-color: var(--accent);
+    background: var(--accent-soft);
+    text-decoration: none;
+    transform: translateY(-1px);
+  }
+  .hero-social svg { width: 15px; height: 15px; }
+
+  .hero-portrait { position: relative; }
+  .hero-portrait::after {
+    content: "";
+    position: absolute;
+    inset: auto -10px -10px auto;
+    width: 60%;
+    height: 60%;
+    border-right: 2px solid var(--accent);
+    border-bottom: 2px solid var(--accent);
+    z-index: 0;
+    pointer-events: none;
+  }
+  .hero-portrait img {
+    width: 100%;
+    aspect-ratio: 4/5;
+    object-fit: cover;
+    border-radius: 4px;
+    display: block;
+    position: relative;
+    z-index: 1;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.06), 0 8px 24px -10px rgba(0,0,0,0.12);
+  }
+
+  /* === SECTIONS === */
+  h2.section-title {
+    font-family: var(--serif);
+    font-size: 21px;
+    font-weight: 600;
+    margin: 44px 0 18px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--line);
+    letter-spacing: -0.01em;
+    color: var(--ink);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  h2.section-title::before {
+    content: "";
+    display: inline-block;
+    width: 3px;
+    height: 18px;
+    background: var(--accent);
+    border-radius: 1px;
+  }
+
+  /* === RESEARCH INTERESTS === */
+  .focus-intro { color: var(--text); margin-top: 10px; margin-bottom: 14px; }
+  .focus-intro strong { color: var(--ink); font-weight: 600; }
+  .focus-list { list-style: none; display: grid; gap: 2px; }
+  .focus-list li {
+    padding: 11px 14px;
+    color: var(--text);
+    background: var(--surface);
+    border-left: 2px solid var(--line-2);
+    border-radius: 0 4px 4px 0;
+    transition: all .2s ease;
+  }
+  .focus-list li:hover {
+    border-left-color: var(--accent);
+    background: var(--accent-soft);
+  }
+  .focus-list li strong { color: var(--ink); font-weight: 600; }
+
+  /* === PUBLICATIONS === */
+  .pub {
+    display: grid;
+    grid-template-columns: 150px 1fr;
+    gap: 22px;
+    padding: 18px 16px 18px 14px;
+    border-bottom: 1px solid var(--line);
+    align-items: start;
+    border-radius: 4px;
+    transition: background .18s ease, border-color .18s ease;
+    border-left: 2px solid transparent;
+    margin-left: -16px;
+    margin-right: -16px;
+  }
+  .pub:hover {
+    background: var(--surface);
+    border-left-color: var(--accent);
+  }
+  .pub:hover .pub-thumb { border-color: var(--line-2); }
+  .pub:last-of-type { border-bottom: none; }
+
+  .pub-thumb {
+    width: 100%;
+    aspect-ratio: 16/10;
+    object-fit: cover;
+    background: var(--surface-2);
+    border: 1px solid var(--line);
+    border-radius: 3px;
+    transition: border-color .2s ease;
+  }
+
+  .pub-title {
+    font-family: var(--serif);
+    font-size: 16.5px;
+    font-weight: 600;
+    line-height: 1.35;
+    margin-bottom: 5px;
+    color: var(--ink);
+    letter-spacing: -0.005em;
+  }
+  .pub-title em { font-style: italic; }
+
+  .pub-tagline {
+    font-style: italic;
+    color: var(--muted);
+    font-size: 14px;
+    margin-bottom: 5px;
+  }
+
+  .pub-authors {
+    font-size: 14.5px;
+    color: var(--text);
+    line-height: 1.5;
+    margin-bottom: 4px;
+  }
+  .pub-authors strong { color: var(--ink); font-weight: 600; }
+
+  .pub-venue {
+    font-size: 13.5px;
+    color: var(--muted);
+    margin-bottom: 6px;
+    font-family: var(--serif);
+    font-style: italic;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 4px;
+  }
+  .pub-venue .venue-text { font-style: italic; }
+  .pub-venue .badge {
+    color: var(--gold);
+    font-weight: 600;
+    font-style: normal;
+    font-family: var(--sans);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    padding: 1px 7px;
+    background: rgba(180, 83, 9, 0.08);
+    border-radius: 100px;
+    border: 1px solid rgba(180, 83, 9, 0.18);
+    margin-left: 4px;
+  }
+
+  /* === VENUE LOGO BADGES === */
+  .venue-logo {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--mono);
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    color: white;
+    padding: 3px 7px;
+    border-radius: 3px;
+    text-transform: uppercase;
+    line-height: 1;
+    margin-right: 4px;
+    flex-shrink: 0;
+    font-style: normal;
+  }
+  .venue-iclr     { background: #1a3a5f; }
+  .venue-neurips  { background: #6b0f1a; }
+  .venue-icml     { background: #b8336a; }
+  .venue-cvpr     { background: #1e6091; }
+  .venue-miccai   { background: #1a4a72; }
+  .venue-arxiv    { background: #b31b1b; }
+  .venue-journal  { background: #475569; }
+  .venue-blog     { background: #5b6b00; }
+
+  /* === PAPER TAGS === */
+  .pub-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+    margin-top: 8px;
+  }
+  .tag {
+    display: inline-flex;
+    align-items: center;
+    font-family: var(--mono);
+    font-size: 11px;
+    font-weight: 400;
+    color: var(--muted);
+    padding: 1px 7px 2px;
+    background: transparent;
+    border: 1px solid var(--line);
+    border-radius: 3px;
+    transition: all .15s ease;
+    cursor: default;
+    line-height: 1.4;
+  }
+  .tag::before {
+    content: "#";
+    margin-right: 1px;
+    opacity: 0.55;
+  }
+  .tag:hover {
+    color: var(--accent);
+    border-color: var(--accent);
+    background: var(--accent-soft);
+  }
+
+  .pub-links {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+    margin-top: 8px;
+  }
+  .pub-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 3px 10px;
+    background: var(--bg);
+    border: 1px solid var(--line);
+    border-radius: 3px;
+    color: var(--ink-2);
+    font-size: 12px;
+    font-family: var(--mono);
+    font-weight: 500;
+    transition: all .15s ease;
+  }
+  .pub-link:hover {
+    background: var(--accent);
+    color: white;
+    border-color: var(--accent);
+    text-decoration: none;
+  }
+
+  /* === FOOTER === */
+  footer {
+    max-width: 940px;
+    margin: 0 auto;
+    padding: 28px 36px 36px;
+    color: var(--muted);
+    font-size: 12.5px;
+    border-top: 1px solid var(--line);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  footer .footer-mark {
+    font-family: var(--serif);
+    font-style: italic;
+    color: var(--ink-2);
+  }
+  footer a { color: var(--muted); }
+  footer a:hover { color: var(--accent); }
+
+  /* === RESPONSIVE === */
+  @media (max-width: 720px) {
+    main { padding: 32px 22px 60px; }
+    .hero { grid-template-columns: 1fr; gap: 24px; }
+    .hero-portrait { max-width: 200px; }
+    .pub {
+      grid-template-columns: 110px 1fr;
+      gap: 16px;
+      padding: 14px 12px;
+      margin-left: -12px;
+      margin-right: -12px;
+    }
+    footer {
+      padding: 24px 22px 28px;
+      flex-direction: column;
+      gap: 8px;
+      text-align: center;
+    }
+    .hero-name { font-size: 30px; }
+  }
+</style>
 </head>
-
 <body>
-  <table style="width:100%;max-width:800px;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-    <tr style="padding:0px">
-      <td style="padding:0px">
-        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-          <tr style="padding:0px">
-            <td style="padding:2.5%;width:63%;vertical-align:middle">
-              <p style="text-align:center">
-                <name>Saeid A. Taghanaki</name>
-              </p>
-              <p> I am a Principal Applied Scientist and Manager at Microsoft US (previously Principal Researcher) and an Adjunct CS Research Professor at Simon Fraser University. My team at Microsoft pushes the boundries of agentic evaluations at scale. Previously, I worked on reliable AI at Autodesk Research and explored ML/CV problems in startups.
-              </p>
-              <p>I completed my PhD in Computing Science at SFU under the supervision of Prof. <a href="https://www.medicalimageanalysis.com/ghassans-bio">Ghassan Hamarneh</a>. During my PhD I had multiple research visits/internships at different research institutions such as <a href="https://mila.quebec/en/">MILA</a> (Montreal, Canada) and <a href="https://www.siemens-healthineers.com/en-ca">Siemens Healtheneers</a> (Princeton, US).
-              </p>
-              <p> Outside of work, I have a strong passion for soccer and running track - the 100m sprint. I've had the privilege of competing and earning a few medals in inter-university competitions in these areas.
-              </p>
-              
-              <p style="text-align:center">
-                <a href="mailto:asgt.saeid@gmail.com" class="social-link"> <i class="fas fa-envelope"></i>
-                </a> &nbsp;&nbsp;
-                <a href="https://www.linkedin.com/in/saeid-asgari-a55a5b5a/" class="social-link"> <i class="fab fa-linkedin"></i>
-                </a> &nbsp;&nbsp;
-                <a href="https://scholar.google.com/citations?user=SuePM1sAAAAJ&hl=en" class="social-link"> <i class="fas fa-graduation-cap"></i>
-                </a> &nbsp;&nbsp;
-                <a href="https://twitter.com/saeid_asg" class="social-link"> <i class="fa-brands fa-x-twitter"></i>
-                </a>
-              </p>
 
-            </td>
-            <td style="padding:2.5%;width:40%;max-width:40%">
-              <img style="width:100%;max-width:100%;border-radius:8px;box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);" alt="profile photo" src="images/20250728_2039456.jpg">
-            </td>
-            
-          </tr>
+<div class="top-accent"></div>
 
-          
-          
-<table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin:auto;">
-  <tbody>
-    <tr>
-      <td style="padding:20px;width:100%;vertical-align:middle">
-        <heading>Core Focus Areas</heading>
-        <p>
-          I lead research and development initiatives in <font color="#078CDD"><b>reliability</b></font> and <font color="#078CDD"><b>evaluation</b></font> of generative models like LLMs and VLMs. I am broadly intrested in:
-        </p>
-        <ul>
-          <li><b>Reliability and Robustness:</b> Designing experiments and datasets to analyze generalization, memorization, and robustness in generative models, ensuring they perform reliably across diverse scenarios.</li>
-          <li><b>Interpretability and Explainability:</b> Building tools to understand ML model behavior, improve transparency, and ensure models meet safety and ethical standards.</li>
-          <li><b>Data Bias and Mitigation:</b> Developing scalable tools to identify hidden and known biases in datasets, while enhancing datasets and designing models to better handle biases, out-of-domain samples, and improve generalization.</li>
-        </ul>
-      </td>
-    </tr>
-  </tbody>
-</table>
+<main>
 
+<section class="hero">
+  <div>
+    <h1 class="hero-name">Saeid A. Taghanaki</h1>
+    <div class="hero-affil">
+      <span class="role"><strong>Principal Applied Scientist &amp; Manager</strong>, Microsoft</span>
+      <span class="role-2">Adjunct Research Professor, Simon Fraser University</span>
+    </div>
 
+    <p>
+      I am a Principal Applied Scientist &amp; Manager at Microsoft (previously Principal Researcher),
+      where I lead a team building <strong class="bio-key">agentic evaluation infrastructure</strong>
+      for foundation-model systems. My research is anchored in one bet: as frontier models grow more
+      capable, evaluation becomes the binding constraint on real-world reliability. That pulls me
+      toward probing reasoning rather than pattern-matching, detecting reward hacking and memorization,
+      and designing trajectory-, outcome-, and process-level signals that don't collapse under their
+      own optimization pressure.
+    </p>
+    <p>
+      Before Microsoft, I worked on reliable AI at Autodesk Research and on ML/CV problems at
+      early-stage startups. I completed my PhD in Computing Science at SFU under Prof.
+      <a href="https://www.medicalimageanalysis.com/ghassans-bio">Ghassan Hamarneh</a>, with research
+      visits at <a href="https://mila.quebec/en/">MILA</a> (Montréal) and
+      <a href="https://www.siemens-healthineers.com/en-ca">Siemens Healthineers</a> (Princeton).
+    </p>
+    <p>
+      Outside of work, I have a strong passion for soccer and the 100m sprint, with a few
+      inter-university medals along the way.
+    </p>
 
+    <div class="hero-social">
+      <a href="mailto:asgt.saeid@gmail.com" aria-label="Email" title="Email">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16v12H4z"/><path d="m4 7 8 6 8-6"/></svg>
+      </a>
+      <a href="https://www.linkedin.com/in/saeid-asgari-a55a5b5a/" aria-label="LinkedIn" title="LinkedIn">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14zM8.34 18.34V9.67H5.67v8.67h2.67zM7 8.33a1.55 1.55 0 1 0 0-3.1 1.55 1.55 0 0 0 0 3.1zm11.34 10V13.5c0-2.55-1.36-3.74-3.18-3.74-1.46 0-2.12.8-2.48 1.37V9.67h-2.67c.04.75 0 8.67 0 8.67h2.67v-4.84c0-.24.02-.48.09-.65.19-.48.63-.97 1.37-.97.97 0 1.36.74 1.36 1.81v4.65h2.84z"/></svg>
+      </a>
+      <a href="https://scholar.google.com/citations?user=SuePM1sAAAAJ&hl=en" aria-label="Google Scholar" title="Google Scholar">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2 1 9l4 2.18v6L12 21l7-3.82v-6l2-1.09V17h2V9L12 2zm6.82 7L12 12.72 5.18 9 12 5.28 18.82 9zM17 15.99l-5 2.73-5-2.73v-3.72L12 15l5-2.73v3.72z"/></svg>
+      </a>
+      <a href="https://twitter.com/saeid_asg" aria-label="X (Twitter)" title="X / Twitter">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2H21l-6.52 7.452L22.5 22h-6.83l-5.354-6.81L4.05 22H1.293l6.974-7.97L1.5 2h7.005l4.84 6.232L18.244 2zm-1.197 18.4h1.515L7.04 3.5H5.413l11.634 16.9z"/></svg>
+      </a>
+    </div>
+  </div>
 
-        <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20"><tbody>
-          <tr>
-            <td>
-              <heading>Current Highlights</heading>
-            </td>
-          </tr>
-        </tbody></table>
+  <div class="hero-portrait">
+    <img src="images/20250728_2039456.jpg" alt="Portrait of Saeid A. Taghanaki">
+  </div>
+</section>
 
+<h2 class="section-title">Research Interests</h2>
+<p class="focus-intro">
+  My work sits at the intersection of <strong>evaluation</strong>, <strong>agentic systems</strong>,
+  and <strong>foundation-model reliability</strong>. Three threads I keep pulling on:
+</p>
+<ul class="focus-list">
+  <li><strong>Capability, reasoning, and self-evaluation</strong> &mdash; probing higher-order reasoning, shortcut learning, and capability elicitation in LLMs and VLMs; methods for models to evaluate themselves and each other (explanation–comprehension discrepancy, judge models) and the failure modes that emerge under optimization pressure.</li>
+  <li><strong>Agentic and process-level evaluation</strong> &mdash; trajectory-, outcome-, and process-level signals for tool-using, long-horizon agents; evaluation pipelines that surface real failure modes without being gamed by the systems they measure.</li>
+  <li><strong>Memorization, generalization, and robustness</strong> &mdash; detecting generative parroting, mitigating spurious correlations, and characterizing how foundation models behave under distribution shift.</li>
+</ul>
 
+<h2 class="section-title">Current Highlights</h2>
 
-              <table width="100%" align="center" border="0" cellpadding="20"><tbody>
-          <tr>
-            <td style="padding:20px;width:25%;vertical-align:middle">
-                <img src="images/spider_plot_accuracy.png" width="300" height="165">
-              </a>
-            </td>
-            <td style="padding:20px;width:75%;vertical-align:middle">
-              <strong>Explain-Query-Test: Self-Evaluating LLMs Via Explanation and Comprehension Discrepancy</strong>
-              <br><br>
-              <strong>Saeid A. Taghanaki</strong>, Joao Monteiro 
-              <br>
-              <em>ICLR 2025, Scaling Self-Improving Foundation Models without Human Supervision</em>
-              <br>
-              <a href="https://arxiv.org/abs/2501.11721" class="paper-link"> <i class="fas fa-archive"></i> Paper </a>
-              <a href="https://github.com/asgsaeid/EQT" class="paper-link"> <i class="fas fa-code"></i> Code </a>
-            </td> 
-          </tr>
-        </tbody></table>  
+<article class="pub">
+  <img class="pub-thumb" src="images/spider_plot_accuracy.png" alt="">
+  <div>
+    <h3 class="pub-title">Explain-Query-Test: Self-Evaluating LLMs Via Explanation and Comprehension Discrepancy</h3>
+    <p class="pub-authors"><strong>Saeid A. Taghanaki</strong>, Joao Monteiro</p>
+    <p class="pub-venue"><span class="venue-logo venue-iclr">ICLR 2025</span><span class="venue-text">Scaling Self-Improving Foundation Models without Human Supervision</span></p>
+    <div class="pub-tags">
+      <span class="tag">evaluation</span>
+      <span class="tag">self-evaluation</span>
+      <span class="tag">reasoning</span>
+    </div>
+    <div class="pub-links">
+      <a class="pub-link" href="https://arxiv.org/abs/2501.11721">paper</a>
+      <a class="pub-link" href="https://github.com/asgsaeid/EQT">code</a>
+    </div>
+  </div>
+</article>
 
+<article class="pub">
+  <img class="pub-thumb" src="images/shortcut_selection_ratio.png" alt="">
+  <div>
+    <h3 class="pub-title">MMLU-Pro+: Evaluating Higher-Order Reasoning and Shortcut Learning in LLMs</h3>
+    <p class="pub-authors"><strong>Saeid A. Taghanaki</strong>, Aliasgahr Khani, Amir Khasahmadi</p>
+    <p class="pub-venue"><span class="venue-logo venue-neurips">NeurIPS 2024</span><span class="venue-text">Safe Generative AI Workshop</span></p>
+    <div class="pub-tags">
+      <span class="tag">evaluation</span>
+      <span class="tag">reasoning</span>
+    </div>
+    <div class="pub-links">
+      <a class="pub-link" href="http://arxiv.org/abs/2409.02257">paper</a>
+      <a class="pub-link" href="https://github.com/asgsaeid/mmlu-pro-plus">code</a>
+    </div>
+  </div>
+</article>
 
+<article class="pub">
+  <img class="pub-thumb" src="images/which_vlm.jpg" alt="">
+  <div>
+    <h3 class="pub-title">How to Determine the Preferred Image Distribution of a Black-Box Vision-Language Model?</h3>
+    <p class="pub-authors"><strong>Saeid A. Taghanaki</strong>, Joseph Lambourne, Alana Mongkhounsavath</p>
+    <p class="pub-venue"><span class="venue-logo venue-neurips">NeurIPS 2024</span><span class="venue-text">Safe Generative AI Workshop</span></p>
+    <div class="pub-tags">
+      <span class="tag">evaluation</span>
+      <span class="tag">vision</span>
+    </div>
+    <div class="pub-links">
+      <a class="pub-link" href="http://arxiv.org/abs/2409.02253">paper</a>
+      <a class="pub-link" href="https://github.com/asgsaeid/cad_vqa">code</a>
+    </div>
+  </div>
+</article>
 
-              <table width="100%" align="center" border="0" cellpadding="20"><tbody>
-          <tr>
-            <td style="padding:20px;width:25%;vertical-align:middle">
-                <img src="images/shortcut_selection_ratio.png" width="300" height="220">
-              </a>
-            </td>
-            <td style="padding:20px;width:75%;vertical-align:middle">
-              <strong> MMLU-Pro+: Evaluating Higher-Order Reasoning and Shortcut Learning in LLMs </strong>
-              <br><br>
-              <strong>Saeid A. Taghanaki</strong>, Aliasgahr Khani, and Amir Khasahmadi 
-              <br>
-              <em>NeurIPS 2024, Safe Generative AI</em>
-              <br>
-              <a href="http://arxiv.org/abs/2409.02257" class="paper-link"> <i class="fas fa-archive"></i> Paper </a>
-              <a href="https://github.com/asgsaeid/mmlu-pro-plus" class="paper-link"> <i class="fas fa-code"></i> Code </a>
-              <br>
-            </td>
-          </tr>
-        </tbody></table>  
+<article class="pub">
+  <img class="pub-thumb" src="images/gen_par.jpg" alt="">
+  <div>
+    <h3 class="pub-title">The Problem of Generative Parroting: Navigating Toward Responsible AI</h3>
+    <p class="pub-authors"><strong>Saeid A. Taghanaki</strong></p>
+    <p class="pub-venue"><span class="venue-logo venue-blog">Blog 2024</span><span class="venue-text">Autodesk Research &mdash; three-part essay series</span></p>
+    <div class="pub-tags">
+      <span class="tag">memorization</span>
+    </div>
+    <div class="pub-links">
+      <a class="pub-link" href="https://www.research.autodesk.com/blog/the-problem-of-generative-parroting-navigating-toward-responsible-ai-part-1/">part 1</a>
+      <a class="pub-link" href="https://www.research.autodesk.com/blog/the-problem-of-generative-parroting-navigating-toward-responsible-ai-part-2/">part 2</a>
+      <a class="pub-link" href="https://www.research.autodesk.com/blog/the-problem-of-generative-parroting-navigating-toward-responsible-ai-part-3/">part 3</a>
+    </div>
+  </div>
+</article>
 
+<article class="pub">
+  <img class="pub-thumb" src="images/d_gen_par.jpg" alt="">
+  <div>
+    <h3 class="pub-title">Detecting Generative Parroting through Overfitting Masked Autoencoders</h3>
+    <p class="pub-authors"><strong>Saeid A. Taghanaki</strong>, Joseph Lambourne</p>
+    <p class="pub-venue"><span class="venue-logo venue-cvpr">CVPR 2024</span><span class="venue-text">Responsible Generative AI Workshop</span></p>
+    <div class="pub-tags">
+      <span class="tag">memorization</span>
+    </div>
+    <div class="pub-links">
+      <a class="pub-link" href="https://arxiv.org/abs/2403.19050">paper</a>
+    </div>
+  </div>
+</article>
 
+<article class="pub">
+  <img class="pub-thumb" src="images/textplain_.jpg" alt="">
+  <div>
+    <h3 class="pub-title">Learned Visual Features to Textual Explanations</h3>
+    <p class="pub-authors"><strong>Saeid A. Taghanaki</strong> et al.</p>
+    <p class="pub-venue"><span class="venue-logo venue-iclr">ICLR 2024</span><span class="venue-text">Reliable and Responsible Foundation Models Workshop</span></p>
+    <div class="pub-tags">
+      <span class="tag">interpretability</span>
+      <span class="tag">vision</span>
+    </div>
+    <div class="pub-links">
+      <a class="pub-link" href="https://arxiv.org/abs/2309.00733">paper</a>
+    </div>
+  </div>
+</article>
 
+<h2 class="section-title">Selected Conference Publications</h2>
 
-              <table width="100%" align="center" border="0" cellpadding="20"><tbody>
-          <tr>
-            <td style="padding:20px;width:25%;vertical-align:middle">
-                <img src="images/which_vlm.jpg" width="300" height="125">
-              </a>
-            </td>
-            <td style="padding:20px;width:75%;vertical-align:middle">
-              <strong>How to Determine the Preferred Image Distribution of a Black-Box Vision-Language Model?</strong>
-              <br><br>
-              <strong>Saeid A. Taghanaki</strong>, Joseph Lambourne, Alana Mongkhounsavath
-              <br>
-              <em>NeurIPS 2024, Safe Generative AI, </em>
-              <br>
-              <a href="http://arxiv.org/abs/2409.02253" class="paper-link"> <i class="fas fa-archive"></i> Paper </a>
-              <a href="https://github.com/asgsaeid/cad_vqa" class="paper-link"> <i class="fas fa-code"></i> Code </a>
-              <br>
-            </td>
-          </tr>
-        </tbody></table>  
-  
+<article class="pub">
+  <img class="pub-thumb" src="images/smite.png" alt="">
+  <div>
+    <h3 class="pub-title">SMITE: Segment Me In Time</h3>
+    <p class="pub-tagline">Optimizing textual embeddings for robust single-shot video segmentation.</p>
+    <p class="pub-authors">Amir Alimohammadi, Sauradip Nag, <strong>Saeid A. Taghanaki</strong>, Andrea Tagliasacchi, Ghassan Hamarneh, Ali Mahdavi-Amiri</p>
+    <p class="pub-venue"><span class="venue-logo venue-iclr">ICLR 2025</span></p>
+    <div class="pub-tags">
+      <span class="tag">vision</span>
+    </div>
+    <div class="pub-links">
+      <a class="pub-link" href="https://segment-me-in-time.github.io">project page</a>
+    </div>
+  </div>
+</article>
 
-        
+<article class="pub">
+  <img class="pub-thumb" src="images/slime.png" alt="">
+  <div>
+    <h3 class="pub-title">SLiMe: Segment Like Me</h3>
+    <p class="pub-tagline">Optimizing textual embeddings for robust single-shot image segmentation.</p>
+    <p class="pub-authors">Aliasghar Khani, <strong>Saeid A. Taghanaki</strong>, Aditya Sanghi, Ali Mahdavi-Amiri, Ghassan Hamarneh</p>
+    <p class="pub-venue"><span class="venue-logo venue-iclr">ICLR 2024</span></p>
+    <div class="pub-tags">
+      <span class="tag">vision</span>
+    </div>
+    <div class="pub-links">
+      <a class="pub-link" href="https://arxiv.org/abs/2309.03179">paper</a>
+      <a class="pub-link" href="https://github.com/aliasgharkhani/SLiMe">code</a>
+    </div>
+  </div>
+</article>
 
+<article class="pub">
+  <img class="pub-thumb" src="images/masktune_.png" alt="">
+  <div>
+    <h3 class="pub-title"><em>MaskTune:</em> Mitigating Spurious Correlations by Forcing to Explore</h3>
+    <p class="pub-authors"><strong>Saeid A. Taghanaki*</strong>, Aliasghar Khani*, Fereshte Khani*, Ali Gholami*, Linh Tran, Ali Mahdavi-Amiri, Ghassan Hamarneh</p>
+    <p class="pub-venue"><span class="venue-logo venue-neurips">NeurIPS 2022</span></p>
+    <div class="pub-tags">
+      <span class="tag">robustness</span>
+    </div>
+    <div class="pub-links">
+      <a class="pub-link" href="https://arxiv.org/abs/2210.00055">paper</a>
+      <a class="pub-link" href="https://github.com/aliasgharkhani/Masktune">code</a>
+    </div>
+  </div>
+</article>
 
-            <table width="100%" align="center" border="0" cellpadding="20"><tbody>
-          <tr>
-            <td style="padding:20px;width:25%;vertical-align:middle">
-                <img src="images/gen_par.jpg" width="300" height="170">
-              </a>
-            </td>
-            <td style="padding:20px;width:75%;vertical-align:middle">
-              <strong>The Problem of Generative Parroting: Navigating Toward Responsible AI</strong> [<a href="https://www.research.autodesk.com/blog/the-problem-of-generative-parroting-navigating-toward-responsible-ai-part-1/">Part 1 </a>, <a href="https://www.research.autodesk.com/blog/the-problem-of-generative-parroting-navigating-toward-responsible-ai-part-2/"> Part 2 </a>, <a href="https://www.research.autodesk.com/blog/the-problem-of-generative-parroting-navigating-toward-responsible-ai-part-3/"> Part 3</a>]
-              <br><br>
-              <strong>Saeid A. Taghanaki </strong>, 
-              <br>
-              <em>Autodesk Research Blog, 2024</em>
-              <br>
-            </td>
-          </tr>
-        </tbody></table>   
+<article class="pub">
+  <img class="pub-thumb" src="images/cim_.jpg" alt="">
+  <div>
+    <h3 class="pub-title">Robust Representation Learning via Perceptual Similarity Metrics</h3>
+    <p class="pub-authors"><strong>Saeid A. Taghanaki*</strong>, Kristy Choi*, Amir Khasahmadi, Anirudh Goyal</p>
+    <p class="pub-venue"><span class="venue-logo venue-icml">ICML 2021</span><span class="badge">Spotlight</span></p>
+    <div class="pub-tags">
+      <span class="tag">robustness</span>
+    </div>
+    <div class="pub-links">
+      <a class="pub-link" href="https://arxiv.org/abs/2106.06620">paper</a>
+    </div>
+  </div>
+</article>
 
+<article class="pub">
+  <img class="pub-thumb" src="images/robustpointset_.png" alt="">
+  <div>
+    <h3 class="pub-title">RobustPointSet: A Dataset for Benchmarking Robustness of Point Cloud Classifiers</h3>
+    <p class="pub-authors"><strong>Saeid A. Taghanaki*</strong>, Jieliang Luo*, Ran Zhang, Ye Wang, Pradeep Kumar Jayaraman, Krishna Murthy Jatavallabhula</p>
+    <p class="pub-venue"><span class="venue-logo venue-iclr">ICLR 2021</span><span class="venue-text">RobustML Workshop</span></p>
+    <div class="pub-tags">
+      <span class="tag">robustness</span>
+      <span class="tag">vision</span>
+    </div>
+    <div class="pub-links">
+      <a class="pub-link" href="https://arxiv.org/abs/2011.11572">paper</a>
+    </div>
+  </div>
+</article>
 
+<article class="pub">
+  <img class="pub-thumb" src="images/pointmask_.jpg" alt="">
+  <div>
+    <h3 class="pub-title">PointMask: Towards Interpretable and Bias-Resilient Point Cloud Processing</h3>
+    <p class="pub-authors"><strong>Saeid A. Taghanaki</strong>, Kaveh Hassani, Pradeep Kumar Jayaraman, Amir Khasahmadi</p>
+    <p class="pub-venue"><span class="venue-logo venue-icml">ICML 2020</span><span class="venue-text">Human Interpretability in ML</span><span class="badge">Talk</span></p>
+    <div class="pub-tags">
+      <span class="tag">interpretability</span>
+      <span class="tag">vision</span>
+    </div>
+    <div class="pub-links">
+      <a class="pub-link" href="https://arxiv.org/abs/2007.04525">paper</a>
+    </div>
+  </div>
+</article>
 
+<article class="pub">
+  <img class="pub-thumb" src="images/kernel.jpg" alt="">
+  <div>
+    <h3 class="pub-title">A Kernelized Manifold Mapping to Diminish the Effect of Adversarial Perturbations</h3>
+    <p class="pub-authors"><strong>Saeid A. Taghanaki</strong>, Kumar Abhishek, Shekoofeh Azizi, Ghassan Hamarneh</p>
+    <p class="pub-venue"><span class="venue-logo venue-cvpr">CVPR 2019</span></p>
+    <div class="pub-tags">
+      <span class="tag">robustness</span>
+    </div>
+    <div class="pub-links">
+      <a class="pub-link" href="https://arxiv.org/abs/1903.01015">paper</a>
+    </div>
+  </div>
+</article>
 
-              <table width="100%" align="center" border="0" cellpadding="20"><tbody>
-          <tr>
-            <td style="padding:20px;width:25%;vertical-align:middle">
-                <img src="images/d_gen_par.jpg" width="300" height="170">
-              </a>
-            </td>
-            <td style="padding:20px;width:75%;vertical-align:middle">
-              <strong> Detecting Generative Parroting through Overfitting Masked Autoencoders </strong> 
-              <br><br>
-              <strong>Saeid A. Taghanaki </strong> and Joseph Lambourne 
-              <br>
-              <em>CVPR 2024, Responsible Generative AI</em>
-              <br>
-              <a href="https://arxiv.org/abs/2403.19050" class="paper-link"> <i class="fas fa-archive"></i> Paper </a>
-              <br>
-            </td>
-          </tr>
-        </tbody></table>   
+<article class="pub">
+  <img class="pub-thumb" src="images/infomask_.png" alt="">
+  <div>
+    <h3 class="pub-title">InfoMask: Masked Variational Latent Representation to Localize Chest Disease</h3>
+    <p class="pub-authors"><strong>Saeid A. Taghanaki</strong>, Mohammad Havaei, Tess Berthier, Francis Dutil, Ghassan Hamarneh, Yoshua Bengio</p>
+    <p class="pub-venue"><span class="venue-logo venue-miccai">MICCAI 2019</span><span class="badge">Early Accept</span></p>
+    <div class="pub-tags">
+      <span class="tag">interpretability</span>
+      <span class="tag">medical</span>
+    </div>
+    <div class="pub-links">
+      <a class="pub-link" href="https://arxiv.org/abs/1903.11741">paper</a>
+    </div>
+  </div>
+</article>
 
-        
-        
+<article class="pub">
+  <img class="pub-thumb" src="images/in_transfer.png" alt="">
+  <div>
+    <h3 class="pub-title">Improved Inference via Deep Input Transfer</h3>
+    <p class="pub-authors"><strong>Saeid A. Taghanaki</strong>, Kumar Abhishek, Ghassan Hamarneh</p>
+    <p class="pub-venue"><span class="venue-logo venue-miccai">MICCAI 2019</span><span class="badge">Early Accept</span></p>
+    <div class="pub-tags">
+      <span class="tag">medical</span>
+    </div>
+    <div class="pub-links">
+      <a class="pub-link" href="https://arxiv.org/abs/1904.02307">paper</a>
+    </div>
+  </div>
+</article>
 
+<article class="pub">
+  <img class="pub-thumb" src="images/sat_.jpg" alt="">
+  <div>
+    <h3 class="pub-title">Select, Attend, and Transfer: Light, Learnable Skip Connections</h3>
+    <p class="pub-authors"><strong>Saeid A. Taghanaki</strong>, Aicha Bentaieb, Anmol Sharma, S. Kevin Zhou, Yefeng Zheng, Bogdan Georgescu, Puneet Sharma, Dorin Comaniciu, Ghassan Hamarneh</p>
+    <p class="pub-venue"><span class="venue-logo venue-miccai">MICCAI 2019</span><span class="venue-text">MLMI Workshop</span><span class="badge">Talk</span></p>
+    <div class="pub-tags">
+      <span class="tag">medical</span>
+    </div>
+    <div class="pub-links">
+      <a class="pub-link" href="https://arxiv.org/abs/1804.05181">paper</a>
+    </div>
+  </div>
+</article>
 
-        
-            <table width="100%" align="center" border="0" cellpadding="20"><tbody>
-          <tr>
-            <td style="padding:20px;width:25%;vertical-align:middle">
-                <img src="images/textplain_.jpg" width="300" height="150">
-              </a>
-            </td>
-            <td style="padding:20px;width:75%;vertical-align:middle">
-              <strong> Learned Visual Features to Textual Explanations </strong> 
-              <br><br>
-              <strong>Saeid A. Taghanaki </strong> et al., 
-              <br>
-              <em>ICLR 2024, Reliable and Responsible Foundation Models</em>
-              <br>
-              <a href="https://arxiv.org/abs/2309.00733" class="paper-link"> <i class="fas fa-archive"></i> Paper </a>
-              <br>
-            </td>
-          </tr>
-        </tbody></table>   
+<article class="pub">
+  <img class="pub-thumb" src="images/vul_.png" alt="">
+  <div>
+    <h3 class="pub-title">Vulnerability Analysis of Chest X-Ray Image Classification Against Adversarial Attacks</h3>
+    <p class="pub-authors"><strong>Saeid A. Taghanaki</strong>, Arkadeep Das, Ghassan Hamarneh</p>
+    <p class="pub-venue"><span class="venue-logo venue-miccai">MICCAI 2018</span><span class="venue-text">Interpreting ML in Medical Image Computing</span><span class="badge">Talk</span></p>
+    <div class="pub-tags">
+      <span class="tag">robustness</span>
+      <span class="tag">medical</span>
+    </div>
+    <div class="pub-links">
+      <a class="pub-link" href="https://arxiv.org/abs/1807.02905">paper</a>
+    </div>
+  </div>
+</article>
 
- 
+<h2 class="section-title">Selected Journal Publications</h2>
 
-        
-        
-        <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20"><tbody>
-          <tr>
-            <td>
-              <heading>Selected Conference Publications</heading>
-            </td>
-          </tr>
-        </tbody></table>
+<article class="pub">
+  <img class="pub-thumb" src="images/review_.jpg" alt="">
+  <div>
+    <h3 class="pub-title">Deep Semantic Segmentation of Natural and Medical Images: A Review</h3>
+    <p class="pub-authors"><strong>Saeid A. Taghanaki*</strong>, Kumar Abhishek*, Joseph Paul Cohen, Julien Cohen-Adad, Ghassan Hamarneh</p>
+    <p class="pub-venue"><span class="venue-logo venue-journal">AI Review</span><span class="venue-text">Artificial Intelligence Review, 2020 &nbsp;·&nbsp; IF 12.0</span></p>
+    <div class="pub-tags">
+      <span class="tag">vision</span>
+      <span class="tag">medical</span>
+    </div>
+    <div class="pub-links">
+      <a class="pub-link" href="https://arxiv.org/abs/1910.07655">paper</a>
+    </div>
+  </div>
+</article>
 
+<article class="pub">
+  <img class="pub-thumb" src="images/combo_.jpg" alt="">
+  <div>
+    <h3 class="pub-title">Combo Loss: Handling Input and Output Imbalance in Multi-Organ Segmentation</h3>
+    <p class="pub-authors"><strong>Saeid A. Taghanaki</strong>, Yefeng Zheng, S. Kevin Zhou, Bogdan Georgescu, Puneet Sharma, Daguang Xu, Dorin Comaniciu, Ghassan Hamarneh</p>
+    <p class="pub-venue"><span class="venue-logo venue-journal">CMIG</span><span class="venue-text">Computerized Medical Imaging and Graphics, 2019 &nbsp;·&nbsp; IF 7.42</span></p>
+    <div class="pub-tags">
+      <span class="tag">medical</span>
+    </div>
+    <div class="pub-links">
+      <a class="pub-link" href="https://arxiv.org/abs/1805.02798">paper</a>
+    </div>
+  </div>
+</article>
 
+<article class="pub">
+  <img class="pub-thumb" src="images/direct_.png" alt="">
+  <div>
+    <h3 class="pub-title">Segmentation-Free Direct Tumor Volume and Metabolic Activity Estimation from PET Scans</h3>
+    <p class="pub-authors"><strong>Saeid A. Taghanaki</strong>, Nouirin Duggan, Hilgan Ma, Anna Celler, Francois Benard, Ghassan Hamarneh</p>
+    <p class="pub-venue"><span class="venue-logo venue-journal">CMIG</span><span class="venue-text">Computerized Medical Imaging and Graphics, 2018 &nbsp;·&nbsp; IF 7.42</span></p>
+    <div class="pub-tags">
+      <span class="tag">medical</span>
+    </div>
+    <div class="pub-links">
+      <a class="pub-link" href="https://www2.cs.sfu.ca/~hamarneh/ecopy/cmig2018a.pdf">paper</a>
+    </div>
+  </div>
+</article>
 
+<article class="pub">
+  <img class="pub-thumb" src="images/pareto_.png" alt="">
+  <div>
+    <h3 class="pub-title">Pareto-Optimal Multi-Objective Dimensionality Reduction Deep Auto-Encoder for Mammography Classification</h3>
+    <p class="pub-authors"><strong>Saeid A. Taghanaki</strong>, Jeremy Kawahara, Ghassan Hamarneh</p>
+    <p class="pub-venue"><span class="venue-logo venue-journal">CMPB</span><span class="venue-text">Computer Methods and Programs in Biomedicine, 2017 &nbsp;·&nbsp; IF 7.10</span></p>
+    <div class="pub-tags">
+      <span class="tag">medical</span>
+    </div>
+    <div class="pub-links">
+      <a class="pub-link" href="https://www2.cs.sfu.ca/~hamarneh/ecopy/cmpb2017.pdf">paper</a>
+    </div>
+  </div>
+</article>
 
-                <table width="100%" align="center" border="0" cellpadding="20"><tbody>
-          <tr>
-            <td style="padding:20px;width:25%;vertical-align:middle">
-                <img src="images/smite.png" width="295" height="165">
-              </a>
-            </td>
-            <td style="padding:20px;width:75%;vertical-align:middle">
-              <strong>SMITE: Segment Me In Time</strong>
-              <br>
-              <em>Optimzing textual embedings for robust single-shot video segmenation.</em>
-              <br><br>
-              Amir Alimohammadi, Sauradip Nag, <strong>Saeid A. Taghanaki</strong>, Andrea Tagliasacchi, Ghassan Hamarneh, Ali Mahdavi-Amiri
-              <br>
-              <em>ICLR 2025</em> 
-              <br>
-              <a href="https://segment-me-in-time.github.io" class="paper-link"> <i class="fas fa-archive"></i> Project page </a>
-              <br>
-            </td>
-          </tr>
-        </tbody></table>  
+<h2 class="section-title">Preprints</h2>
 
-  
+<article class="pub">
+  <img class="pub-thumb" src="images/counter.png" alt="">
+  <div>
+    <h3 class="pub-title">Counterbalancing Teacher: Regularizing Batch Normalized Models for Robustness</h3>
+    <p class="pub-authors"><strong>Saeid A. Taghanaki</strong>, Ali Gholami, Fereshte Khani, Kristy Choi, Linh Tran, Ran Zhang, Aliasghar Khani</p>
+    <p class="pub-venue"><span class="venue-logo venue-arxiv">arXiv</span><span class="venue-text">2022</span></p>
+    <div class="pub-tags">
+      <span class="tag">robustness</span>
+    </div>
+    <div class="pub-links">
+      <a class="pub-link" href="https://arxiv.org/abs/2207.01548">paper</a>
+    </div>
+  </div>
+</article>
 
+<article class="pub">
+  <img class="pub-thumb" src="images/jigsaw_.jpg" alt="">
+  <div>
+    <h3 class="pub-title">Jigsaw-VAE: Towards Balancing Features in Variational Autoencoders</h3>
+    <p class="pub-authors"><strong>Saeid A. Taghanaki</strong>, Mohammad Havaei, Alex Lamb, Aditya Sanghi, Ara Danielyan, Tonya Custis</p>
+    <p class="pub-venue"><span class="venue-logo venue-arxiv">arXiv</span><span class="venue-text">2020</span></p>
+    <div class="pub-tags">
+      <span class="tag">robustness</span>
+    </div>
+    <div class="pub-links">
+      <a class="pub-link" href="https://arxiv.org/abs/2005.05496">paper</a>
+    </div>
+  </div>
+</article>
 
-  
+<article class="pub">
+  <img class="pub-thumb" src="images/sign_.jpg" alt="">
+  <div>
+    <h3 class="pub-title">Signed Input Regularization</h3>
+    <p class="pub-authors"><strong>Saeid A. Taghanaki</strong>, Kumar Abhishek, Ghassan Hamarneh</p>
+    <p class="pub-venue"><span class="venue-logo venue-arxiv">arXiv</span><span class="venue-text">2019</span></p>
+    <div class="pub-tags">
+      <span class="tag">robustness</span>
+    </div>
+    <div class="pub-links">
+      <a class="pub-link" href="https://arxiv.org/abs/1911.07086">paper</a>
+    </div>
+  </div>
+</article>
 
-                <table width="100%" align="center" border="0" cellpadding="20"><tbody>
-          <tr>
-            <td style="padding:20px;width:25%;vertical-align:middle">
-                <img src="images/slime.png" width="300" height="150">
-              </a>
-            </td>
-            <td style="padding:20px;width:75%;vertical-align:middle">
-              <strong>SLiMe: Segment Like Me</strong>
-              <br>
-              <em>Optimzing textual embedings for robust single-shot image segmenation</em>
-              <br><br>
-              Aliasghar Khani, <strong>Saeid A. Taghanaki</strong>, Aditya Sanghi, Ali Mahdavi-Amiri, Ghassan Hamarneh
-              <br>
-              <em>ICLR 2024</em> 
-              <br>
-              <a href="https://arxiv.org/abs/2309.03179" class="paper-link"> <i class="fas fa-archive"></i> Paper </a>
-              <a href="https://github.com/aliasgharkhani/SLiMe" class="paper-link"> <i class="fas fa-code"></i> Code </a>
+</main>
 
-              <br>
-            </td>
-          </tr>
-        </tbody></table>  
-        
-        
-        <table width="100%" align="center" border="0" cellpadding="20"><tbody>
-          <tr>
-            <td style="padding:20px;width:25%;vertical-align:middle">
-                <img src="images/masktune_.png" width="300" height="110">
-              </a>
-            </td>
-            <td style="padding:20px;width:75%;vertical-align:middle">
-              <strong><em>MaskTune:</em> Mitigating Spurious Correlations by Forcing to Explore</strong>
-              <br><br>
-              <strong>Saeid A. Taghanaki*</strong>, 
-              Aliasghar Khani*, 
-              Fereshte Khani*, 
-              Ali Gholami*, 
-              Linh Tran, 
-              Ali Mahdavi-Amiri, 
-              Ghassan Hamarneh, 
+<footer>
+  <span class="footer-mark">Saeid A. Taghanaki</span>
+  <span>Last updated April 2026 &nbsp;·&nbsp; <a href="mailto:asgt.saeid@gmail.com">asgt.saeid@gmail.com</a></span>
+</footer>
 
-              <br>
-              <em>NeurIPS 2022</em>  
-              <br>
-              <a href="https://arxiv.org/abs/2210.00055" class="paper-link"> <i class="fas fa-archive"></i> Paper </a>
-              <a href="https://github.com/aliasgharkhani/Masktune" class="paper-link"> <i class="fas fa-code"></i> Code </a>
-            </td>
-          </tr>
-        </tbody></table>
-        
-        
-        
-        <table width="100%" align="center" border="0" cellpadding="20"><tbody>
-          <tr>
-            <td style="padding:20px;width:25%;vertical-align:middle">
-                <img src="images/cim_.jpg" width="300" height="130">
-              </a>
-            </td>
-            <td style="padding:20px;width:75%;vertical-align:middle">
-              <strong>Robust Representation Learning via Perceptual Similarity Metrics</strong>
-              <br><br>
-              <strong>Saeid A. Taghanaki*</strong>, 
-              Kristy Choi*, 
-              Amir Khasahmadi, 
-             Anirudh Goyal, 
-              <br>
-              <em>ICML 2021 (<span style="color: #ff0000">Spotlight presentation</span>)</em>  
-              <br>
-              <a href="https://arxiv.org/abs/2106.06620" class="paper-link"> <i class="fas fa-archive"></i> Paper </a>
-            </td>
-          </tr>
-        </tbody></table>
-        
-                <table width="100%" align="center" border="0" cellpadding="20"><tbody>
-          <tr>
-            <td style="padding:20px;width:25%;vertical-align:middle">
-                <img src="images/robustpointset_.png" width="300" height="105">
-              </a>
-            </td>
-            <td style="padding:20px;width:75%;vertical-align:middle">
-              <strong>RobustPointSet: A Dataset for Benchmarking Robustness of Point Cloud Classifiers</strong>
-              <br><br>
-              <strong>Saeid A. Taghanaki*</strong>, 
-              Jieliang Luo*, 
-              Ran Zhang, 
-              Ye Wang, 
-              Pradeep Kumar Jayaraman, 
-              Krishna Murthy Jatavallabhula, 
-
-              <br>
-              <em>ICLR 2021, RobustML</em>  
-              <br>
-              <a href="https://arxiv.org/abs/2011.11572" class="paper-link"> <i class="fas fa-archive"></i> Paper </a>
-            </td>
-          </tr>
-        </tbody></table>
-        
-                <table width="100%" align="center" border="0" cellpadding="20"><tbody>
-          <tr>
-            <td style="padding:20px;width:25%;vertical-align:middle">
-                <img src="images/pointmask_.jpg" width="300" height="100">
-              </a>
-            </td>
-            <td style="padding:20px;width:75%;vertical-align:middle">
-              <strong>PointMask: Towards Interpretable and Bias-Resilient Point Cloud Processing</strong>
-              <br><br>
-              <strong>Saeid A. Taghanaki </strong>, 
-              Kaveh Hassani, 
-              Pradeep Kumar Jayaraman, 
-              Amir Khasahmadi, 
-              <br>
-              <em>ICML 2020, Human Interpretability in Machine Learning (<span style="color: #ff0000">Talk</span>)</em> 
-              <br>
-              <a href="https://arxiv.org/abs/2007.04525" class="paper-link"> <i class="fas fa-archive"></i> Paper </a>
-            </td>
-         </tr>
-        </tbody></table>
-        
-                <table width="100%" align="center" border="0" cellpadding="20"><tbody>
-          <tr>
-            <td style="padding:20px;width:25%;vertical-align:middle">
-                <img src="images/kernel.jpg" width="300" height="150">
-              </a>
-            </td>
-            <td style="padding:20px;width:75%;vertical-align:middle">
-               <strong>A Kernelized Manifold Mapping to Diminish the Effect of Adversarial Perturbations</strong>
-              <br><br>
-              <strong>Saeid A. Taghanaki </strong>, 
-              Kumar Abhishek, 
-              Shekoofeh Azizi, 
-              Ghassan Hamarneh, 
-              <br>
-              <em>CVPR 2019</em>  
-              <br>
-              <a href="https://arxiv.org/abs/1903.01015" class="paper-link"> <i class="fas fa-archive"></i> Paper </a>
-            </td>
-          </tr>
-        </tbody></table>
-        
-                <table width="100%" align="center" border="0" cellpadding="20"><tbody>
-          <tr>
-            <td style="padding:20px;width:25%;vertical-align:middle">
-                <img src="images/infomask_.png" width="300" height="130">
-              </a>
-            </td>
-            <td style="padding:20px;width:75%;vertical-align:middle">
-              <strong>InfoMask: Masked Variational Latent Representation to Localize Chest Disease</strong>
-              <br><br>
-              <strong>Saeid A. Taghanaki </strong>, 
-              Mohammad Havaei, 
-              Tess Berthier, 
-              Francis Dutil, 
-              Ghassan Hamarneh, 
-              Yoshua Bengio, 
-              <br>
-              <em>MICCAI 2019 (<span style="color: #ff0000">Early accept</span>)</em> 
-              <br>
-              <a href="https://arxiv.org/abs/1903.11741" class="paper-link"> <i class="fas fa-archive"></i> Paper </a>
-            </td>
-          </tr>
-        </tbody></table>
-        
-                <table width="100%" align="center" border="0" cellpadding="20"><tbody>
-          <tr>
-            <td style="padding:20px;width:25%;vertical-align:middle">
-                <img src="images/in_transfer.png" width="300" height="150">
-              </a>
-            </td>
-            <td style="padding:20px;width:75%;vertical-align:middle">
-              <strong>Improved Inference via Deep Input Transfer</strong> 
-              <br><br>
-              <strong>Saeid A. Taghanaki </strong>, 
-               Kumar Abhishek, 
-               Ghassan Hamarneh, 
-              <br>
-              <em>MICCAI 2019 (<span style="color: #ff0000">Early accept</span>) </em> 
-              <br>
-              <a href="https://arxiv.org/abs/1904.02307 class="paper-link"> <i class="fas fa-archive"></i> Paper </a>
-            </td>
-          </tr>
-        </tbody></table>
-        
-                <table width="100%" align="center" border="0" cellpadding="20"><tbody>
-          <tr>
-            <td style="padding:20px;width:25%;vertical-align:middle">
-                <img src="images/sat_.jpg" width="300" height="150">
-              </a>
-            </td>
-            <td style="padding:20px;width:75%;vertical-align:middle">
-              <strong>Select, Attend, and Transfer: Light, Learnable Skip Connections</strong>
-              <br><br>
-              <strong>Saeid A. Taghanaki </strong>, 
-              Aicha Bentaieb, 
-              Anmol Sharma, 
-              S. Kevin Zhou, 
-              Yefeng Zheng, 
-              Bogdan Georgescu, 
-              Puneet Sharma, 
-              Dorin Comaniciu, 
-              Ghassan Hamarneh, 
-              <br>
-              <em>MICCAI 2019, MLMI (<span style="color: #ff0000">Talk</span>) </em>
-              <br>
-              <a href="https://arxiv.org/abs/1804.05181 class="paper-link"> <i class="fas fa-archive"></i> Paper </a>
-            </td>
-          </tr>
-        </tbody></table>
-        
-                <table width="100%" align="center" border="0" cellpadding="20"><tbody>
-          <tr>
-            <td style="padding:20px;width:25%;vertical-align:middle">
-                <img src="images/vul_.png" width="300" height="150">
-              </a>
-            </td>
-            <td style="padding:20px;width:75%;vertical-align:middle">
-               <strong>Vulnerability Analysis of Chest X-Ray Image Classification Against Adversarial Attacks</strong>
-              <br><br>
-              <strong>Saeid A. Taghanaki </strong>, 
-              Arkadeep Das, 
-             Ghassan Hamarneh, 
-              <br>
-              <em>MICCAI 2018, Understanding and Interpreting Machine Learning in Medical Image Computing Applications (<span style="color: #ff0000">Talk </span>)</em>
-              <br>
-              <a href="https://arxiv.org/abs/1807.02905 class="paper-link"> <i class="fas fa-archive"></i> Paper </a>
-            </td>
-          </tr>
-        </tbody></table>
-        
-                <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20"><tbody>
-          <tr>
-            <td>
-              <heading>Seleted Journal Publications</heading>
-            </td>
-          </tr>
-        </tbody></table>
-        
-                <table width="100%" align="center" border="0" cellpadding="20"><tbody>
-          <tr>
-            <td style="padding:20px;width:25%;vertical-align:middle">
-                <img src="images/review_.jpg" width="300" height="200">
-              </a>
-            </td>
-            <td style="padding:20px;width:75%;vertical-align:middle">
-              <strong>Deep Semantic Segmentation of Natural and Medical Images: A Review</strong>
-              <br><br>
-              <strong>Saeid A. Taghanaki*</strong>, 
-              Kumar Abhishek*, 
-              Joseph Paul Cohen, 
-              Julien Cohen-Adad, 
-              Ghassan Hamarneh, 
-              <br>
-              <em>Artificial Intelligence Review, 2020 (IF=12) </em>  
-              <br>
-              <a href="https://arxiv.org/abs/1910.07655 class="paper-link"> <i class="fas fa-archive"></i> Paper </a>
-            </td>
-          </tr>
-        </tbody></table>
-        
-                <table width="100%" align="center" border="0" cellpadding="20"><tbody>
-          <tr>
-            <td style="padding:20px;width:25%;vertical-align:middle">
-                <img src="images/combo_.jpg" width="300" height="200">
-              </a>
-            </td>
-            <td style="padding:20px;width:75%;vertical-align:middle">
-              <strong>Combo Loss: Handling Input and Output Imbalance in Multi-Organ Segmentation</strong>
-              <br><br>
-              <strong>Saeid A. Taghanaki </strong>, 
-              Yefeng Zheng, 
-              S. Kevin Zhou, 
-              Bogdan Georgescu, 
-              Puneet Sharma, 
-              Daguang Xu, 
-              Dorin Comaniciu, 
-              Ghassan Hamarneh,               
-              <br>
-              <em>Computerized Medical Imaging and Graphics, 2019 (IF= 7.42) </em>  
-              <br>
-              <a href="https://arxiv.org/abs/1805.02798 class="paper-link"> <i class="fas fa-archive"></i> Paper </a>
-            </td>
-          </tr>
-        </tbody></table>
-        
-                <table width="100%" align="center" border="0" cellpadding="20"><tbody>
-          <tr>
-            <td style="padding:20px;width:25%;vertical-align:middle">
-                <img src="images/direct_.png" width="300" height="200">
-              </a>
-            </td>
-            <td style="padding:20px;width:75%;vertical-align:middle">
-              <strong>Segmentation-Free Direct Tumor Volume and Metabolic Activity Estimation from PET Scans</strong>
-              <br><br>
-              <strong>Saeid A. Taghanaki </strong>, 
-              Nouirin Duggan, 
-              Hilgan Ma, 
-              Anna Celler, 
-              Francois Benard, 
-             Ghassan Hamarneh, 
-
-              <br>
-              <em>Computerized Medical Imaging and Graphics, 2018 (IF=7.42) </em> 
-              <br>
-              <a href="https://www2.cs.sfu.ca/~hamarneh/ecopy/cmig2018a.pdf class="paper-link"> <i class="fas fa-archive"></i> Paper </a>
-            </td>
-          </tr>
-        </tbody></table>
-        
-                <table width="100%" align="center" border="0" cellpadding="20"><tbody>
-          <tr>
-            <td style="padding:20px;width:25%;vertical-align:middle">
-                <img src="images/pareto_.png" width="300" height="130">
-              </a>
-            </td>
-            <td style="padding:20px;width:75%;vertical-align:middle">
-              <strong>Pareto-Optimal Multi-Objective Dimensionality Reduction Deep Auto-Encoder for Mammography Classification</strong>
-              <br><br>
-              <strong>Saeid A. Taghanaki </strong>, 
-              Jeremy Kawahara, 
-              Ghassan Hamarneh, 
-              <br>
-              <em>Computer Methods and Programs in Biomedicine, 2017 (IF=7.10) </em>  
-              <br>
-              <a href="https://www2.cs.sfu.ca/~hamarneh/ecopy/cmpb2017.pdf class="paper-link"> <i class="fas fa-archive"></i> Paper </a>
-            </td>
-          </tr>
-        </tbody></table>
-        
-        
-          <!-- <table width="100%" align="center" border="0" cellpadding="20"><tbody>
-          <tr>
-            <td style="padding:20px;width:25%;vertical-align:middle">
-                <img src="images/nonlf_.png" width="300" height="130">
-              </a>
-            </td>
-            <td style="padding:20px;width:75%;vertical-align:middle">
-              Nonlinear Feature Transformation and GA-based Feature Selection: Improving System Security and Decrease Computational Cost
-              <br>
-              <strong>Saeid A. Taghanaki </strong>, 
-              Ansari M. R., 
-              Zamani B., 
-              Mousavi S. A., 
-              <br>
-              <em>ETRI Journal, 2012 (IF = 2.03)</em>  
-              <br>
-              <a href="https://arxiv.org/abs/2008.06151">[paper]</a> 
-            </td>
-          </tr>
-        </tbody></table> -->
-        
-              <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20"><tbody>
-          <tr>
-            <td>
-              <heading>Preprints</heading>
-            </td>
-          </tr>
-                      
-                </tbody></table>
-        
-                <table width="100%" align="center" border="0" cellpadding="20"><tbody>
-          <tr>
-            <td style="padding:20px;width:25%;vertical-align:middle">
-                <img src="images/counter.png" width="300" height="210">
-              </a>
-            </td>
-            <td style="padding:20px;width:75%;vertical-align:middle">
-              <strong>Counterbalancing Teacher: Regularizing Batch Normalized Models for Robustness</strong>
-              <br><br>
-              <strong>Saeid A. Taghanaki </strong>, 
-               Ali Gholami, 
-               Fereshte Khani, 
-              Kristy Choi, 
-              Linh Tran, 
-              Ran Zhang, 
-              Aliasghar Khani, 
-              <br>
-              <em>arXiv, 2022 </em>  
-              <br>
-              <a href="https://arxiv.org/abs/2207.01548 class="paper-link"> <i class="fas fa-archive"></i> Paper </a>
-            </td>
-          </tr>
-        </tbody></table>                  
-                              
-                <table width="100%" align="center" border="0" cellpadding="20"><tbody>
-          <tr>
-            <td style="padding:20px;width:25%;vertical-align:middle">
-                <img src="images/jigsaw_.jpg" width="300" height="130">
-              </a>
-            </td>
-            <td style="padding:20px;width:75%;vertical-align:middle">
-              <strong>Jigsaw-VAE: Towards Balancing Features in Variational Autoencoders</strong>
-              <br><br>
-              <strong>Saeid A. Taghanaki </strong>, 
-              Mohammad Havaei, 
-              Alex Lamb, 
-             Aditya Sanghi, 
-              Ara Danielyan, 
-              Tonya Custis, 
-              <br>
-              <em>arXiv, 2020 </em>  
-              <br>
-              <a href="https://arxiv.org/abs/2005.05496 class="paper-link"> <i class="fas fa-archive"></i> Paper </a>
-            </td>
-          </tr>
-        </tbody></table>
-        
-                <table width="100%" align="center" border="0" cellpadding="20"><tbody>
-          <tr>
-            <td style="padding:20px;width:25%;vertical-align:middle">
-                <img src="images/sign_.jpg" width="300" height="180">
-              </a>
-            </td>
-            <td style="padding:20px;width:75%;vertical-align:middle">
-              <strong>Signed Input Regularization</strong>
-              <br><br>
-              <strong>Saeid A. Taghanaki </strong>, 
-              Kumar Abhishek</a>, 
-              Ghassan Hamarneh</a>,               
-              <br>
-              <em>arXiv, 2019 </em>  
-              <br>
-              <a href="https://arxiv.org/abs/1911.07086 class="paper-link"> <i class="fas fa-archive"></i> Paper </a>
-            </td>
-          </tr>
-        </tbody></table>
-
-
-        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-          <tr>
-            <td style="padding:0px">
-              <br>
-              <p style="text-align:right;font-size:small;">
-                <small>Design template by</small> <a href="https://jonbarron.info/"><small>Jon Barron</small></a>
-              </p>
-            </td>
-          </tr>
-        </tbody></table>
-
-      </td>
-    </tr>
-  </table>
 </body>
-
 </html>
