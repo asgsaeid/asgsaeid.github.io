@@ -132,17 +132,6 @@
   .hero-social svg { width: 15px; height: 15px; }
 
   .hero-portrait { position: relative; }
-  .hero-portrait::after {
-    content: "";
-    position: absolute;
-    inset: auto -10px -10px auto;
-    width: 60%;
-    height: 60%;
-    border-right: 0px solid var(--accent);
-    border-bottom: 0px solid var(--accent);
-    z-index: 0;
-    pointer-events: none;
-  }
   .hero-portrait img {
     width: 100%;
     aspect-ratio: 4/5;
@@ -379,15 +368,17 @@
 
     <p>
       I am a Principal Applied Scientist &amp; Manager at Microsoft, where I lead a team building
-      <strong class="bio-key">agentic evaluation infrastructure</strong> for foundation-model systems.
-      Our closed-loop platform ships as part of Copilot Tuning and has been adopted by 50+ enterprises
-      in early private release.
+      <strong class="bio-key">agentic evaluation infrastructure</strong> for Copilot Tuning.
     </p>
     <p>
-      My research is anchored in one bet: as frontier models grow more capable, evaluation becomes the
-      binding constraint on real-world reliability. That pulls me toward probing reasoning rather than
-      pattern-matching, detecting reward hacking and memorization, and designing trajectory-, outcome-,
-      and process-level signals that don't collapse under their own optimization pressure.
+      My research treats evaluation as a central constraint on foundation-model reliability.
+      Standard academic benchmarks, with their static test sets and closed-form answers, describe a
+      regime distant from how models are deployed: enterprise systems operate over open-ended
+      tasks, multi-step trajectories, and continuous optimization pressure, often without a fixed
+      answer key. I focus on three connected threads, expanded below: capability assessment that
+      distinguishes reasoning from shortcut learning, evaluation of long-horizon agents under their
+      own optimization pressure, and detection of memorization in production-scale generative
+      models.
     </p>
     <p>
       Before Microsoft I worked on reliable AI at Autodesk Research, where I contributed to
@@ -553,7 +544,7 @@
   <div class="service-item">
     <div class="service-label">Industry Impact</div>
     <div class="service-content">
-      Closed-loop agentic evaluation systems shipped in <strong>Microsoft Copilot Tuning</strong>.
+      Closed-loop agentic evaluation systems for <strong>Microsoft Copilot Tuning</strong>.
     </div>
   </div>
 </div>
