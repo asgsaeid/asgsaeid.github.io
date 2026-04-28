@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Saeid A. Taghanaki</title>
 <meta name="author" content="Saeid A. Taghanaki">
-<meta name="description" content="Saeid A. Taghanaki — Principal Scientist & Manager at Microsoft, working on agentic evaluations, reliability, and interpretability of generative models.">
+<meta name="description" content="Saeid A. Taghanaki, Principal Applied Scientist & Manager at Microsoft, working on agentic evaluation, reliability, and self-improving foundation-model systems.">
 <link rel="icon" type="image/png" href="images/web_icon_.png">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -40,8 +40,8 @@
     font-family: var(--sans);
     background: var(--bg);
     color: var(--text);
-    font-size: 15.5px;
-    line-height: 1.6;
+    font-size: 16px;
+    line-height: 1.65;
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
   }
@@ -55,7 +55,7 @@
   a:hover { color: var(--accent-2); text-decoration: underline; text-underline-offset: 3px; text-decoration-thickness: 1px; }
 
   main {
-    max-width: 940px;
+    max-width: 820px;
     margin: 0 auto;
     padding: 56px 36px 80px;
   }
@@ -63,7 +63,7 @@
   /* === HERO === */
   .hero {
     display: grid;
-    grid-template-columns: 1fr 220px;
+    grid-template-columns: 1fr 200px;
     gap: 44px;
     align-items: start;
     padding-bottom: 36px;
@@ -99,9 +99,8 @@
   }
 
   .hero p {
-    margin-bottom: 12px;
+    margin-bottom: 14px;
     color: var(--text);
-    max-width: 64ch;
   }
   .hero p:last-of-type { margin-bottom: 22px; }
   .hero p strong.bio-key { color: var(--ink); font-weight: 600; }
@@ -139,8 +138,8 @@
     inset: auto -10px -10px auto;
     width: 60%;
     height: 60%;
-    border-right: 0px solid var(--accent);
-    border-bottom: 0px solid var(--accent);
+    border-right: 2px solid var(--accent);
+    border-bottom: 2px solid var(--accent);
     z-index: 0;
     pointer-events: none;
   }
@@ -158,9 +157,9 @@
   /* === SECTIONS === */
   h2.section-title {
     font-family: var(--serif);
-    font-size: 21px;
+    font-size: 23px;
     font-weight: 600;
-    margin: 44px 0 18px;
+    margin: 52px 0 4px;
     padding-bottom: 8px;
     border-bottom: 1px solid var(--line);
     letter-spacing: -0.01em;
@@ -178,205 +177,166 @@
     border-radius: 1px;
   }
 
-  /* === RESEARCH INTERESTS === */
-  .focus-intro { color: var(--text); margin-top: 10px; margin-bottom: 14px; }
-  .focus-intro strong { color: var(--ink); font-weight: 600; }
-  .focus-list { list-style: none; display: grid; gap: 2px; }
-  .focus-list li {
-    padding: 11px 14px;
+  /* === RESEARCH NARRATIVE === */
+  .research-lead {
+    font-family: var(--serif);
+    font-size: 17.5px;
+    line-height: 1.55;
+    color: var(--ink-2);
+    margin: 24px 0 8px;
+    padding: 18px 22px;
+    background: var(--surface);
+    border-left: 3px solid var(--accent);
+    border-radius: 0 4px 4px 0;
+    font-style: italic;
+  }
+  .research-lead strong { color: var(--ink); font-weight: 600; font-style: normal; }
+
+  h3.theme-title {
+    font-family: var(--serif);
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--ink);
+    margin: 44px 0 16px;
+    letter-spacing: -0.012em;
+    position: relative;
+    padding-bottom: 10px;
+  }
+  h3.theme-title::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 36px;
+    height: 2px;
+    background: var(--accent);
+  }
+
+  .theme-body {
     color: var(--text);
+    margin-bottom: 12px;
+  }
+  .theme-body strong { color: var(--ink); font-weight: 600; }
+  .theme-body em { color: var(--ink-2); }
+
+  /* === VENUE BADGES (inline links) === */
+  .venue-link {
+    display: inline-block;
+    font-family: var(--mono);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    color: white !important;
+    padding: 2px 8px;
+    border-radius: 3px;
+    text-transform: uppercase;
+    line-height: 1.4;
+    white-space: nowrap;
+    text-decoration: none !important;
+    transition: all .15s ease;
+    vertical-align: baseline;
+    position: relative;
+    top: -1px;
+    margin: 0 1px;
+  }
+  .venue-link:hover {
+    filter: brightness(1.12);
+    transform: translateY(-1px);
+    box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+  }
+  .venue-link.spotlight::after {
+    content: " ★";
+    color: #ffd966;
+  }
+  .v-iclr     { background: #1a3a5f; }
+  .v-neurips  { background: #6b0f1a; }
+  .v-icml     { background: #b8336a; }
+  .v-cvpr     { background: #1e6091; }
+  .v-miccai   { background: #1a4a72; }
+  .v-arxiv    { background: #b31b1b; }
+  .v-journal  { background: #475569; }
+  .v-blog     { background: #5b6b00; }
+  .v-nist     { background: #1a4d3a; }
+
+  /* === SERVICE === */
+  .service-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 14px;
+    margin-top: 18px;
+  }
+  .service-item {
+    padding: 13px 16px;
     background: var(--surface);
     border-left: 2px solid var(--line-2);
     border-radius: 0 4px 4px 0;
     transition: all .2s ease;
   }
-  .focus-list li:hover {
+  .service-item:hover {
     border-left-color: var(--accent);
     background: var(--accent-soft);
   }
-  .focus-list li strong { color: var(--ink); font-weight: 600; }
-
-  /* === PUBLICATIONS === */
-  .pub {
-    display: grid;
-    grid-template-columns: 150px 1fr;
-    gap: 22px;
-    padding: 18px 16px 18px 14px;
-    border-bottom: 1px solid var(--line);
-    align-items: start;
-    border-radius: 4px;
-    transition: background .18s ease, border-color .18s ease;
-    border-left: 2px solid transparent;
-    margin-left: -16px;
-    margin-right: -16px;
-  }
-  .pub:hover {
-    background: var(--surface);
-    border-left-color: var(--accent);
-  }
-  .pub:hover .pub-thumb { border-color: var(--line-2); }
-  .pub:last-of-type { border-bottom: none; }
-
-  .pub-thumb {
-    width: 100%;
-    aspect-ratio: 16/10;
-    object-fit: cover;
-    background: var(--surface-2);
-    border: 1px solid var(--line);
-    border-radius: 3px;
-    transition: border-color .2s ease;
-  }
-
-  .pub-title {
-    font-family: var(--serif);
-    font-size: 16.5px;
+  .service-label {
+    font-family: var(--sans);
+    font-size: 12px;
     font-weight: 600;
-    line-height: 1.35;
-    margin-bottom: 5px;
-    color: var(--ink);
-    letter-spacing: -0.005em;
-  }
-  .pub-title em { font-style: italic; }
-
-  .pub-tagline {
-    font-style: italic;
-    color: var(--muted);
-    font-size: 14px;
-    margin-bottom: 5px;
-  }
-
-  .pub-authors {
-    font-size: 14.5px;
-    color: var(--text);
-    line-height: 1.5;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--accent);
     margin-bottom: 4px;
   }
-  .pub-authors strong { color: var(--ink); font-weight: 600; }
+  .service-content { color: var(--text); font-size: 15px; line-height: 1.55; }
+  .service-content strong { color: var(--ink); font-weight: 600; }
 
-  .pub-venue {
-    font-size: 13.5px;
-    color: var(--muted);
-    margin-bottom: 6px;
-    font-family: var(--serif);
-    font-style: italic;
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 4px;
+  /* === TALKS === */
+  .talks-list {
+    list-style: none;
+    margin-top: 14px;
   }
-  .pub-venue .venue-text { font-style: italic; }
-  .pub-venue .badge {
-    color: var(--gold);
-    font-weight: 600;
-    font-style: normal;
-    font-family: var(--sans);
-    font-size: 11px;
-    text-transform: uppercase;
-    letter-spacing: 0.04em;
-    padding: 1px 7px;
-    background: rgba(180, 83, 9, 0.08);
-    border-radius: 100px;
-    border: 1px solid rgba(180, 83, 9, 0.18);
-    margin-left: 4px;
+  .talks-list li {
+    padding: 8px 0;
+    border-bottom: 1px solid var(--line);
+    display: grid;
+    grid-template-columns: 60px 1fr;
+    gap: 16px;
+    color: var(--text);
+    font-size: 14.5px;
   }
-
-  /* === VENUE LOGO BADGES === */
-  .venue-logo {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
+  .talks-list li:last-child { border-bottom: none; }
+  .talks-list .year {
     font-family: var(--mono);
-    font-size: 10px;
-    font-weight: 600;
-    letter-spacing: 0.04em;
-    color: white;
-    padding: 3px 7px;
-    border-radius: 3px;
-    text-transform: uppercase;
-    line-height: 1;
-    margin-right: 4px;
-    flex-shrink: 0;
-    font-style: normal;
-  }
-  .venue-iclr     { background: #1a3a5f; }
-  .venue-neurips  { background: #6b0f1a; }
-  .venue-icml     { background: #b8336a; }
-  .venue-cvpr     { background: #1e6091; }
-  .venue-miccai   { background: #1a4a72; }
-  .venue-arxiv    { background: #b31b1b; }
-  .venue-journal  { background: #475569; }
-  .venue-blog     { background: #5b6b00; }
-
-  /* === PAPER TAGS === */
-  .pub-tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 4px;
-    margin-top: 8px;
-  }
-  .tag {
-    display: inline-flex;
-    align-items: center;
-    font-family: var(--mono);
-    font-size: 11px;
-    font-weight: 400;
-    color: var(--muted);
-    padding: 1px 7px 2px;
-    background: transparent;
-    border: 1px solid var(--line);
-    border-radius: 3px;
-    transition: all .15s ease;
-    cursor: default;
-    line-height: 1.4;
-  }
-  .tag::before {
-    content: "#";
-    margin-right: 1px;
-    opacity: 0.55;
-  }
-  .tag:hover {
-    color: var(--accent);
-    border-color: var(--accent);
-    background: var(--accent-soft);
-  }
-
-  .pub-links {
-    display: flex;
-    gap: 6px;
-    flex-wrap: wrap;
-    margin-top: 8px;
-  }
-  .pub-link {
-    display: inline-flex;
-    align-items: center;
-    gap: 5px;
-    padding: 3px 10px;
-    background: var(--bg);
-    border: 1px solid var(--line);
-    border-radius: 3px;
-    color: var(--ink-2);
     font-size: 12px;
-    font-family: var(--mono);
+    color: var(--muted);
     font-weight: 500;
-    transition: all .15s ease;
+    padding-top: 1px;
   }
-  .pub-link:hover {
-    background: var(--accent);
-    color: white;
-    border-color: var(--accent);
-    text-decoration: none;
-  }
+  .talks-list .talk-title { font-style: italic; color: var(--ink-2); }
+  .talks-list .talk-venue { color: var(--muted); font-style: normal; }
 
   /* === FOOTER === */
+  .full-list-link {
+    margin-top: 28px;
+    padding: 14px 18px;
+    background: var(--surface);
+    border-radius: 4px;
+    font-size: 14px;
+    color: var(--muted);
+    text-align: center;
+  }
+  .full-list-link a {
+    color: var(--accent);
+    font-weight: 500;
+  }
+
   footer {
-    max-width: 940px;
+    max-width: 820px;
     margin: 0 auto;
     padding: 28px 36px 36px;
     color: var(--muted);
     font-size: 12.5px;
     border-top: 1px solid var(--line);
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
   }
   footer .footer-mark {
@@ -392,20 +352,14 @@
     main { padding: 32px 22px 60px; }
     .hero { grid-template-columns: 1fr; gap: 24px; }
     .hero-portrait { max-width: 200px; }
-    .pub {
-      grid-template-columns: 110px 1fr;
-      gap: 16px;
-      padding: 14px 12px;
-      margin-left: -12px;
-      margin-right: -12px;
-    }
+    .hero-name { font-size: 30px; }
+    .talks-list li { grid-template-columns: 50px 1fr; gap: 12px; }
     footer {
       padding: 24px 22px 28px;
       flex-direction: column;
       gap: 8px;
       text-align: center;
     }
-    .hero-name { font-size: 30px; }
   }
 </style>
 </head>
@@ -419,29 +373,29 @@
   <div>
     <h1 class="hero-name">Saeid A. Taghanaki</h1>
     <div class="hero-affil">
-      <span class="role"><strong>Principal Scientist &amp; Manager</strong>, Microsoft</span>
+      <span class="role"><strong>Principal Applied Scientist &amp; Manager</strong>, Microsoft</span>
       <span class="role-2">Adjunct Research Professor, Simon Fraser University</span>
     </div>
 
     <p>
-      I am a Principal Scientist &amp; Manager at Microsoft,
-      where I lead a team building <strong class="bio-key">agentic evaluation systmes</strong>
-      for foundation-model systems. My research is anchored in one bet: as frontier models grow more
-      capable, evaluation becomes the binding constraint on real-world reliability. That pulls me
-      toward probing reasoning rather than pattern-matching, detecting reward hacking and memorization,
-      and designing trajectory-, outcome-, and process-level signals that don't collapse under their
-      own optimization pressure.
+      I am a Principal Applied Scientist &amp; Manager at Microsoft, where I lead a team building
+      <strong class="bio-key">agentic evaluation infrastructure</strong> for foundation-model systems.
+      Our closed-loop platform ships as part of Copilot Tuning and has been adopted by 50+ enterprises
+      in early private release.
     </p>
     <p>
-      Before Microsoft, I worked on reliable AI at Autodesk Research and on ML/CV problems at
-      early-stage startups. I completed my PhD in Computing Science at SFU under Prof.
+      My research is anchored in one bet: as frontier models grow more capable, evaluation becomes the
+      binding constraint on real-world reliability. That pulls me toward probing reasoning rather than
+      pattern-matching, detecting reward hacking and memorization, and designing trajectory-, outcome-,
+      and process-level signals that don't collapse under their own optimization pressure.
+    </p>
+    <p>
+      Before Microsoft I worked on reliable AI at Autodesk Research, where I contributed to
+      Generative AI Content Authentication at the U.S. AI Safety Institute Consortium (NIST AISIC).
+      I completed my PhD at SFU under Prof.
       <a href="https://www.medicalimageanalysis.com/ghassans-bio">Ghassan Hamarneh</a>, with research
       visits at <a href="https://mila.quebec/en/">MILA</a> (Montréal) and
       <a href="https://www.siemens-healthineers.com/en-ca">Siemens Healthineers</a> (Princeton).
-    </p>
-    <p>
-      Outside of work, I have a strong passion for soccer and the 100m sprint, with a few
-      inter-university medals along the way.
     </p>
 
     <div class="hero-social">
@@ -465,403 +419,155 @@
   </div>
 </section>
 
-<h2 class="section-title">Research Interests</h2>
-<p class="focus-intro">
-  My work sits at the intersection of <strong>evaluation</strong>, <strong>agentic systems</strong>,
-  and <strong>foundation-model reliability</strong>. Three threads I keep pulling on:
+<h2 class="section-title">Research</h2>
+
+<p class="research-lead">
+  My work sits at the intersection of <strong>evaluation</strong>,
+  <strong>self-improving and long-horizon agents</strong>, and
+  <strong>foundation-model reliability</strong>. The threads below trace a single conviction:
+  as models grow more capable, evaluation becomes the binding constraint on real-world reliability.
+  They span capability assessment, agent infrastructure, memorization, and the failure modes that
+  emerge under optimization pressure.
 </p>
-<ul class="focus-list">
-  <li><strong>Capability, reasoning, and self-evaluation</strong>; probing higher-order reasoning, shortcut learning, and capability elicitation in LLMs and VLMs; methods for models to evaluate themselves and each other (explanation–comprehension discrepancy, judge models) and the failure modes that emerge under optimization pressure.</li>
-  <li><strong>Agentic and process-level evaluation</strong>; trajectory-, outcome-, and process-level signals for tool-using, long-horizon agents; evaluation pipelines that surface real failure modes without being gamed by the systems they measure.</li>
-  <li><strong>Memorization, generalization, and robustness</strong>; detecting generative parroting, mitigating spurious correlations, and characterizing how foundation models behave under distribution shift.</li>
+
+<h3 class="theme-title">Capability and self-evaluation</h3>
+<p class="theme-body">
+  Standard accuracy benchmarks tell us less than they used to. As models scale, surface accuracy
+  increasingly decouples from real capability. Models pass tests by exploiting structure in the test
+  rather than by reasoning. Two recent threads of mine push back from different angles.
+</p>
+<p class="theme-body">
+  In <strong>MMLU-Pro+</strong> <a class="venue-link v-neurips" href="http://arxiv.org/abs/2409.02257">NeurIPS 2024</a>
+  we built a benchmark hardened against the kind of shortcut-selection that inflates leaderboard
+  numbers without the underlying reasoning. Models that look strong on MMLU often pick the right
+  answer for the wrong reason; MMLU-Pro+ measures and penalizes that explicitly.
+</p>
+<p class="theme-body">
+  In <strong>Explain-Query-Test (EQT)</strong>
+  <a class="venue-link v-iclr" href="https://arxiv.org/abs/2501.11721">ICLR 2025</a>
+  we asked whether models can evaluate themselves without human labels. The method exploits a structural
+  asymmetry: a model that can explain a concept well should also be able to comprehend its own
+  explanation. Where the gap opens, the model's understanding is shallower than its surface fluency
+  suggests. EQT turns this into a label-free capability signal, useful both as evaluation and as
+  training signal for self-improving systems.
+</p>
+
+<h3 class="theme-title">Agentic evaluation at scale</h3>
+<p class="theme-body">
+  I lead a team at Microsoft building the agentic evaluation infrastructure for Copilot Tuning,
+  a closed-loop system that connects customer-facing evaluation to post-training:
+  reinforcement-learning fine-tuning and inference-time optimization. The work targets
+  long-horizon, tool-using agents and the evaluation signals that make self-improvement possible
+  without constant human supervision.
+</p>
+<p class="theme-body">
+  How do you produce trajectory-, outcome-, and process-level signals for long-horizon agents
+  that don't collapse under their own optimization pressure? How do rubrics, judges, and
+  synthetic evaluators interact when used as training signal in self-improving systems rather
+  than just as measurement? When does evaluation become the bottleneck, and when does it become
+  the signal that gets gamed?
+</p>
+
+<h3 class="theme-title">Memorization and content provenance</h3>
+<p class="theme-body">
+  Generative models memorize their training data and reproduce it, sometimes verbatim. This is
+  simultaneously a copyright issue, a privacy issue, and a reliability issue.
+</p>
+<p class="theme-body">
+  In <strong>Detecting Generative Parroting</strong>
+  <a class="venue-link v-cvpr" href="https://arxiv.org/abs/2403.19050">CVPR 2024</a>
+  we introduced a method using overfit masked autoencoders to flag probable verbatim reproduction at
+  inference time, without needing access to the training set. The full argument (why memorization
+  happens, how to detect it, and what to do about it) appears in a three-part essay series I wrote
+  for Autodesk Research
+  (<a href="https://www.research.autodesk.com/blog/the-problem-of-generative-parroting-navigating-toward-responsible-ai-part-1/">part 1</a>,
+  <a href="https://www.research.autodesk.com/blog/the-problem-of-generative-parroting-navigating-toward-responsible-ai-part-2/">part 2</a>,
+  <a href="https://www.research.autodesk.com/blog/the-problem-of-generative-parroting-navigating-toward-responsible-ai-part-3/">part 3</a>).
+  Related to this work, I contributed to Generative AI Content Authentication at the U.S. AI Safety
+  Institute Consortium
+  (<a class="venue-link v-nist" href="https://www.nist.gov/aisi/artificial-intelligence-safety-institute-consortium-aisic">NIST AISIC</a>).
+</p>
+
+<h3 class="theme-title">Vision-language and multimodal understanding</h3>
+<p class="theme-body">
+  In <strong>Determining the Preferred Image Distribution of a Black-Box VLM</strong>
+  <a class="venue-link v-neurips" href="http://arxiv.org/abs/2409.02253">NeurIPS 2024</a>
+  we introduced a probing method that surfaces a VLM's input preferences without access to weights or
+  training data, useful for safe deployment in domains where input distribution matters (CAD, medical,
+  industrial imagery). On the generation side,
+  <strong>SLiMe</strong> <a class="venue-link v-iclr" href="https://arxiv.org/abs/2309.03179">ICLR 2024</a>
+  and <strong>SMITE</strong> <a class="venue-link v-iclr" href="https://segment-me-in-time.github.io">ICLR 2025</a>
+  optimize textual embeddings for robust single-shot segmentation in images and video respectively.
+  Earlier work on bridging vision and explanation appears in
+  <strong>Learned Visual Features to Textual Explanations</strong>
+  <a class="venue-link v-iclr" href="https://arxiv.org/abs/2309.00733">ICLR 2024</a>.
+</p>
+
+<h3 class="theme-title">Robustness and earlier foundations</h3>
+<p class="theme-body">
+  Earlier threads that inform how I think about evaluation today.
+  <strong>MaskTune</strong> <a class="venue-link v-neurips" href="https://arxiv.org/abs/2210.00055">NeurIPS 2022</a>
+  mitigates spurious correlations by selectively masking salient features, forcing models to discover
+  alternative discriminative signals.
+  <strong>Robust Representation Learning via Perceptual Similarity Metrics</strong>
+  <a class="venue-link v-icml spotlight" href="https://arxiv.org/abs/2106.06620">ICML 2021</a>
+  proposed perceptual similarity as a robustness objective for self-supervised representations
+  (Spotlight).
+  <strong>A Kernelized Manifold Mapping</strong>
+  <a class="venue-link v-cvpr" href="https://arxiv.org/abs/1903.01015">CVPR 2019</a>
+  addressed adversarial perturbations through learned manifold projection.
+</p>
+<p class="theme-body">
+  My PhD focused on reliable deep learning for medical imaging. The most-cited contribution from
+  that period is a <strong>Deep Semantic Segmentation review</strong>
+  <a class="venue-link v-journal" href="https://arxiv.org/abs/1910.07655">AI Review 2020</a>,
+  now a standard reference in medical-image segmentation. Earlier,
+  <strong>InfoMask</strong>
+  <a class="venue-link v-miccai" href="https://arxiv.org/abs/1903.11741">MICCAI 2019</a>
+  used masked variational latent representations for weakly-supervised chest disease localization
+  during a research visit at MILA (Early Accept).
+</p>
+
+<div class="full-list-link">
+  Full publication list on <a href="https://scholar.google.com/citations?user=SuePM1sAAAAJ&hl=en">Google Scholar</a>
+</div>
+
+<h2 class="section-title">Service &amp; Impact</h2>
+
+<div class="service-grid">
+  <div class="service-item">
+    <div class="service-label">Standards &amp; Policy</div>
+    <div class="service-content">
+      Contributed to <strong>Generative AI Content Authentication</strong> at the U.S. AI Safety
+      Institute Consortium (NIST AISIC).
+    </div>
+  </div>
+  <div class="service-item">
+    <div class="service-label">Academic</div>
+    <div class="service-content">
+      <strong>Adjunct Research Professor</strong>, Simon Fraser University, co-supervising
+      PhD and Master's students on foundation models and reliable AI. Reviewer for <strong>NeurIPS,
+      ICML, ICLR, CVPR, MICCAI</strong>, and <strong>NSERC Canada</strong>.
+    </div>
+  </div>
+  <div class="service-item">
+    <div class="service-label">Industry Impact</div>
+    <div class="service-content">
+      Closed-loop agentic evaluation systems shipped in <strong>Microsoft Copilot Tuning</strong>.
+    </div>
+  </div>
+</div>
+
+<h2 class="section-title">Selected Talks</h2>
+
+<ul class="talks-list">
+  <li><span class="year">2025</span><span><span class="talk-title">Towards More Reliable Generative AI: Evaluation and Mitigation Strategies</span> &nbsp;<span class="talk-venue">at Microsoft</span></span></li>
+  <li><span class="year">2024</span><span><span class="talk-title">The Parroting Problem of Generative AI</span> &nbsp;<span class="talk-venue">at Autodesk TechX</span></span></li>
+  <li><span class="year">2022</span><span><span class="talk-title">Spurious Correlations in Computer Vision</span> &nbsp;<span class="talk-venue">at Sony AI</span></span></li>
+  <li><span class="year">2022</span><span><span class="talk-title">Input Space Modifications for Reducing Spurious Correlations</span> &nbsp;<span class="talk-venue">at Google Research</span></span></li>
+  <li><span class="year">2021</span><span><span class="talk-title">Robust Representation Learning via Perceptual Similarity Metrics</span> &nbsp;<span class="talk-venue">at ICML</span></span></li>
+  <li><span class="year">2020</span><span><span class="talk-title">Towards Interpretable and Bias-Resilient Point Cloud Processing</span> &nbsp;<span class="talk-venue">at ICML</span></span></li>
 </ul>
-
-<h2 class="section-title">Current Highlights</h2>
-
-<article class="pub">
-  <img class="pub-thumb" src="images/spider_plot_accuracy.png" alt="">
-  <div>
-    <h3 class="pub-title">Explain-Query-Test: Self-Evaluating LLMs Via Explanation and Comprehension Discrepancy</h3>
-    <p class="pub-authors"><strong>Saeid A. Taghanaki</strong>, Joao Monteiro</p>
-    <p class="pub-venue"><span class="venue-logo venue-iclr">ICLR 2025</span><span class="venue-text">Scaling Self-Improving Foundation Models without Human Supervision</span></p>
-    <div class="pub-tags">
-      <span class="tag">evaluation</span>
-      <span class="tag">self-evaluation</span>
-      <span class="tag">reasoning</span>
-    </div>
-    <div class="pub-links">
-      <a class="pub-link" href="https://arxiv.org/abs/2501.11721">paper</a>
-      <a class="pub-link" href="https://github.com/asgsaeid/EQT">code</a>
-    </div>
-  </div>
-</article>
-
-<article class="pub">
-  <img class="pub-thumb" src="images/shortcut_selection_ratio.png" alt="">
-  <div>
-    <h3 class="pub-title">MMLU-Pro+: Evaluating Higher-Order Reasoning and Shortcut Learning in LLMs</h3>
-    <p class="pub-authors"><strong>Saeid A. Taghanaki</strong>, Aliasgahr Khani, Amir Khasahmadi</p>
-    <p class="pub-venue"><span class="venue-logo venue-neurips">NeurIPS 2024</span><span class="venue-text">Safe Generative AI Workshop</span></p>
-    <div class="pub-tags">
-      <span class="tag">evaluation</span>
-      <span class="tag">reasoning</span>
-    </div>
-    <div class="pub-links">
-      <a class="pub-link" href="http://arxiv.org/abs/2409.02257">paper</a>
-      <a class="pub-link" href="https://github.com/asgsaeid/mmlu-pro-plus">code</a>
-    </div>
-  </div>
-</article>
-
-<article class="pub">
-  <img class="pub-thumb" src="images/which_vlm.jpg" alt="">
-  <div>
-    <h3 class="pub-title">How to Determine the Preferred Image Distribution of a Black-Box Vision-Language Model?</h3>
-    <p class="pub-authors"><strong>Saeid A. Taghanaki</strong>, Joseph Lambourne, Alana Mongkhounsavath</p>
-    <p class="pub-venue"><span class="venue-logo venue-neurips">NeurIPS 2024</span><span class="venue-text">Safe Generative AI Workshop</span></p>
-    <div class="pub-tags">
-      <span class="tag">evaluation</span>
-      <span class="tag">vision</span>
-    </div>
-    <div class="pub-links">
-      <a class="pub-link" href="http://arxiv.org/abs/2409.02253">paper</a>
-      <a class="pub-link" href="https://github.com/asgsaeid/cad_vqa">code</a>
-    </div>
-  </div>
-</article>
-
-<article class="pub">
-  <img class="pub-thumb" src="images/gen_par.jpg" alt="">
-  <div>
-    <h3 class="pub-title">The Problem of Generative Parroting: Navigating Toward Responsible AI</h3>
-    <p class="pub-authors"><strong>Saeid A. Taghanaki</strong></p>
-    <p class="pub-venue"><span class="venue-logo venue-blog">Blog 2024</span><span class="venue-text">Autodesk Research &mdash; three-part essay series</span></p>
-    <div class="pub-tags">
-      <span class="tag">memorization</span>
-    </div>
-    <div class="pub-links">
-      <a class="pub-link" href="https://www.research.autodesk.com/blog/the-problem-of-generative-parroting-navigating-toward-responsible-ai-part-1/">part 1</a>
-      <a class="pub-link" href="https://www.research.autodesk.com/blog/the-problem-of-generative-parroting-navigating-toward-responsible-ai-part-2/">part 2</a>
-      <a class="pub-link" href="https://www.research.autodesk.com/blog/the-problem-of-generative-parroting-navigating-toward-responsible-ai-part-3/">part 3</a>
-    </div>
-  </div>
-</article>
-
-<article class="pub">
-  <img class="pub-thumb" src="images/d_gen_par.jpg" alt="">
-  <div>
-    <h3 class="pub-title">Detecting Generative Parroting through Overfitting Masked Autoencoders</h3>
-    <p class="pub-authors"><strong>Saeid A. Taghanaki</strong>, Joseph Lambourne</p>
-    <p class="pub-venue"><span class="venue-logo venue-cvpr">CVPR 2024</span><span class="venue-text">Responsible Generative AI Workshop</span></p>
-    <div class="pub-tags">
-      <span class="tag">memorization</span>
-    </div>
-    <div class="pub-links">
-      <a class="pub-link" href="https://arxiv.org/abs/2403.19050">paper</a>
-    </div>
-  </div>
-</article>
-
-<article class="pub">
-  <img class="pub-thumb" src="images/textplain_.jpg" alt="">
-  <div>
-    <h3 class="pub-title">Learned Visual Features to Textual Explanations</h3>
-    <p class="pub-authors"><strong>Saeid A. Taghanaki</strong> et al.</p>
-    <p class="pub-venue"><span class="venue-logo venue-iclr">ICLR 2024</span><span class="venue-text">Reliable and Responsible Foundation Models Workshop</span></p>
-    <div class="pub-tags">
-      <span class="tag">interpretability</span>
-      <span class="tag">vision</span>
-    </div>
-    <div class="pub-links">
-      <a class="pub-link" href="https://arxiv.org/abs/2309.00733">paper</a>
-    </div>
-  </div>
-</article>
-
-<h2 class="section-title">Selected Conference Publications</h2>
-
-<article class="pub">
-  <img class="pub-thumb" src="images/smite.png" alt="">
-  <div>
-    <h3 class="pub-title">SMITE: Segment Me In Time</h3>
-    <p class="pub-tagline">Optimizing textual embeddings for robust single-shot video segmentation.</p>
-    <p class="pub-authors">Amir Alimohammadi, Sauradip Nag, <strong>Saeid A. Taghanaki</strong>, Andrea Tagliasacchi, Ghassan Hamarneh, Ali Mahdavi-Amiri</p>
-    <p class="pub-venue"><span class="venue-logo venue-iclr">ICLR 2025</span></p>
-    <div class="pub-tags">
-      <span class="tag">vision</span>
-    </div>
-    <div class="pub-links">
-      <a class="pub-link" href="https://segment-me-in-time.github.io">project page</a>
-    </div>
-  </div>
-</article>
-
-<article class="pub">
-  <img class="pub-thumb" src="images/slime.png" alt="">
-  <div>
-    <h3 class="pub-title">SLiMe: Segment Like Me</h3>
-    <p class="pub-tagline">Optimizing textual embeddings for robust single-shot image segmentation.</p>
-    <p class="pub-authors">Aliasghar Khani, <strong>Saeid A. Taghanaki</strong>, Aditya Sanghi, Ali Mahdavi-Amiri, Ghassan Hamarneh</p>
-    <p class="pub-venue"><span class="venue-logo venue-iclr">ICLR 2024</span></p>
-    <div class="pub-tags">
-      <span class="tag">vision</span>
-    </div>
-    <div class="pub-links">
-      <a class="pub-link" href="https://arxiv.org/abs/2309.03179">paper</a>
-      <a class="pub-link" href="https://github.com/aliasgharkhani/SLiMe">code</a>
-    </div>
-  </div>
-</article>
-
-<article class="pub">
-  <img class="pub-thumb" src="images/masktune_.png" alt="">
-  <div>
-    <h3 class="pub-title"><em>MaskTune:</em> Mitigating Spurious Correlations by Forcing to Explore</h3>
-    <p class="pub-authors"><strong>Saeid A. Taghanaki*</strong>, Aliasghar Khani*, Fereshte Khani*, Ali Gholami*, Linh Tran, Ali Mahdavi-Amiri, Ghassan Hamarneh</p>
-    <p class="pub-venue"><span class="venue-logo venue-neurips">NeurIPS 2022</span></p>
-    <div class="pub-tags">
-      <span class="tag">robustness</span>
-    </div>
-    <div class="pub-links">
-      <a class="pub-link" href="https://arxiv.org/abs/2210.00055">paper</a>
-      <a class="pub-link" href="https://github.com/aliasgharkhani/Masktune">code</a>
-    </div>
-  </div>
-</article>
-
-<article class="pub">
-  <img class="pub-thumb" src="images/cim_.jpg" alt="">
-  <div>
-    <h3 class="pub-title">Robust Representation Learning via Perceptual Similarity Metrics</h3>
-    <p class="pub-authors"><strong>Saeid A. Taghanaki*</strong>, Kristy Choi*, Amir Khasahmadi, Anirudh Goyal</p>
-    <p class="pub-venue"><span class="venue-logo venue-icml">ICML 2021</span><span class="badge">Spotlight</span></p>
-    <div class="pub-tags">
-      <span class="tag">robustness</span>
-    </div>
-    <div class="pub-links">
-      <a class="pub-link" href="https://arxiv.org/abs/2106.06620">paper</a>
-    </div>
-  </div>
-</article>
-
-<article class="pub">
-  <img class="pub-thumb" src="images/robustpointset_.png" alt="">
-  <div>
-    <h3 class="pub-title">RobustPointSet: A Dataset for Benchmarking Robustness of Point Cloud Classifiers</h3>
-    <p class="pub-authors"><strong>Saeid A. Taghanaki*</strong>, Jieliang Luo*, Ran Zhang, Ye Wang, Pradeep Kumar Jayaraman, Krishna Murthy Jatavallabhula</p>
-    <p class="pub-venue"><span class="venue-logo venue-iclr">ICLR 2021</span><span class="venue-text">RobustML Workshop</span></p>
-    <div class="pub-tags">
-      <span class="tag">robustness</span>
-      <span class="tag">vision</span>
-    </div>
-    <div class="pub-links">
-      <a class="pub-link" href="https://arxiv.org/abs/2011.11572">paper</a>
-    </div>
-  </div>
-</article>
-
-<article class="pub">
-  <img class="pub-thumb" src="images/pointmask_.jpg" alt="">
-  <div>
-    <h3 class="pub-title">PointMask: Towards Interpretable and Bias-Resilient Point Cloud Processing</h3>
-    <p class="pub-authors"><strong>Saeid A. Taghanaki</strong>, Kaveh Hassani, Pradeep Kumar Jayaraman, Amir Khasahmadi</p>
-    <p class="pub-venue"><span class="venue-logo venue-icml">ICML 2020</span><span class="venue-text">Human Interpretability in ML</span><span class="badge">Talk</span></p>
-    <div class="pub-tags">
-      <span class="tag">interpretability</span>
-      <span class="tag">vision</span>
-    </div>
-    <div class="pub-links">
-      <a class="pub-link" href="https://arxiv.org/abs/2007.04525">paper</a>
-    </div>
-  </div>
-</article>
-
-<article class="pub">
-  <img class="pub-thumb" src="images/kernel.jpg" alt="">
-  <div>
-    <h3 class="pub-title">A Kernelized Manifold Mapping to Diminish the Effect of Adversarial Perturbations</h3>
-    <p class="pub-authors"><strong>Saeid A. Taghanaki</strong>, Kumar Abhishek, Shekoofeh Azizi, Ghassan Hamarneh</p>
-    <p class="pub-venue"><span class="venue-logo venue-cvpr">CVPR 2019</span></p>
-    <div class="pub-tags">
-      <span class="tag">robustness</span>
-    </div>
-    <div class="pub-links">
-      <a class="pub-link" href="https://arxiv.org/abs/1903.01015">paper</a>
-    </div>
-  </div>
-</article>
-
-<article class="pub">
-  <img class="pub-thumb" src="images/infomask_.png" alt="">
-  <div>
-    <h3 class="pub-title">InfoMask: Masked Variational Latent Representation to Localize Chest Disease</h3>
-    <p class="pub-authors"><strong>Saeid A. Taghanaki</strong>, Mohammad Havaei, Tess Berthier, Francis Dutil, Ghassan Hamarneh, Yoshua Bengio</p>
-    <p class="pub-venue"><span class="venue-logo venue-miccai">MICCAI 2019</span><span class="badge">Early Accept</span></p>
-    <div class="pub-tags">
-      <span class="tag">interpretability</span>
-      <span class="tag">medical</span>
-    </div>
-    <div class="pub-links">
-      <a class="pub-link" href="https://arxiv.org/abs/1903.11741">paper</a>
-    </div>
-  </div>
-</article>
-
-<article class="pub">
-  <img class="pub-thumb" src="images/in_transfer.png" alt="">
-  <div>
-    <h3 class="pub-title">Improved Inference via Deep Input Transfer</h3>
-    <p class="pub-authors"><strong>Saeid A. Taghanaki</strong>, Kumar Abhishek, Ghassan Hamarneh</p>
-    <p class="pub-venue"><span class="venue-logo venue-miccai">MICCAI 2019</span><span class="badge">Early Accept</span></p>
-    <div class="pub-tags">
-      <span class="tag">medical</span>
-    </div>
-    <div class="pub-links">
-      <a class="pub-link" href="https://arxiv.org/abs/1904.02307">paper</a>
-    </div>
-  </div>
-</article>
-
-<article class="pub">
-  <img class="pub-thumb" src="images/sat_.jpg" alt="">
-  <div>
-    <h3 class="pub-title">Select, Attend, and Transfer: Light, Learnable Skip Connections</h3>
-    <p class="pub-authors"><strong>Saeid A. Taghanaki</strong>, Aicha Bentaieb, Anmol Sharma, S. Kevin Zhou, Yefeng Zheng, Bogdan Georgescu, Puneet Sharma, Dorin Comaniciu, Ghassan Hamarneh</p>
-    <p class="pub-venue"><span class="venue-logo venue-miccai">MICCAI 2019</span><span class="venue-text">MLMI Workshop</span><span class="badge">Talk</span></p>
-    <div class="pub-tags">
-      <span class="tag">medical</span>
-    </div>
-    <div class="pub-links">
-      <a class="pub-link" href="https://arxiv.org/abs/1804.05181">paper</a>
-    </div>
-  </div>
-</article>
-
-<article class="pub">
-  <img class="pub-thumb" src="images/vul_.png" alt="">
-  <div>
-    <h3 class="pub-title">Vulnerability Analysis of Chest X-Ray Image Classification Against Adversarial Attacks</h3>
-    <p class="pub-authors"><strong>Saeid A. Taghanaki</strong>, Arkadeep Das, Ghassan Hamarneh</p>
-    <p class="pub-venue"><span class="venue-logo venue-miccai">MICCAI 2018</span><span class="venue-text">Interpreting ML in Medical Image Computing</span><span class="badge">Talk</span></p>
-    <div class="pub-tags">
-      <span class="tag">robustness</span>
-      <span class="tag">medical</span>
-    </div>
-    <div class="pub-links">
-      <a class="pub-link" href="https://arxiv.org/abs/1807.02905">paper</a>
-    </div>
-  </div>
-</article>
-
-<h2 class="section-title">Selected Journal Publications</h2>
-
-<article class="pub">
-  <img class="pub-thumb" src="images/review_.jpg" alt="">
-  <div>
-    <h3 class="pub-title">Deep Semantic Segmentation of Natural and Medical Images: A Review</h3>
-    <p class="pub-authors"><strong>Saeid A. Taghanaki*</strong>, Kumar Abhishek*, Joseph Paul Cohen, Julien Cohen-Adad, Ghassan Hamarneh</p>
-    <p class="pub-venue"><span class="venue-logo venue-journal">AI Review</span><span class="venue-text">Artificial Intelligence Review, 2020 &nbsp;·&nbsp; IF 12.0</span></p>
-    <div class="pub-tags">
-      <span class="tag">vision</span>
-      <span class="tag">medical</span>
-    </div>
-    <div class="pub-links">
-      <a class="pub-link" href="https://arxiv.org/abs/1910.07655">paper</a>
-    </div>
-  </div>
-</article>
-
-<article class="pub">
-  <img class="pub-thumb" src="images/combo_.jpg" alt="">
-  <div>
-    <h3 class="pub-title">Combo Loss: Handling Input and Output Imbalance in Multi-Organ Segmentation</h3>
-    <p class="pub-authors"><strong>Saeid A. Taghanaki</strong>, Yefeng Zheng, S. Kevin Zhou, Bogdan Georgescu, Puneet Sharma, Daguang Xu, Dorin Comaniciu, Ghassan Hamarneh</p>
-    <p class="pub-venue"><span class="venue-logo venue-journal">CMIG</span><span class="venue-text">Computerized Medical Imaging and Graphics, 2019 &nbsp;·&nbsp; IF 7.42</span></p>
-    <div class="pub-tags">
-      <span class="tag">medical</span>
-    </div>
-    <div class="pub-links">
-      <a class="pub-link" href="https://arxiv.org/abs/1805.02798">paper</a>
-    </div>
-  </div>
-</article>
-
-<article class="pub">
-  <img class="pub-thumb" src="images/direct_.png" alt="">
-  <div>
-    <h3 class="pub-title">Segmentation-Free Direct Tumor Volume and Metabolic Activity Estimation from PET Scans</h3>
-    <p class="pub-authors"><strong>Saeid A. Taghanaki</strong>, Nouirin Duggan, Hilgan Ma, Anna Celler, Francois Benard, Ghassan Hamarneh</p>
-    <p class="pub-venue"><span class="venue-logo venue-journal">CMIG</span><span class="venue-text">Computerized Medical Imaging and Graphics, 2018 &nbsp;·&nbsp; IF 7.42</span></p>
-    <div class="pub-tags">
-      <span class="tag">medical</span>
-    </div>
-    <div class="pub-links">
-      <a class="pub-link" href="https://www2.cs.sfu.ca/~hamarneh/ecopy/cmig2018a.pdf">paper</a>
-    </div>
-  </div>
-</article>
-
-<article class="pub">
-  <img class="pub-thumb" src="images/pareto_.png" alt="">
-  <div>
-    <h3 class="pub-title">Pareto-Optimal Multi-Objective Dimensionality Reduction Deep Auto-Encoder for Mammography Classification</h3>
-    <p class="pub-authors"><strong>Saeid A. Taghanaki</strong>, Jeremy Kawahara, Ghassan Hamarneh</p>
-    <p class="pub-venue"><span class="venue-logo venue-journal">CMPB</span><span class="venue-text">Computer Methods and Programs in Biomedicine, 2017 &nbsp;·&nbsp; IF 7.10</span></p>
-    <div class="pub-tags">
-      <span class="tag">medical</span>
-    </div>
-    <div class="pub-links">
-      <a class="pub-link" href="https://www2.cs.sfu.ca/~hamarneh/ecopy/cmpb2017.pdf">paper</a>
-    </div>
-  </div>
-</article>
-
-<h2 class="section-title">Preprints</h2>
-
-<article class="pub">
-  <img class="pub-thumb" src="images/counter.png" alt="">
-  <div>
-    <h3 class="pub-title">Counterbalancing Teacher: Regularizing Batch Normalized Models for Robustness</h3>
-    <p class="pub-authors"><strong>Saeid A. Taghanaki</strong>, Ali Gholami, Fereshte Khani, Kristy Choi, Linh Tran, Ran Zhang, Aliasghar Khani</p>
-    <p class="pub-venue"><span class="venue-logo venue-arxiv">arXiv</span><span class="venue-text">2022</span></p>
-    <div class="pub-tags">
-      <span class="tag">robustness</span>
-    </div>
-    <div class="pub-links">
-      <a class="pub-link" href="https://arxiv.org/abs/2207.01548">paper</a>
-    </div>
-  </div>
-</article>
-
-<article class="pub">
-  <img class="pub-thumb" src="images/jigsaw_.jpg" alt="">
-  <div>
-    <h3 class="pub-title">Jigsaw-VAE: Towards Balancing Features in Variational Autoencoders</h3>
-    <p class="pub-authors"><strong>Saeid A. Taghanaki</strong>, Mohammad Havaei, Alex Lamb, Aditya Sanghi, Ara Danielyan, Tonya Custis</p>
-    <p class="pub-venue"><span class="venue-logo venue-arxiv">arXiv</span><span class="venue-text">2020</span></p>
-    <div class="pub-tags">
-      <span class="tag">robustness</span>
-    </div>
-    <div class="pub-links">
-      <a class="pub-link" href="https://arxiv.org/abs/2005.05496">paper</a>
-    </div>
-  </div>
-</article>
-
-<article class="pub">
-  <img class="pub-thumb" src="images/sign_.jpg" alt="">
-  <div>
-    <h3 class="pub-title">Signed Input Regularization</h3>
-    <p class="pub-authors"><strong>Saeid A. Taghanaki</strong>, Kumar Abhishek, Ghassan Hamarneh</p>
-    <p class="pub-venue"><span class="venue-logo venue-arxiv">arXiv</span><span class="venue-text">2019</span></p>
-    <div class="pub-tags">
-      <span class="tag">robustness</span>
-    </div>
-    <div class="pub-links">
-      <a class="pub-link" href="https://arxiv.org/abs/1911.07086">paper</a>
-    </div>
-  </div>
-</article>
 
 </main>
 
