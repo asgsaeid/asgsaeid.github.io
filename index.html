@@ -272,52 +272,51 @@
 <p class="research-intro">
   My work sits at the intersection of <strong>evaluation</strong>,
   <strong>self-improving and long-horizon agents</strong>, and
-  <strong>foundation-model reliability</strong>. The threads below trace a single conviction: as
-  models grow more capable, evaluation becomes the binding constraint on real-world reliability.
+  <strong>foundation-model reliability</strong>. The threads below share a common framing: as
+  models grow more capable, evaluation becomes a more central constraint on real-world reliability.
 </p>
 
 <h3>Agentic evaluation and capability assessment</h3>
 <p>
   I lead a team at Microsoft building the agentic evaluation infrastructure for Copilot Tuning,
   a closed-loop system that connects customer-facing evaluation to post-training:
-  reinforcement-learning fine-tuning and inference-time optimization. The work targets
-  long-horizon, tool-using agents and the evaluation signals that make self-improvement possible
-  without constant human supervision.
+  reinforcement-learning fine-tuning and inference-time optimization. The work focuses on
+  long-horizon, tool-using agents and on evaluation signals suitable for self-improving systems.
 </p>
 <p>
   Two questions sit at the core of this work. The first is what to measure. As models scale,
-  surface accuracy decouples from real capability: models pass tests by exploiting structure in
-  the test rather than by reasoning. The second is what happens to evaluation once a system is
-  being trained to do well on it. Rubrics, judges, and synthetic evaluators all
-  drift, saturate, or get gamed under sustained optimization pressure.
+  surface accuracy can decouple from underlying capability: models sometimes pass tests by
+  exploiting structure in the test rather than by reasoning. The second is what happens to
+  evaluation once a system is being trained to do well on it. Rubrics, judges, and synthetic
+  evaluators can drift, saturate, or get gamed under sustained optimization pressure.
 </p>
 <p>
-  My recent work attacks both ends.
-  <a href="http://arxiv.org/abs/2409.02257"><strong>MMLU-Pro+</strong></a> (NeurIPS 2024) hardens
-  benchmark design against the kind of shortcut-selection that inflates leaderboard numbers
-  without the underlying reasoning.
-  <a href="https://arxiv.org/abs/2501.11721"><strong>Explain-Query-Test (EQT)</strong></a> (ICLR
-  2025) asks whether models can evaluate themselves without human labels, exploiting a structural
-  asymmetry: a model that can explain a concept well should also be able to comprehend its own
-  explanation, and the gap is a label-free capability signal.
-  <a href="https://arxiv.org/abs/2604.27547"><strong>GoalCover</strong></a> (arXiv 2026) moves the
-  question upstream of training, decomposing a high-level goal into atomic subgoals to surface
-  capability gaps in fine-tuning data before an expensive training run.
-  <a href="https://arxiv.org/abs/2602.20751"><strong>SibylSense</strong></a> (arXiv 2026) attacks
-  the gameable side, adapting a rubric generator through a tunable memory bank and an adversarial
-  policy loop so rubrics keep capturing new quality dimensions rather than saturating into a
-  hackable target.
+  Several of our recent papers address pieces of these two questions.
+  <a href="http://arxiv.org/abs/2409.02257"><strong>MMLU-Pro+</strong></a> (NeurIPS 2024)
+  studies shortcut-selection in benchmark design, where models can score well on MMLU without
+  the underlying reasoning the benchmark is intended to test. In
+  <a href="https://arxiv.org/abs/2501.11721"><strong>Explain-Query-Test (EQT)</strong></a>
+  (ICLR 2025) we consider whether models can evaluate themselves without human labels, using a
+  structural asymmetry: a model that can explain a concept well should also be able to
+  comprehend its own explanation, and the gap between the two can serve as a label-free
+  capability signal. In
+  <a href="https://arxiv.org/abs/2604.27547"><strong>GoalCover</strong></a> (arXiv 2026) we look
+  at the question upstream of training, decomposing a high-level goal into subgoals to help
+  identify capability gaps in fine-tuning data before training. In
+  <a href="https://arxiv.org/abs/2602.20751"><strong>SibylSense</strong></a> (arXiv 2026) we
+  consider the rubric side, adapting a rubric generator through a tunable memory bank and an
+  adversarial policy loop, with the goal of slowing rubric saturation under optimization.
 </p>
 
 <h3>Memorization and content provenance</h3>
 <p>
-  Generative models memorize their training data and reproduce it, sometimes verbatim. This is
-  simultaneously a copyright issue, a privacy issue, and a reliability issue.
+  Generative models can memorize their training data and reproduce parts of it, sometimes
+  verbatim. This raises copyright, privacy, and reliability concerns that often overlap.
 </p>
 <p>
   In <a href="https://arxiv.org/abs/2403.19050"><strong>Detecting Generative Parroting</strong></a>
-  (CVPR 2024) we introduced a method using overfit masked autoencoders to flag probable verbatim
-  reproduction at inference time, without needing access to the training set. The full argument
+  (CVPR 2024) we proposed a method using overfit masked autoencoders to flag probable verbatim
+  reproduction at inference time, without needing access to the training set. A longer discussion
   (why memorization happens, how to detect it, and what to do about it) appears in a three-part
   essay series I wrote for Autodesk Research
   (<a href="https://www.research.autodesk.com/blog/the-problem-of-generative-parroting-navigating-toward-responsible-ai-part-1/">part 1</a>,
@@ -331,13 +330,13 @@
 <h3>Vision-language and multimodal understanding</h3>
 <p>
   In <a href="http://arxiv.org/abs/2409.02253"><strong>Determining the Preferred Image Distribution
-  of a Black-Box VLM</strong></a> (NeurIPS 2024) we introduced a probing method that surfaces a
-  VLM's input preferences without access to weights or training data, useful for safe deployment in
+  of a Black-Box VLM</strong></a> (NeurIPS 2024) we proposed a probing method that estimates a
+  VLM's input preferences without access to weights or training data, with potential use in
   domains where input distribution matters (CAD, medical, industrial imagery). On the generation
-  side, <a href="https://arxiv.org/abs/2309.03179"><strong>SLiMe</strong></a> (ICLR 2024) and
-  <a href="https://segment-me-in-time.github.io"><strong>SMITE</strong></a> (ICLR 2025) optimize
-  textual embeddings for robust single-shot segmentation in images and video respectively. Earlier
-  work on bridging vision and explanation appears in
+  side, in <a href="https://arxiv.org/abs/2309.03179"><strong>SLiMe</strong></a> (ICLR 2024) and
+  <a href="https://segment-me-in-time.github.io"><strong>SMITE</strong></a> (ICLR 2025) we
+  optimize textual embeddings for single-shot segmentation in images and video respectively.
+  Earlier work on bridging vision and explanation appears in
   <a href="https://arxiv.org/abs/2309.00733"><strong>Learned Visual Features to Textual
   Explanations</strong></a> (ICLR 2024).
 </p>
@@ -345,20 +344,20 @@
 <h3>Robustness and earlier foundations</h3>
 <p>
   Earlier threads that inform how I think about evaluation today.
-  <a href="https://arxiv.org/abs/2210.00055"><strong>MaskTune</strong></a> (NeurIPS 2022) mitigates
-  spurious correlations by selectively masking salient features, forcing models to discover
-  alternative discriminative signals.
+  In <a href="https://arxiv.org/abs/2210.00055"><strong>MaskTune</strong></a> (NeurIPS 2022) we
+  proposed a method that addresses spurious correlations by selectively masking salient features,
+  encouraging models to rely on alternative discriminative signals. In
   <a href="https://arxiv.org/abs/2106.06620"><strong>Robust Representation Learning via Perceptual
-  Similarity Metrics</strong></a> (ICML 2021, Spotlight) proposed perceptual similarity as a
-  robustness objective for self-supervised representations.
+  Similarity Metrics</strong></a> (ICML 2021, Spotlight) we proposed perceptual similarity as a
+  robustness objective for self-supervised representations. In
   <a href="https://arxiv.org/abs/1903.01015"><strong>A Kernelized Manifold Mapping</strong></a>
-  (CVPR 2019) addressed adversarial perturbations through learned manifold projection.
+  (CVPR 2019) we studied adversarial perturbations through learned manifold projection.
 </p>
 <p>
-  My PhD focused on reliable deep learning for medical imaging. The most-cited contribution from
-  that period is a <a href="https://arxiv.org/abs/1910.07655"><strong>Deep Semantic Segmentation
-  review</strong></a> (AI Review 2020), now a standard reference in medical-image segmentation.
-  Earlier, <a href="https://arxiv.org/abs/1903.11741"><strong>InfoMask</strong></a> (MICCAI 2019,
+  My PhD focused on reliable deep learning for medical imaging. Work from that period includes a
+  <a href="https://arxiv.org/abs/1910.07655"><strong>Deep Semantic Segmentation review</strong></a>
+  (AI Review 2020), which has been widely cited in medical-image segmentation. Earlier,
+  <a href="https://arxiv.org/abs/1903.11741"><strong>InfoMask</strong></a> (MICCAI 2019,
   Early Accept) used masked variational latent representations for weakly-supervised chest disease
   localization during a research visit at MILA.
 </p>
