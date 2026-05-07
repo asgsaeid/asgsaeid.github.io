@@ -41,6 +41,13 @@
     color: var(--link-hover);
     text-decoration: underline;
   }
+  a .venue-text {
+    color: #6b9bd1;
+    font-weight: normal;
+  }
+  a:hover .venue-text {
+    color: var(--link-hover);
+  }
 
   main {
     max-width: 740px;
@@ -292,19 +299,19 @@
 </p>
 <p>
   Several of our recent papers address pieces of these two questions.
-  <a href="http://arxiv.org/abs/2409.02257"><strong>MMLU-Pro+</strong></a> (NeurIPS 2024)
+  <a href="http://arxiv.org/abs/2409.02257"><strong>MMLU-Pro+</strong> <span class="venue-text">(NeurIPS 2024)</span></a>
   studies shortcut-selection in benchmark design, where models can score well on MMLU without
   the underlying reasoning the benchmark is intended to test. In
-  <a href="https://arxiv.org/abs/2501.11721"><strong>Explain-Query-Test (EQT)</strong></a>
-  (ICLR 2025) we consider whether models can evaluate themselves without human labels, using a
+  <a href="https://arxiv.org/abs/2501.11721"><strong>Explain-Query-Test (EQT)</strong> <span class="venue-text">(ICLR 2025)</span></a>
+  we consider whether models can evaluate themselves without human labels, using a
   structural asymmetry: a model that can explain a concept well should also be able to
   comprehend its own explanation, and the gap between the two can serve as a label-free
   capability signal. In
-  <a href="https://arxiv.org/abs/2604.27547"><strong>GoalCover</strong></a> (arXiv 2026) we look
-  at the question upstream of training, decomposing a high-level goal into subgoals to help
+  <a href="https://arxiv.org/abs/2604.27547"><strong>GoalCover</strong> <span class="venue-text">(arXiv 2026)</span></a>
+  we look at the question upstream of training, decomposing a high-level goal into subgoals to help
   identify capability gaps in fine-tuning data before training. In
-  <a href="https://arxiv.org/abs/2602.20751"><strong>SibylSense</strong></a> (arXiv 2026) we
-  consider the rubric side, adapting a rubric generator through a tunable memory bank and an
+  <a href="https://arxiv.org/abs/2602.20751"><strong>SibylSense</strong> <span class="venue-text">(arXiv 2026)</span></a>
+  we consider the rubric side, adapting a rubric generator through a tunable memory bank and an
   adversarial policy loop, with the goal of slowing rubric saturation under optimization.
 </p>
 
@@ -314,8 +321,8 @@
   verbatim. This raises copyright, privacy, and reliability concerns that often overlap.
 </p>
 <p>
-  In <a href="https://arxiv.org/abs/2403.19050"><strong>Detecting Generative Parroting</strong></a>
-  (CVPR 2024) we proposed a method using overfit masked autoencoders to flag probable verbatim
+  In <a href="https://arxiv.org/abs/2403.19050"><strong>Detecting Generative Parroting</strong> <span class="venue-text">(CVPR 2024)</span></a>
+  we proposed a method using overfit masked autoencoders to flag probable verbatim
   reproduction at inference time, without needing access to the training set. A longer discussion
   (why memorization happens, how to detect it, and what to do about it) appears in a three-part
   essay series I wrote for Autodesk Research
@@ -330,35 +337,35 @@
 <h3>Vision-language and multimodal understanding</h3>
 <p>
   In <a href="http://arxiv.org/abs/2409.02253"><strong>Determining the Preferred Image Distribution
-  of a Black-Box VLM</strong></a> (NeurIPS 2024) we proposed a probing method that estimates a
+  of a Black-Box VLM</strong> <span class="venue-text">(NeurIPS 2024)</span></a> we proposed a probing method that estimates a
   VLM's input preferences without access to weights or training data, with potential use in
   domains where input distribution matters (CAD, medical, industrial imagery). On the generation
-  side, in <a href="https://arxiv.org/abs/2309.03179"><strong>SLiMe</strong></a> (ICLR 2024) and
-  <a href="https://segment-me-in-time.github.io"><strong>SMITE</strong></a> (ICLR 2025) we
+  side, in <a href="https://arxiv.org/abs/2309.03179"><strong>SLiMe</strong> <span class="venue-text">(ICLR 2024)</span></a> and
+  <a href="https://segment-me-in-time.github.io"><strong>SMITE</strong> <span class="venue-text">(ICLR 2025)</span></a> we
   optimize textual embeddings for single-shot segmentation in images and video respectively.
   Earlier work on bridging vision and explanation appears in
   <a href="https://arxiv.org/abs/2309.00733"><strong>Learned Visual Features to Textual
-  Explanations</strong></a> (ICLR 2024).
+  Explanations</strong> <span class="venue-text">(ICLR 2024)</span></a>.
 </p>
 
 <h3>Robustness and earlier foundations</h3>
 <p>
   Earlier threads that inform how I think about evaluation today.
-  In <a href="https://arxiv.org/abs/2210.00055"><strong>MaskTune</strong></a> (NeurIPS 2022) we
+  In <a href="https://arxiv.org/abs/2210.00055"><strong>MaskTune</strong> <span class="venue-text">(NeurIPS 2022)</span></a> we
   proposed a method that addresses spurious correlations by selectively masking salient features,
   encouraging models to rely on alternative discriminative signals. In
   <a href="https://arxiv.org/abs/2106.06620"><strong>Robust Representation Learning via Perceptual
-  Similarity Metrics</strong></a> (ICML 2021, Spotlight) we proposed perceptual similarity as a
+  Similarity Metrics</strong> <span class="venue-text">(ICML 2021, Spotlight)</span></a> we proposed perceptual similarity as a
   robustness objective for self-supervised representations. In
-  <a href="https://arxiv.org/abs/1903.01015"><strong>A Kernelized Manifold Mapping</strong></a>
-  (CVPR 2019) we studied adversarial perturbations through learned manifold projection.
+  <a href="https://arxiv.org/abs/1903.01015"><strong>A Kernelized Manifold Mapping</strong> <span class="venue-text">(CVPR 2019)</span></a>
+  we studied adversarial perturbations through learned manifold projection.
 </p>
 <p>
   My PhD focused on reliable deep learning for medical imaging. Work from that period includes a
-  <a href="https://arxiv.org/abs/1910.07655"><strong>Deep Semantic Segmentation review</strong></a>
-  (AI Review 2020), which has been widely cited in medical-image segmentation. Earlier,
-  <a href="https://arxiv.org/abs/1903.11741"><strong>InfoMask</strong></a> (MICCAI 2019,
-  Early Accept) used masked variational latent representations for weakly-supervised chest disease
+  <a href="https://arxiv.org/abs/1910.07655"><strong>Deep Semantic Segmentation review</strong> <span class="venue-text">(AI Review 2020)</span></a>,
+  which has been widely cited in medical-image segmentation. Earlier,
+  <a href="https://arxiv.org/abs/1903.11741"><strong>InfoMask</strong> <span class="venue-text">(MICCAI 2019, Early Accept)</span></a>
+  used masked variational latent representations for weakly-supervised chest disease
   localization during a research visit at MILA.
 </p>
 
