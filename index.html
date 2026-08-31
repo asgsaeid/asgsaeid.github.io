@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Saeid Asgari</title>
 <meta name="author" content="Saeid Asgari">
-<meta name="description" content="Saeid Asgari, Principal Scientist & Manager at Microsoft, working on agentic evaluation, reliability, and self-improving foundation-model systems.">
+<meta name="description" content="Saeid Asgari, Enterprise Evals Leader at Microsoft, building enterprise evaluations for AI agents in security.">
 <link rel="icon" type="image/png" href="images/web_icon_.png">
 
 <style>
@@ -145,6 +145,18 @@
     margin-bottom: 24px;
   }
 
+  /* === PAPER LISTS === */
+  .papers {
+    list-style: none;
+    margin: 4px 0 10px;
+  }
+  .papers li {
+    padding: 7px 0;
+    color: var(--text);
+    font-size: 15px;
+    line-height: 1.55;
+  }
+
   /* === SERVICE === */
   .service ul {
     list-style: none;
@@ -229,7 +241,7 @@
 <section class="hero">
   <div>
     <h1 class="hero-name">Saeid Asgari</h1>
-    <div class="hero-affil"><strong style="color: var(--ink); font-weight: 600;">Principal Scientist &amp; Manager</strong>, Microsoft</div>
+    <div class="hero-affil"><strong style="color: var(--ink); font-weight: 600;">Enterprise Evals Leader</strong>, Microsoft</div>
     <div class="hero-affil-2">Adjunct Research Professor, Simon Fraser University</div>
 
     <div class="hero-contact">
@@ -253,21 +265,26 @@
 
 <div class="lead">
   <p>
-    I am a Principal Scientist &amp; Manager at Microsoft, where I lead a team building
-    <strong>agentic evals</strong> for Copilot Tuning.
+    My science team at Microsoft Security builds <strong>enterprise evals</strong> for AI agents:
+    evaluations of how security agents perform on the open-ended, messy tasks of real enterprise
+    environments, where there is rarely a single correct answer.
   </p>
   <p>
-    My research treats evaluation as a central constraint on foundation-model reliability.
-    Static benchmarks, with their closed-form answers, describe a regime distant from how models
-    are deployed: real-world systems operate over open-ended tasks, multi-step trajectories, and
-    continuous optimization pressure, often without a fixed answer key. I focus on two connected
-    threads, expanded below: agentic evaluation and capability assessment for long-horizon
-    self-improving systems, and detection of memorization in generative models.
+    Previously, my team built general enterprise evals for <strong>Copilot Tuning</strong>,
+    where I established <strong>closed-loop evaluation</strong>: evaluation
+    signals feed directly into agent improvement, through inference-time optimization or
+    reinforcement fine-tuning (RFT), and the improved agent is then evaluated again.
+  </p>
+  <p>
+    One idea runs through my work: evaluation is a central constraint on foundation-model
+    reliability. Deployed systems face open-ended tasks, long multi-step trajectories, and
+    sustained optimization pressure against the evaluation itself. Static benchmarks with fixed
+    answer keys describe a different regime.
   </p>
   <p>
     Before Microsoft I worked on reliable AI at Autodesk Research, where I contributed to
     Generative AI Content Authentication at the U.S. AI Safety Institute Consortium (NIST AISIC).
-    I completed my PhD at SFU under Prof.
+    I completed my PhD at Simon Fraser University under Prof.
     <a href="https://www.medicalimageanalysis.com/ghassans-bio">Ghassan Hamarneh</a>, with research
     visits at <a href="https://mila.quebec/en/">MILA</a> (Montréal) and
     <a href="https://www.siemens-healthineers.com/en-ca">Siemens Healthineers</a> (Princeton).
@@ -277,95 +294,81 @@
 <h2>Research</h2>
 
 <p class="research-intro">
-  My work sits at the intersection of <strong>evaluation</strong>,
-  <strong>self-improving and long-horizon agents</strong>, and
-  <strong>foundation-model reliability</strong>. The threads below share a common framing: as
-  models grow more capable, evaluation becomes a more central constraint on real-world reliability.
+  My work sits at the intersection of <strong>evaluation</strong>, <strong>security</strong>, and
+  <strong>self-improving, long-horizon agents</strong>. The threads below share one framing: as
+  models become more capable, evaluation becomes the binding constraint on real-world reliability.
 </p>
 
-<h3>Agentic evaluation and capability assessment</h3>
+<h3>Security evaluations for agentic systems</h3>
 <p>
-  I lead a team at Microsoft building the agentic evaluation infrastructure for Copilot Tuning,
-  a closed-loop system that connects customer-facing evaluation to post-training:
-  reinforcement-learning fine-tuning and inference-time optimization. The work focuses on
-  long-horizon, tool-using agents and on evaluation signals suitable for self-improving systems.
+  My current focus. Security is a demanding domain for agent evaluation: tasks are open ended,
+  ground truth is scarce, real customer environments cannot simply be copied into a test harness,
+  and both attackers and defenders adapt. My team builds enterprise evals for security agents
+  under these constraints, aiming to measure agents against the environments they actually
+  operate in rather than against generic benchmarks.
+</p>
+
+<h3>Closed-loop evaluation and capability assessment</h3>
+<p>
+  Previously at Microsoft, I led the team that built the agentic evaluation infrastructure for
+  Copilot Tuning. There I established a closed-loop system connecting customer-facing evaluation
+  to agent improvement: evaluation results drive reinforcement fine-tuning (RFT) or inference-time
+  optimization, and the updated agent goes back through evaluation. The focus was long-horizon,
+  tool-using agents and evaluation signals that stay meaningful inside such a loop.
 </p>
 <p>
-  Two questions sit at the core of this work. The first is what to measure. As models scale,
-  surface accuracy can decouple from underlying capability: models sometimes pass tests by
-  exploiting structure in the test rather than by reasoning. The second is what happens to
-  evaluation once a system is being trained to do well on it. Rubrics, judges, and synthetic
-  evaluators can drift, saturate, or get gamed under sustained optimization pressure.
+  Two questions run through this work. First, <em>what to measure</em>: models can pass tests by
+  exploiting structure in the test rather than by reasoning. Second, <em>what happens to an
+  evaluation once a system is trained against it</em>: rubrics, judges, and synthetic evaluators
+  can drift, saturate, or get gamed under sustained optimization pressure.
 </p>
-<p>
-  Several of our recent papers address pieces of these two questions.
-  <a href="http://arxiv.org/abs/2409.02257"><strong>MMLU-Pro+</strong> <span class="venue-text">(NeurIPS 2024)</span></a>
-  studies shortcut-selection in benchmark design, where models can score well on MMLU without
-  the underlying reasoning the benchmark is intended to test. In
-  <a href="https://arxiv.org/abs/2501.11721"><strong>Explain-Query-Test (EQT)</strong> <span class="venue-text">(ICLR 2025)</span></a>
-  we consider whether models can evaluate themselves without human labels, using a
-  structural asymmetry: a model that can explain a concept well should also be able to
-  comprehend its own explanation, and the gap between the two can serve as a label-free
-  capability signal. In
-  <a href="https://arxiv.org/abs/2604.27547"><strong>GoalCover</strong> <span class="venue-text">(arXiv 2026)</span></a>
-  we look at the question upstream of training, decomposing a high-level goal into subgoals to help
-  identify capability gaps in fine-tuning data before training. In
-  <a href="https://arxiv.org/abs/2602.20751"><strong>SibylSense</strong> <span class="venue-text">(arXiv 2026)</span></a>
-  we consider the rubric side, adapting a rubric generator through a tunable memory bank and an
-  adversarial policy loop, with the goal of slowing rubric saturation under optimization.
-</p>
+<ul class="papers">
+  <li><a href="https://arxiv.org/abs/2602.20751"><strong>SibylSense</strong> <span class="venue-text">(arXiv 2026)</span></a> adapts a rubric generator through a tunable memory bank and an adversarial policy loop, to slow rubric saturation under optimization.</li>
+  <li><a href="https://arxiv.org/abs/2604.27547"><strong>GoalCover</strong> <span class="venue-text">(arXiv 2026)</span></a> decomposes a high-level goal into subgoals to expose capability gaps in fine-tuning data before training.</li>
+  <li><a href="https://arxiv.org/abs/2501.11721"><strong>Explain-Query-Test (EQT)</strong> <span class="venue-text">(ICLR 2025)</span></a> proposes a label-free capability signal: the gap between how well a model explains a concept and how well it comprehends its own explanation.</li>
+  <li><a href="http://arxiv.org/abs/2409.02257"><strong>MMLU-Pro+</strong> <span class="venue-text">(NeurIPS 2024)</span></a> studies shortcut selection in benchmark design, where models score well without the reasoning the benchmark is meant to test.</li>
+</ul>
 
 <h3>Memorization and content provenance</h3>
 <p>
-  Generative models can memorize their training data and reproduce parts of it, sometimes
-  verbatim. This raises copyright, privacy, and reliability concerns that often overlap.
+  Generative models can memorize training data and reproduce parts of it, sometimes verbatim,
+  which raises overlapping copyright, privacy, and reliability concerns.
 </p>
+<ul class="papers">
+  <li><a href="https://arxiv.org/abs/2403.19050"><strong>Detecting Generative Parroting</strong> <span class="venue-text">(CVPR 2024)</span></a> flags probable verbatim reproduction at inference time using overfit masked autoencoders, without access to the training set.</li>
+</ul>
 <p>
-  In <a href="https://arxiv.org/abs/2403.19050"><strong>Detecting Generative Parroting</strong> <span class="venue-text">(CVPR 2024)</span></a>
-  we proposed a method using overfit masked autoencoders to flag probable verbatim
-  reproduction at inference time, without needing access to the training set. A longer discussion
-  (why memorization happens, how to detect it, and what to do about it) appears in a three-part
-  essay series I wrote for Autodesk Research
+  A longer discussion of why memorization happens, how to detect it, and what to do about it
+  appears in a three-part essay series I wrote for Autodesk Research
   (<a href="https://www.research.autodesk.com/blog/the-problem-of-generative-parroting-navigating-toward-responsible-ai-part-1/">part 1</a>,
   <a href="https://www.research.autodesk.com/blog/the-problem-of-generative-parroting-navigating-toward-responsible-ai-part-2/">part 2</a>,
   <a href="https://www.research.autodesk.com/blog/the-problem-of-generative-parroting-navigating-toward-responsible-ai-part-3/">part 3</a>).
-  Related to this work, I contributed to Generative AI Content Authentication at the U.S. AI Safety
-  Institute Consortium
-  (<a href="https://www.nist.gov/aisi/artificial-intelligence-safety-institute-consortium-aisic">NIST AISIC</a>).
+  Related to this work, I contributed to Generative AI Content Authentication at the
+  <a href="https://www.nist.gov/aisi/artificial-intelligence-safety-institute-consortium-aisic">NIST AISIC</a>.
 </p>
 
 <h3>Vision-language and multimodal understanding</h3>
-<p>
-  In <a href="http://arxiv.org/abs/2409.02253"><strong>Determining the Preferred Image Distribution
-  of a Black-Box VLM</strong> <span class="venue-text">(NeurIPS 2024)</span></a> we proposed a probing method that estimates a
-  VLM's input preferences without access to weights or training data, with potential use in
-  domains where input distribution matters (CAD, medical, industrial imagery). On the generation
-  side, in <a href="https://arxiv.org/abs/2309.03179"><strong>SLiMe</strong> <span class="venue-text">(ICLR 2024)</span></a> and
-  <a href="https://segment-me-in-time.github.io"><strong>SMITE</strong> <span class="venue-text">(ICLR 2025)</span></a> we
-  optimize textual embeddings for single-shot segmentation in images and video respectively.
-  Earlier work on bridging vision and explanation appears in
-  <a href="https://arxiv.org/abs/2309.00733"><strong>Learned Visual Features to Textual
-  Explanations</strong> <span class="venue-text">(ICLR 2024)</span></a>.
-</p>
+<ul class="papers">
+  <li><a href="http://arxiv.org/abs/2409.02253"><strong>Determining the Preferred Image Distribution of a Black-Box VLM</strong> <span class="venue-text">(NeurIPS 2024)</span></a> estimates a vision-language model's preferred input distribution without access to weights or training data, useful where input distribution matters (computer-aided design, medical, and industrial imagery).</li>
+  <li><a href="https://arxiv.org/abs/2309.03179"><strong>SLiMe</strong> <span class="venue-text">(ICLR 2024)</span></a> and <a href="https://segment-me-in-time.github.io"><strong>SMITE</strong> <span class="venue-text">(ICLR 2025)</span></a> optimize textual embeddings for one-shot segmentation in images and video, respectively.</li>
+  <li><a href="https://arxiv.org/abs/2309.00733"><strong>Learned Visual Features to Textual Explanations</strong> <span class="venue-text">(ICLR 2024)</span></a> bridges learned visual features and natural-language explanations.</li>
+</ul>
 
 <h3>Robustness and earlier foundations</h3>
 <p>
-  Earlier threads that inform how I think about evaluation today.
-  In <a href="https://arxiv.org/abs/2210.00055"><strong>MaskTune</strong> <span class="venue-text">(NeurIPS 2022)</span></a> we
-  proposed a method that addresses spurious correlations by selectively masking salient features,
-  encouraging models to rely on alternative discriminative signals. In
-  <a href="https://arxiv.org/abs/2106.06620"><strong>Robust Representation Learning via Perceptual
-  Similarity Metrics</strong> <span class="venue-text">(ICML 2021, Spotlight)</span></a> we proposed perceptual similarity as a
-  robustness objective for self-supervised representations. In
-  <a href="https://arxiv.org/abs/1903.01015"><strong>A Kernelized Manifold Mapping</strong> <span class="venue-text">(CVPR 2019)</span></a>
-  we studied adversarial perturbations through learned manifold projection.
+  Earlier threads that shaped how I think about evaluation today.
 </p>
+<ul class="papers">
+  <li><a href="https://arxiv.org/abs/2210.00055"><strong>MaskTune</strong> <span class="venue-text">(NeurIPS 2022)</span></a> reduces reliance on spurious correlations by masking salient features, forcing models to find alternative discriminative signals.</li>
+  <li><a href="https://arxiv.org/abs/2106.06620"><strong>Robust Representation Learning via Perceptual Similarity Metrics</strong> <span class="venue-text">(ICML 2021, Spotlight)</span></a> proposes perceptual similarity as a robustness objective for self-supervised representations.</li>
+  <li><a href="https://arxiv.org/abs/1903.01015"><strong>A Kernelized Manifold Mapping</strong> <span class="venue-text">(CVPR 2019)</span></a> studies adversarial perturbations through learned manifold projection.</li>
+</ul>
 <p>
   My PhD focused on reliable deep learning for medical imaging. Work from that period includes a
   <a href="https://arxiv.org/abs/1910.07655"><strong>Deep Semantic Segmentation review</strong> <span class="venue-text">(AI Review 2020)</span></a>,
-  which has been widely cited in medical-image segmentation. Earlier,
-  <a href="https://arxiv.org/abs/1903.11741"><strong>InfoMask</strong> <span class="venue-text">(MICCAI 2019, Early Accept)</span></a>
-  used masked variational latent representations for weakly-supervised chest disease
+  widely cited in medical-image segmentation, and
+  <a href="https://arxiv.org/abs/1903.11741"><strong>InfoMask</strong> <span class="venue-text">(MICCAI 2019, Early Accept)</span></a>,
+  which used masked variational latent representations for weakly-supervised chest disease
   localization during a research visit at MILA.
 </p>
 
