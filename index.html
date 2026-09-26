@@ -3,410 +3,55 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Saeid Asgari</title>
+<title>Blog · Saeid Asgari</title>
 <meta name="author" content="Saeid Asgari">
-<meta name="description" content="Saeid Asgari, Enterprise AI Evals at Microsoft, building enterprise evaluations for AI agents in security.">
-<link rel="icon" type="image/png" href="images/web_icon_.png">
-
+<meta name="description" content="Blog posts by Saeid Asgari on agent evaluation and self-improvement.">
+<link rel="icon" type="image/png" href="../images/web_icon_.png">
 <style>
-  :root {
-    --bg: #ffffff;
-    --ink: #1a1a1a;
-    --text: #333333;
-    --muted: #666666;
-    --line: #e5e5e5;
-    --link: #1a4d8c;
-    --link-hover: #0d2c5e;
-    --serif: Georgia, 'Times New Roman', Times, serif;
-    --sans: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  }
-
+  :root { --bg:#ffffff; --ink:#1a1a1a; --text:#333333; --muted:#666666; --line:#e5e5e5; --link:#1a4d8c; --link-hover:#0d2c5e;
+          --serif: Georgia, 'Times New Roman', Times, serif;
+          --sans: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif; }
   * { box-sizing: border-box; margin: 0; padding: 0; }
-
-  body {
-    font-family: var(--sans);
-    background: var(--bg);
-    color: var(--text);
-    font-size: 16px;
-    line-height: 1.6;
-    -webkit-font-smoothing: antialiased;
-    text-rendering: optimizeLegibility;
-  }
-
-  a {
-    color: var(--link);
-    text-decoration: none;
-  }
-  a:hover {
-    color: var(--link-hover);
-    text-decoration: underline;
-  }
-  a .venue-text {
-    color: #6b9bd1;
-    font-weight: normal;
-  }
-  a:hover .venue-text {
-    color: var(--link-hover);
-  }
-
-  main {
-    max-width: 740px;
-    margin: 0 auto;
-    padding: 60px 28px 80px;
-  }
-
-  /* === HERO === */
-  .hero {
-    display: grid;
-    grid-template-columns: 1fr 200px;
-    gap: 40px;
-    align-items: start;
-    margin-bottom: 36px;
-  }
-
-  .hero-name {
-    font-family: var(--sans);
-    font-size: 30px;
-    font-weight: 700;
-    color: var(--ink);
-    margin-bottom: 8px;
-    letter-spacing: -0.01em;
-  }
-
-  .hero-affil {
-    color: var(--text);
-    font-size: 15px;
-    margin-bottom: 6px;
-  }
-  .hero-affil-2 {
-    color: var(--muted);
-    font-size: 14px;
-    margin-bottom: 18px;
-  }
-
-  .hero-contact {
-    color: var(--muted);
-    font-size: 14px;
-    margin-bottom: 4px;
-  }
-  .hero-contact a {
-    color: var(--link);
-  }
-  .hero-contact .sep {
-    color: var(--line);
-    margin: 0 8px;
-  }
-
-  .hero-portrait img {
-    width: 100%;
-    aspect-ratio: 1/1;
-    object-fit: cover;
-    border-radius: 10px;
-    display: block;
-  }
-
-  /* === SECTIONS === */
-  h2 {
-    font-family: var(--sans);
-    font-size: 22px;
-    font-weight: 700;
-    color: var(--ink);
-    margin: 44px 0 14px;
-    letter-spacing: -0.005em;
-  }
-
-  h3 {
-    font-family: var(--sans);
-    font-size: 17px;
-    font-weight: 700;
-    color: var(--ink);
-    margin: 28px 0 10px;
-  }
-
-  /* === TEXT BLOCKS === */
-  p {
-    margin-bottom: 14px;
-    color: var(--text);
-  }
-  p strong {
-    color: var(--ink);
-    font-weight: 600;
-  }
-  p em {
-    font-style: italic;
-  }
-
-  .lead p {
-    color: var(--text);
-  }
-
-  /* === RESEARCH NARRATIVE === */
-  .research-intro {
-    margin-bottom: 24px;
-  }
-
-  /* === PAPER LISTS === */
-  .papers {
-    list-style: none;
-    margin: 4px 0 10px;
-  }
-  .papers li {
-    padding: 7px 0;
-    color: var(--text);
-    font-size: 15px;
-    line-height: 1.55;
-  }
-
-  /* === SERVICE === */
-  .service ul {
-    list-style: none;
-    margin-top: 8px;
-  }
-  .service li {
-    padding: 6px 0;
-    color: var(--text);
-    font-size: 15px;
-  }
-  .service li strong {
-    color: var(--ink);
-    font-weight: 600;
-  }
-
-  /* === TALKS === */
-  .talks ul {
-    list-style: none;
-    margin-top: 8px;
-  }
-  .talks li {
-    padding: 5px 0;
-    color: var(--text);
-    font-size: 14.5px;
-    display: grid;
-    grid-template-columns: 50px 1fr;
-    gap: 12px;
-  }
-  .talks .year {
-    color: var(--muted);
-    font-size: 13.5px;
-  }
-  .talks .talk-title {
-    font-style: italic;
-    color: var(--ink);
-  }
-  .talks .talk-venue {
-    color: var(--muted);
-  }
-
-  /* === SCHOLAR LINK === */
-  .scholar-link {
-    margin-top: 22px;
-    padding-top: 14px;
-    border-top: 1px solid var(--line);
-    color: var(--muted);
-    font-size: 14.5px;
-  }
-
-  /* === FOOTER === */
-  footer {
-    max-width: 740px;
-    margin: 0 auto;
-    padding: 24px 28px 36px;
-    color: var(--muted);
-    font-size: 13px;
-    border-top: 1px solid var(--line);
-    margin-top: 40px;
-  }
-
-  /* === RESPONSIVE === */
-  @media (max-width: 640px) {
-    main { padding: 32px 22px 60px; }
-    .hero {
-      grid-template-columns: 1fr;
-      gap: 20px;
-    }
-    .hero-portrait { max-width: 200px; }
-    .hero-name { font-size: 26px; }
-    .talks li {
-      grid-template-columns: 44px 1fr;
-      gap: 10px;
-    }
-    footer { padding: 20px 22px 28px; }
-  }
+  body { font-family: var(--sans); background: var(--bg); color: var(--text); font-size: 16px; line-height: 1.6; -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; }
+  a { color: var(--link); text-decoration: none; } a:hover { color: var(--link-hover); text-decoration: underline; }
+  main { max-width: 740px; margin: 0 auto; padding: 48px 28px 80px; }
+  .topnav { font-size: 14px; color: var(--muted); margin-bottom: 36px; }
+  .topnav a { color: var(--link); } .topnav .sep { color: var(--line); margin: 0 8px; }
+  h1 { font-family: var(--sans); font-size: 30px; font-weight: 700; color: var(--ink); line-height: 1.2; letter-spacing: -0.01em; margin-bottom: 10px; }
+  .byline { color: var(--muted); font-size: 14px; margin-bottom: 28px; padding-bottom: 16px; border-bottom: 1px solid var(--line); }
+  h2 { font-family: var(--sans); font-size: 22px; font-weight: 700; color: var(--ink); margin: 40px 0 14px; letter-spacing: -0.005em; }
+  h3 { font-family: var(--sans); font-size: 17px; font-weight: 700; color: var(--ink); margin: 28px 0 10px; }
+  p { margin-bottom: 14px; color: var(--text); } p strong { color: var(--ink); font-weight: 600; } p em { font-style: italic; }
+  ul, ol { margin: 0 0 14px 22px; } li { margin-bottom: 6px; }
+  img { max-width: 100%; height: auto; display: block; margin: 20px auto 8px; border: 1px solid var(--line); border-radius: 8px; }
+  figure { margin: 0 0 22px; } figcaption { font-size: 13.5px; color: var(--muted); }
+  table { border-collapse: collapse; width: 100%; font-size: 14px; margin: 12px 0 22px; font-variant-numeric: tabular-nums; }
+  th, td { border-bottom: 1px solid var(--line); padding: 6px 8px; text-align: left; vertical-align: top; }
+  th { color: var(--ink); font-weight: 600; border-bottom: 2px solid #ccc; }
+  code { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 0.88em; background: #f4f4f4; padding: 1px 4px; border-radius: 3px; }
+  pre { background: #f6f6f6; border: 1px solid var(--line); border-radius: 6px; padding: 12px 14px; overflow-x: auto; font-size: 13px; line-height: 1.5; margin-bottom: 14px; }
+  pre code { background: none; padding: 0; }
+  hr { border: 0; border-top: 1px solid var(--line); margin: 32px 0; }
+  .posts { list-style: none; margin: 8px 0 0; } .posts li { padding: 12px 0; border-bottom: 1px solid var(--line); }
+  .posts .date { color: var(--muted); font-size: 13.5px; } .posts .title { font-size: 17px; font-weight: 600; } .posts .summary { color: var(--text); font-size: 15px; margin-top: 4px; }
+  footer { max-width: 740px; margin: 40px auto 0; padding: 24px 28px 36px; color: var(--muted); font-size: 13px; border-top: 1px solid var(--line); }
+  @media (max-width: 640px) { main { padding: 32px 22px 60px; } h1 { font-size: 26px; } footer { padding: 20px 22px 28px; } table { font-size: 12.5px; } }
 </style>
 </head>
 <body>
-
 <main>
-
-<section class="hero">
-  <div>
-    <h1 class="hero-name">Saeid Asgari</h1>
-    <div class="hero-affil"><strong style="color: var(--ink); font-weight: 600;">Enterprise AI Evals Leader</strong>, Microsoft</div>
-    <div class="hero-affil-2">Adjunct Research Professor, Simon Fraser University</div>
-
-    <div class="hero-contact">
-      asgt.saeid at gmail dot com
-    </div>
-    <div class="hero-contact">
-      <a href="https://scholar.google.com/citations?user=SuePM1sAAAAJ&hl=en">Google Scholar</a>
-      <span class="sep">·</span>
-      <a href="https://www.linkedin.com/in/saeid-asgari-a55a5b5a/">LinkedIn</a>
-      <span class="sep">·</span>
-      <a href="https://x.com/saeid_asg">X</a>
-      <span class="sep">·</span>
-      <a href="blog/">Blog</a>
-    </div>
-  </div>
-
-  <div class="hero-portrait">
-    <img src="images/20250728_2039456.jpg" alt="Portrait of Saeid Asgari">
-  </div>
-</section>
-
-<h2>About</h2>
-
-<div class="lead">
-  <p>
-    My science team at Microsoft Security builds <strong>enterprise evals</strong> for Security AI agents:
-    evaluations of how security agents perform on the open-ended, messy tasks of real enterprise
-    environments, where there is rarely a single correct answer.
-  </p>
-  <p>
-    Previously, my team built general enterprise evals for <strong>Copilot Tuning</strong>,
-    where I established <strong>closed-loop evaluation</strong>: evaluation
-    signals feed directly into agent improvement, through inference-time optimization or
-    reinforcement fine-tuning (RFT), and the improved agent is then evaluated again.
-  </p>
-  <p>
-    One idea runs through my work: evaluation is a central constraint on foundation-model
-    reliability. Deployed systems face open-ended tasks, long multi-step trajectories, and
-    sustained optimization pressure against the evaluation itself. Static benchmarks with fixed
-    answer keys describe a different regime.
-  </p>
-  <p>
-    Before Microsoft I worked on reliable AI at Autodesk Research, where I contributed to
-    Generative AI Content Authentication at the U.S. AI Safety Institute Consortium (NIST AISIC).
-    Before that, I worked in startup environments.
-    I completed my PhD in Computer Science at Simon Fraser University (Vancouver, Canada), with
-    research visits at <a href="https://mila.quebec/en/">MILA</a> (Montréal, Canada) and
-    <a href="https://www.siemens-healthineers.com/en-ca">Siemens Healthineers</a> (Princeton, US).
-  </p>
-</div>
-
-<h2>Research</h2>
-
-<p class="research-intro">
-  My work sits at the intersection of <strong>evaluation</strong>, <strong>security</strong>, and
-  <strong>self-improving, long-horizon agents</strong>. The threads below share one framing: as
-  models become more capable, evaluation becomes the binding constraint on real-world reliability.
-</p>
-
-<h3>Security evaluations for agentic systems</h3>
-<p>
-  My current focus. Security poses distinct challenges for agent evaluation: tasks are open ended,
-  ground truth is scarce, real customer environments cannot simply be copied into a test harness,
-  and both attackers and defenders adapt. My team builds enterprise evals for security agents
-  under these constraints, aiming to measure agents against the environments they actually
-  operate in rather than against generic benchmarks.
-</p>
-
-<h3>Closed-loop evaluation and capability assessment</h3>
-<p>
-  Previously at Microsoft, I led the team that built the agentic evaluation infrastructure for
-  Copilot Tuning. There I established a closed-loop system connecting customer-facing evaluation
-  to agent improvement: evaluation results drive reinforcement fine-tuning (RFT) or inference-time
-  optimization, and the updated agent goes back through evaluation. The focus was long-horizon,
-  tool-using agents and evaluation signals that stay meaningful inside such a loop.
-</p>
-<p>
-  Two questions run through this work. First, <em>what to measure</em>: models can pass tests by
-  exploiting structure in the test rather than by reasoning. Second, <em>what happens to an
-  evaluation once a system is trained against it</em>: rubrics, judges, and synthetic evaluators
-  can drift, saturate, or get gamed under sustained optimization pressure.
-</p>
-<ul class="papers">
-  <li><a href="https://arxiv.org/abs/2602.20751"><strong>SibylSense</strong> <span class="venue-text">(arXiv 2026)</span></a> adapts a rubric generator through a tunable memory bank and an adversarial policy loop, to slow rubric saturation under optimization.</li>
-  <li><a href="https://arxiv.org/abs/2604.27547"><strong>GoalCover</strong> <span class="venue-text">(arXiv 2026)</span></a> decomposes a high-level goal into subgoals to expose capability gaps in fine-tuning data before training.</li>
-  <li><a href="https://arxiv.org/abs/2501.11721"><strong>Explain-Query-Test (EQT)</strong> <span class="venue-text">(ICLR 2025)</span></a> proposes a label-free capability signal: the gap between how well a model explains a concept and how well it comprehends its own explanation.</li>
-  <li><a href="http://arxiv.org/abs/2409.02257"><strong>MMLU-Pro+</strong> <span class="venue-text">(NeurIPS 2024)</span></a> studies shortcut selection in benchmark design, where models score well without the reasoning the benchmark is meant to test.</li>
+<div class="topnav"><a href="../">Saeid Asgari</a><span class="sep">·</span><a href="../blog/">Blog</a></div>
+<h1>Blog</h1>
+<p class="lead">Notes on evaluating and improving tool-using agents.</p>
+<ul class="posts">
+  <li>
+    <div class="date">September 25, 2026</div>
+    <div class="title"><a href="2026-09-agents-that-design-their-own-judges.html">Letting agents design their own judges: lessons from 15,000 agent runs</a></div>
+    <div class="summary">Five findings from a matched, five-repeat benchmark of ACE variants, a self-designed frozen evaluator (SelfSuite) and a ten-label evaluator calibration on tau2-bench and AppWorld, with a link to the paper.</div>
+  </li>
 </ul>
-
-<h3>Memorization and content provenance</h3>
-<p>
-  Generative models can memorize training data and reproduce parts of it, sometimes verbatim,
-  which raises overlapping copyright, privacy, and reliability concerns.
-</p>
-<ul class="papers">
-  <li><a href="https://arxiv.org/abs/2403.19050"><strong>Detecting Generative Parroting</strong> <span class="venue-text">(CVPR 2024)</span></a> flags probable verbatim reproduction at inference time using overfit masked autoencoders, without access to the training set.</li>
-</ul>
-<p>
-  A longer discussion of why memorization happens, how to detect it, and what to do about it
-  appears in a three-part essay series I wrote for Autodesk Research
-  (<a href="https://www.research.autodesk.com/blog/the-problem-of-generative-parroting-navigating-toward-responsible-ai-part-1/">part 1</a>,
-  <a href="https://www.research.autodesk.com/blog/the-problem-of-generative-parroting-navigating-toward-responsible-ai-part-2/">part 2</a>,
-  <a href="https://www.research.autodesk.com/blog/the-problem-of-generative-parroting-navigating-toward-responsible-ai-part-3/">part 3</a>).
-  Related to this work, I contributed to Generative AI Content Authentication at the
-  <a href="https://www.nist.gov/aisi/artificial-intelligence-safety-institute-consortium-aisic">NIST AISIC</a>.
-</p>
-
-<h3>Vision-language and multimodal understanding</h3>
-<ul class="papers">
-  <li><a href="http://arxiv.org/abs/2409.02253"><strong>Determining the Preferred Image Distribution of a Black-Box VLM</strong> <span class="venue-text">(NeurIPS 2024)</span></a> estimates a vision-language model's preferred input distribution without access to weights or training data, useful where input distribution matters (computer-aided design, medical, and industrial imagery).</li>
-  <li><a href="https://arxiv.org/abs/2309.03179"><strong>SLiMe</strong> <span class="venue-text">(ICLR 2024)</span></a> and <a href="https://segment-me-in-time.github.io"><strong>SMITE</strong> <span class="venue-text">(ICLR 2025)</span></a> optimize textual embeddings for one-shot segmentation in images and video, respectively.</li>
-  <li><a href="https://arxiv.org/abs/2309.00733"><strong>Learned Visual Features to Textual Explanations</strong> <span class="venue-text">(ICLR 2024)</span></a> bridges learned visual features and natural-language explanations.</li>
-</ul>
-
-<h3>Robustness and earlier foundations</h3>
-<p>
-  Earlier threads that shaped how I think about evaluation today.
-</p>
-<ul class="papers">
-  <li><a href="https://arxiv.org/abs/2210.00055"><strong>MaskTune</strong> <span class="venue-text">(NeurIPS 2022)</span></a> reduces reliance on spurious correlations by masking salient features, forcing models to find alternative discriminative signals.</li>
-  <li><a href="https://arxiv.org/abs/2106.06620"><strong>Robust Representation Learning via Perceptual Similarity Metrics</strong> <span class="venue-text">(ICML 2021, Spotlight)</span></a> proposes perceptual similarity as a robustness objective for self-supervised representations.</li>
-  <li><a href="https://arxiv.org/abs/1903.01015"><strong>A Kernelized Manifold Mapping</strong> <span class="venue-text">(CVPR 2019)</span></a> studies adversarial perturbations through learned manifold projection.</li>
-</ul>
-<p>
-  My PhD focused on reliable deep learning for medical imaging. Work from that period includes a
-  <a href="https://arxiv.org/abs/1910.07655"><strong>Deep Semantic Segmentation review</strong> <span class="venue-text">(AI Review 2020)</span></a>,
-  widely cited in medical-image segmentation, and
-  <a href="https://arxiv.org/abs/1903.11741"><strong>InfoMask</strong> <span class="venue-text">(MICCAI 2019, Early Accept)</span></a>,
-  which used masked variational latent representations for weakly-supervised chest disease
-  localization during a research visit at MILA.
-</p>
-
-<div class="scholar-link">
-  Full publication list on
-  <a href="https://scholar.google.com/citations?user=SuePM1sAAAAJ&hl=en">Google Scholar</a>.
-</div>
-
-<h2>Service</h2>
-
-<div class="service">
-  <ul>
-    <li>Contributed to <strong>Generative AI Content Authentication</strong> at the U.S. AI Safety Institute Consortium (NIST AISIC).</li>
-    <li><strong>Adjunct Research Professor</strong>, Simon Fraser University. Co-supervising PhD and Master's students on foundation models and reliable AI.</li>
-    <li>Reviewer for <strong>NeurIPS, ICML, ICLR, CVPR, MICCAI</strong>, and <strong>NSERC Canada</strong>.</li>
-  </ul>
-</div>
-
-<h2>Selected Talks</h2>
-
-<div class="talks">
-  <ul>
-    <li><span class="year">2025</span><span><span class="talk-title">Towards More Reliable Generative AI: Evaluation and Mitigation Strategies</span> &nbsp;<span class="talk-venue">at Microsoft</span></span></li>
-    <li><span class="year">2024</span><span><span class="talk-title">The Parroting Problem of Generative AI</span> &nbsp;<span class="talk-venue">at Autodesk TechX</span></span></li>
-    <li><span class="year">2022</span><span><span class="talk-title">Spurious Correlations in Computer Vision</span> &nbsp;<span class="talk-venue">at Sony AI</span></span></li>
-    <li><span class="year">2022</span><span><span class="talk-title">Input Space Modifications for Reducing Spurious Correlations</span> &nbsp;<span class="talk-venue">at Google Research</span></span></li>
-    <li><span class="year">2021</span><span><span class="talk-title">Robust Representation Learning via Perceptual Similarity Metrics</span> &nbsp;<span class="talk-venue">at ICML</span></span></li>
-    <li><span class="year">2020</span><span><span class="talk-title">Towards Interpretable and Bias-Resilient Point Cloud Processing</span> &nbsp;<span class="talk-venue">at ICML</span></span></li>
-  </ul>
-</div>
 
 </main>
-
-<footer>
-  © Saeid Asgari
-</footer>
-
+<footer>© Saeid Asgari</footer>
 </body>
 </html>
