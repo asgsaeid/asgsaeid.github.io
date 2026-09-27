@@ -135,8 +135,8 @@ and without the expert calibration.</p>
 with ten labels it ties the strongest baseline.</strong> The plain agent
 scores 76.4 ± 6.2 % overall. SelfSuite with a freshly designed suite and
 no labels scores 82.4 ± 3.9 %, +6.0 pp paired over the agent (95 %
-confidence interval [−0.3, +12.3], so not significant on its own), and
-within noise of every learning method on both benchmarks. With the ten
+confidence interval [−0.3, +12.3], so not significant on its own), level with the labelled methods on tau2, but behind ACE on AppWorld, where
+running the code gives ACE a direct signal. With the ten
 expert labels used to calibrate its evaluator it reaches 84.4 ± 4.6 %,
 +8.0 pp over the agent ([+2.2, +13.8]) and +2.0 pp over its uncalibrated
 version ([+0.2, +3.8]). ACE seeded with the same ten labels as a warm
@@ -189,10 +189,11 @@ context-collapsing re-implementation of ACE, the evaluator’s effect was
 to stop drift: a warm playbook that kept adapting without labels lost 3
 pp on tau2, while the same playbook adapting under the calibrated
 evaluator held its warm-up score.</p>
-<p><strong>Where the world already gives a signal, the methods
-tie.</strong> On AppWorld, running the code tells every learner whether
-it worked, and the four learning methods land between 86 and 92 %, with
-standard deviations of 2 to 4 pp. On tau2, following the policy leaves
+<p><strong>Where the world already gives a signal, self-written judges
+add less.</strong> On AppWorld, running the code tells every learner
+whether it worked: the ACE variants and calibrated SelfSuite land within
+a point or two of each other, and label-free SelfSuite trails ACE by four
+to five points. On tau2, following the policy leaves
 no execution trace, and that is where the methods separate. Switch the
 results chart above between Tau2 and AppWorld to see this. Claims about
 learning without labels are most informative on worlds like tau2.</p>
