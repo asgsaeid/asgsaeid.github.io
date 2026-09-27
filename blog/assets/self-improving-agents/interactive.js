@@ -382,8 +382,12 @@
       el('line', { x1: X(v), x2: X(v), y1: top - 4, y2: H - 30, class: v === 0 ? 'viz-zero' : 'viz-grid' }, g0);
       txt(g0, X(v), H - 12, (v > 0 ? '+' : '') + v, { class: 'viz-axis', 'text-anchor': 'middle' });
     }
-    txt(g0, 14, top - 12, 'Label-free baselines on the same tasks', { class: 'viz-model' });
-    txt(g0, 14, top + 2 * rowH + gap - 12, 'SelfSuite with one component removed', { class: 'viz-model' });
+    function groupHead(y, label) {
+      txt(g0, 14, y, label, { class: 'viz-group' });
+      el('line', { x1: 14, x2: W - 14, y1: y + 7, y2: y + 7, class: 'viz-group-rule' }, g0);
+    }
+    groupHead(top - 14, 'BASELINES (NO LABELS)');
+    groupHead(top + 2 * rowH + gap - 14, 'ABLATIONS: SELFSUITE WITH ONE PART REMOVED');
     var tip, sel = 1;
     var rows = ABL.map(function (a, i) {
       var y = Y(i);

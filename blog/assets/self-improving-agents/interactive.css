@@ -80,3 +80,6 @@ circle.viz-dot { stroke:#fff; }
 .reveal.is-in { opacity:1; transform:none; }
 @media (prefers-reduced-motion: reduce) { .reveal { opacity:1; transform:none; transition:none; } }
 @media (max-width: 640px) { .mx-body { font-size:14px; min-height:7em; } .mx-title { font-size:15px; } }
+
+.viz-group { font-size:11px; font-weight:700; letter-spacing:.08em; fill:var(--muted); }
+.viz-group-rule { stroke:var(--grid); stroke-width:1.2; }
