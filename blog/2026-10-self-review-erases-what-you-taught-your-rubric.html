@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Self-review erases what you taught your rubric · Saeid Asgari</title>
+<meta name="author" content="Saeid Asgari">
+<meta name="description" content="Asking a model to improve a grading rubric pulled it back toward the model&rsquo;s own idea of a good answer: it added requirements nobody asked for and deleted the check that came from human labels.">
+<link rel="icon" type="image/png" href="../images/web_icon_.png">
+<link rel="canonical" href="https://asgsaeid.github.io/blog/2026-10-self-review-erases-what-you-taught-your-rubric.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Self-review erases what you taught your rubric">
+<meta property="og:description" content="Asking a model to improve a grading rubric pulled it back toward the model&rsquo;s own idea of a good answer: it added requirements nobody asked for and deleted the check that came from human labels.">
+<meta property="og:url" content="https://asgsaeid.github.io/blog/2026-10-self-review-erases-what-you-taught-your-rubric.html">
+<meta property="og:image" content="https://asgsaeid.github.io/blog/assets/rubric-judges/p2_fig1_loops.png">
+<meta name="twitter:card" content="summary_large_image">
+<style>
+  :root { --bg:#ffffff; --ink:#1a1a1a; --text:#333333; --muted:#666666; --line:#e5e5e5; --link:#1a4d8c; --link-hover:#0d2c5e;
+          --serif: Georgia, 'Times New Roman', Times, serif;
+          --sans: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: var(--sans); background: var(--bg); color: var(--text); font-size: 16px; line-height: 1.6; -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; }
+  a { color: var(--link); text-decoration: none; } a:hover { color: var(--link-hover); text-decoration: underline; }
+  main { max-width: 740px; margin: 0 auto; padding: 48px 28px 80px; }
+  .topnav { font-size: 14px; color: var(--muted); margin-bottom: 36px; }
+  .topnav a { color: var(--link); } .topnav .sep { color: var(--line); margin: 0 8px; }
+  h1 { font-family: var(--sans); font-size: 30px; font-weight: 700; color: var(--ink); line-height: 1.2; letter-spacing: -0.01em; margin-bottom: 10px; }
+  .byline { color: var(--muted); font-size: 14px; margin-bottom: 28px; padding-bottom: 16px; border-bottom: 1px solid var(--line); }
+  h2 { font-family: var(--sans); font-size: 22px; font-weight: 700; color: var(--ink); margin: 40px 0 14px; letter-spacing: -0.005em; }
+  h3 { font-family: var(--sans); font-size: 17px; font-weight: 700; color: var(--ink); margin: 28px 0 10px; }
+  p { margin-bottom: 14px; color: var(--text); } p strong { color: var(--ink); font-weight: 600; } p em { font-style: italic; }
+  ul, ol { margin: 0 0 14px 22px; } li { margin-bottom: 6px; }
+  img { max-width: 100%; height: auto; display: block; margin: 20px auto 8px; border: 1px solid var(--line); border-radius: 8px; }
+  figure { margin: 0 0 22px; } figcaption { font-size: 13.5px; color: var(--muted); }
+  table { border-collapse: collapse; width: 100%; font-size: 14px; margin: 12px 0 22px; font-variant-numeric: tabular-nums; }
+  th, td { border-bottom: 1px solid var(--line); padding: 6px 8px; text-align: left; vertical-align: top; }
+  th { color: var(--ink); font-weight: 600; border-bottom: 2px solid #ccc; }
+  code { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 0.88em; background: #f4f4f4; padding: 1px 4px; border-radius: 3px; }
+  pre { background: #f6f6f6; border: 1px solid var(--line); border-radius: 6px; padding: 12px 14px; overflow-x: auto; font-size: 13px; line-height: 1.5; margin-bottom: 14px; }
+  pre code { background: none; padding: 0; }
+  hr { border: 0; border-top: 1px solid var(--line); margin: 32px 0; }
+  .posts { list-style: none; margin: 8px 0 0; } .posts li { padding: 12px 0; border-bottom: 1px solid var(--line); }
+  .posts .date { color: var(--muted); font-size: 13.5px; } .posts .title { font-size: 17px; font-weight: 600; } .posts .summary { color: var(--text); font-size: 15px; margin-top: 4px; }
+  footer { max-width: 740px; margin: 40px auto 0; padding: 24px 28px 36px; color: var(--muted); font-size: 13px; border-top: 1px solid var(--line); }
+  @media (max-width: 640px) { main { padding: 32px 22px 60px; } h1 { font-size: 26px; } footer { padding: 20px 22px 28px; } table { font-size: 12.5px; } }
+</style>
+<link rel="stylesheet" href="assets/rubric-judges/interactive.css">
+<script src="assets/rubric-judges/interactive.js" defer></script>
+</head>
+<body>
+<main>
+<div class="topnav"><a href="../">Saeid Asgari</a><span class="sep">·</span><a href="../blog/">Blog</a></div>
+<h1>Self-review erases what you taught your rubric</h1>
+<div class="byline">Saeid Asgari · October, 2026 · 7 min read</div>
+<p>A common step in building model-graded evaluations is a refinement loop: generate a rubric, then ask a model to review it for ambiguity, gaps and flaws no check would catch, and repeat. Each round feels like progress. The rubric gets more thorough, and nobody objects to &ldquo;more thorough.&rdquo;</p>
+<p>I expected that loop to ratchet: under all-must-pass grading, every added check can only lower the pass rate, and reviewers add far more than they delete. What I found is more specific, and worse. <strong>Self-review pulls a rubric back toward the reviewer&rsquo;s own idea of a good answer.</strong> It adds the requirements the reviewer believes in, and it deletes the requirements it didn&rsquo;t originate, including the ones you put there on purpose. Check count turned out not to be the mechanism at all.</p>
+
+<h2 id="setup">Setup</h2>
+<p>The task is grading findings reports from an automated security reconnaissance agent, which inspects a cloud tenant&rsquo;s configuration and reports security posture issues. I used 12 synthetic environments and a labeled set of 108 reports (36 correct, 72 flawed). The flaws are a missed finding, a made-up finding, a finding on the wrong resource, an overstated impact, and, in 12 of the reports, leaving out a real exposure that is in the inventory but isn&rsquo;t part of the planted scenario. I&rsquo;ll call that last one an <strong>unplanned miss</strong>: it tests whether a rubric can fail a report for leaving out something nobody anticipated.</p>
+<p>I started from two rubrics that were already good, in different ways:</p>
+<ul>
+<li><strong>A hand-written checklist,</strong> 6 checks per environment. It passes 97% of correct reports and catches 83% of flawed ones, but it catches none of the unplanned misses, because it only knows about the planted scenario.</li>
+<li><strong>A rubric taught by labeled examples,</strong> about 8 checks per environment. A model revised it after seeing 36 labeled reports from four of the environments, and it learned two things the labels implied: remediation advice is optional, and a report should be failed if it leaves out any real risk in the inventory. It added an open coverage check for the second point. It passes 83% of correct reports, catches 100% of flawed ones, and catches 100% of unplanned misses.</li>
+</ul>
+<p>Opus then revised each rubric for four rounds with a generic instruction: review each rubric for ambiguity, gaps, checks a different judge might misread, and flaws a report could have that no check would catch. Four variants:</p>
+<ul>
+<li><strong>Free revision,</strong> two independent seeds.</li>
+<li><strong>Fixed count:</strong> rewrite anything, but keep exactly the same number of checks.</li>
+<li><strong>Delete or merge only:</strong> no new requirements, no making a check stricter.</li>
+</ul>
+<p>After rounds 2 and 4, Sonnet graded all 108 reports with each revised rubric.</p>
+
+<h2 id="what-changed">What self-review did to one rubric</h2>
+<p>Before the aggregate numbers, here is what free revision did to the same environment starting from each rubric. Switch tabs to compare; the replay button runs it again.</p>
+<div data-viz="rubricdiff">
+<noscript>
+<p class="viz-fallback"><em>Starting from the hand-written checklist, self-review rewrote every check and added one requiring remediation advice, which fails all three correct reports. Starting from the label-taught rubric, it deleted the open coverage check the labels had taught.</em></p>
+</noscript>
+</div>
+
+<h2 id="results">Results</h2>
+<div data-viz="loops">
+<noscript>
+<img src="assets/rubric-judges/p2_fig1_loops.png" alt="Rubric quality after four rounds of self-review">
+</noscript>
+</div>
+<p>Free revision broke both rubrics, in opposite directions.</p>
+<p><strong>The hand-written checklist became far too strict.</strong> After four rounds, it passed 6% of correct reports with one seed and 11% with the other, down from 97%. With the first seed, the damage was complete by round 2. When I looked at what the reviewer added, the pattern was obvious: over the four rounds, one seed added 10 checks requiring remediation advice (&ldquo;does the report recommend removing the dangling DNS record?&rdquo;), and every one of those 10 failed at least one correct report. The task never asked for remediation advice; the reviewer believed a good report should include it, so it wrote that belief into the rubric. To be fair, the same revision also added an open coverage check in some environments, which raised the catch rate on unplanned misses from 0% to 92%. But a rubric that fails 94% of correct outputs is unusable regardless.</p>
+<p><strong>The label-taught rubric lost what the labels had taught it.</strong> Free revision deleted the open coverage check in 11 of 12 environments, describing it in one change note as &ldquo;the vague completeness check.&rdquo; Unplanned misses caught fell from 100% to 25% with one seed and 8% with the other, and the overall catch rate fell from 100% to about 86%. Remediation checks crept back in too. The rubric got <em>shorter</em>, from 7.9 to 7.0 checks per environment, and still got worse.</p>
+<p><strong>Holding the count fixed didn&rsquo;t protect either rubric.</strong> Fixed-count revision dropped the hand checklist&rsquo;s pass rate on correct reports to 72%, and took the label-taught rubric&rsquo;s unplanned-miss catch rate down to 17%. Rewrites alone carried the drift.</p>
+<p><strong>Only delete-or-merge was safe.</strong> It shrank the hand checklist from 6 to 4 checks per environment and the label-taught one from 7.9 to 5.8, and left every metric where it started (the hand checklist&rsquo;s correct-pass rate even ticked up from 97% to 100%). Removing a requirement can&rsquo;t import a new belief.</p>
+<div data-viz="counts">
+<noscript>
+<img src="assets/rubric-judges/p2_fig2_counts.png" alt="Checks per environment across revision rounds">
+</noscript>
+</div>
+<p>The counts make the point that this isn&rsquo;t a ratchet. Free revision grew one rubric by 1.7 to 3 checks per environment and shrank the other by about one. Both got worse. What changed was content, and the content moved toward the same place each time: the reviewer&rsquo;s own standard.</p>
+
+<h2 id="loop-limits">A loop can&rsquo;t fix what its author believes</h2>
+<p>This also explains a result from an earlier run. There, the starting rubric was model-generated, and it already demanded remediation advice: it passed 6% of correct reports. Three rounds of self-review (6 to 14%), and three rounds of a more elaborate loop where the model wrote test reports with intended verdicts and checked whether a judge agreed, left it at 6 to 8%. The loop agreed with itself on 71 or 72 of 72 test reports every round, because the model wrote its &ldquo;should pass&rdquo; test reports to its own standard, remediation advice included. Nothing in the loop could tell it the standard was wrong.</p>
+<p>What did fix it was showing the model 36 labeled reports: one round took the correct-pass rate from 6% to about 80% without losing any catches. And as this experiment shows, a later round of self-review undoes exactly that.</p>
+
+<h2 id="practice">What I&rsquo;d change in practice</h2>
+<ol>
+<li><strong>Track where each check came from.</strong> Checks derived from labels, from domain experts or from incident reviews should be frozen against automated revision. A self-review pass can propose changes to them, never apply them.</li>
+<li><strong>Make unattended revision delete-only.</strong> If a loop runs without a human, it may merge or remove checks, never add requirements or tighten them. Additions go through review.</li>
+<li><strong>Regression-test every revision against labeled data before accepting it.</strong> Three numbers: correct outputs passed, flawed outputs caught, and unplanned misses caught. A revision that lowers any of them is rejected, however much more thorough it reads.</li>
+<li><strong>Read additions as statements of the reviewer&rsquo;s beliefs.</strong> A new check that sounds obviously right (&ldquo;should recommend a fix&rdquo;) is exactly the kind that encodes a standard nobody agreed to.</li>
+</ol>
+
+<h2 id="caveats">Caveats</h2>
+<p>The environments and labels are synthetic and mine. One model wrote and revised all the rubrics, and judges came from the same model family, so I can&rsquo;t yet separate this reviewer&rsquo;s specific beliefs from a general tendency of self-review; repeating with a different reviewer family is the next experiment. Free revision ran with two seeds and the constrained variants with one, and each rubric was graded once per round, so small differences (a few points) aren&rsquo;t meaningful. The large effects (97% to 6%, 100% to 8%) are well outside that noise.</p>
+<p>The companion post covers what sets a judge&rsquo;s strictness in the first place: <a href="2026-10-your-judge-isnt-lenient-or-strict-your-rubric-is.html">Your judge isn&rsquo;t lenient or strict. Your rubric is.</a></p>
+
+</main>
+<footer>© Saeid Asgari</footer>
+</body>
+</html>

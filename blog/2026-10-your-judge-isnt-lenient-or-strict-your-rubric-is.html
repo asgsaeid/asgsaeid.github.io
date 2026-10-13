@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Your judge isn&rsquo;t lenient or strict. Your rubric is. · Saeid Asgari</title>
+<meta name="author" content="Saeid Asgari">
+<meta name="description" content="Holding the judge and the outputs fixed, rubric content moved the pass rate on correct outputs from 2% to 98%. Swapping the judge model or rendering the same checks as a paragraph barely moved it.">
+<link rel="icon" type="image/png" href="../images/web_icon_.png">
+<link rel="canonical" href="https://asgsaeid.github.io/blog/2026-10-your-judge-isnt-lenient-or-strict-your-rubric-is.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Your judge isn&rsquo;t lenient or strict. Your rubric is.">
+<meta property="og:description" content="Holding the judge and the outputs fixed, rubric content moved the pass rate on correct outputs from 2% to 98%. Swapping the judge model or rendering the same checks as a paragraph barely moved it.">
+<meta property="og:url" content="https://asgsaeid.github.io/blog/2026-10-your-judge-isnt-lenient-or-strict-your-rubric-is.html">
+<meta property="og:image" content="https://asgsaeid.github.io/blog/assets/rubric-judges/p1_fig1_operating.png">
+<meta name="twitter:card" content="summary_large_image">
+<style>
+  :root { --bg:#ffffff; --ink:#1a1a1a; --text:#333333; --muted:#666666; --line:#e5e5e5; --link:#1a4d8c; --link-hover:#0d2c5e;
+          --serif: Georgia, 'Times New Roman', Times, serif;
+          --sans: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: var(--sans); background: var(--bg); color: var(--text); font-size: 16px; line-height: 1.6; -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; }
+  a { color: var(--link); text-decoration: none; } a:hover { color: var(--link-hover); text-decoration: underline; }
+  main { max-width: 740px; margin: 0 auto; padding: 48px 28px 80px; }
+  .topnav { font-size: 14px; color: var(--muted); margin-bottom: 36px; }
+  .topnav a { color: var(--link); } .topnav .sep { color: var(--line); margin: 0 8px; }
+  h1 { font-family: var(--sans); font-size: 30px; font-weight: 700; color: var(--ink); line-height: 1.2; letter-spacing: -0.01em; margin-bottom: 10px; }
+  .byline { color: var(--muted); font-size: 14px; margin-bottom: 28px; padding-bottom: 16px; border-bottom: 1px solid var(--line); }
+  h2 { font-family: var(--sans); font-size: 22px; font-weight: 700; color: var(--ink); margin: 40px 0 14px; letter-spacing: -0.005em; }
+  h3 { font-family: var(--sans); font-size: 17px; font-weight: 700; color: var(--ink); margin: 28px 0 10px; }
+  p { margin-bottom: 14px; color: var(--text); } p strong { color: var(--ink); font-weight: 600; } p em { font-style: italic; }
+  ul, ol { margin: 0 0 14px 22px; } li { margin-bottom: 6px; }
+  img { max-width: 100%; height: auto; display: block; margin: 20px auto 8px; border: 1px solid var(--line); border-radius: 8px; }
+  figure { margin: 0 0 22px; } figcaption { font-size: 13.5px; color: var(--muted); }
+  table { border-collapse: collapse; width: 100%; font-size: 14px; margin: 12px 0 22px; font-variant-numeric: tabular-nums; }
+  th, td { border-bottom: 1px solid var(--line); padding: 6px 8px; text-align: left; vertical-align: top; }
+  th { color: var(--ink); font-weight: 600; border-bottom: 2px solid #ccc; }
+  code { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 0.88em; background: #f4f4f4; padding: 1px 4px; border-radius: 3px; }
+  pre { background: #f6f6f6; border: 1px solid var(--line); border-radius: 6px; padding: 12px 14px; overflow-x: auto; font-size: 13px; line-height: 1.5; margin-bottom: 14px; }
+  pre code { background: none; padding: 0; }
+  hr { border: 0; border-top: 1px solid var(--line); margin: 32px 0; }
+  .posts { list-style: none; margin: 8px 0 0; } .posts li { padding: 12px 0; border-bottom: 1px solid var(--line); }
+  .posts .date { color: var(--muted); font-size: 13.5px; } .posts .title { font-size: 17px; font-weight: 600; } .posts .summary { color: var(--text); font-size: 15px; margin-top: 4px; }
+  footer { max-width: 740px; margin: 40px auto 0; padding: 24px 28px 36px; color: var(--muted); font-size: 13px; border-top: 1px solid var(--line); }
+  @media (max-width: 640px) { main { padding: 32px 22px 60px; } h1 { font-size: 26px; } footer { padding: 20px 22px 28px; } table { font-size: 12.5px; } }
+</style>
+<link rel="stylesheet" href="assets/rubric-judges/interactive.css">
+<script src="assets/rubric-judges/interactive.js" defer></script>
+</head>
+<body>
+<main>
+<div class="topnav"><a href="../">Saeid Asgari</a><span class="sep">·</span><a href="../blog/">Blog</a></div>
+<h1>Your judge isn&rsquo;t lenient or strict. Your rubric is.</h1>
+<div class="byline">Saeid Asgari · October, 2026 · 8 min read</div>
+<p>Large language model (LLM) judges have a reputation for leniency: they pass outputs a careful human would reject. Checklist rubrics are the usual fix. Break &ldquo;is this good?&rdquo; into atomic yes/no checks, require all of them to pass, and the judge can no longer wave things through.</p>
+<p>When I generated checklists this way for a security task, the judge went from lenient to failing almost everything, including outputs that were correct. That made me suspect leniency and strictness aren&rsquo;t properties of the judge at all. So I held the judge and the outputs fixed and varied only the rubric.</p>
+<p><strong>Short version:</strong> what the rubric asks for decides strictness. Swapping the judge model barely matters, and so does rendering the same checks as a checklist, a paragraph or a 1 to 5 scale. The way most people validate judges, a single accuracy number on a defect-heavy test set, can&rsquo;t see any of this.</p>
+
+<h2 id="setup">Setup</h2>
+<p>The task is grading findings reports from an automated security reconnaissance agent: an agent that inspects a cloud tenant&rsquo;s configuration and writes a short report of security posture issues. I built 12 synthetic environments, each with a ground-truth inventory and two real findings. For each environment I wrote 2 correct reports and 4 reports with exactly one planted flaw: a missed finding, a made-up finding, a finding placed on the wrong resource, or an overstated impact. That gives 72 reports, 24 correct and 48 flawed, with labels known by construction.</p>
+<p>The judge sees the inventory and one report at a time (one report per environment per batch, so it never compares versions of the same report). Sonnet is the main judge, every condition was run twice, and a subset was repeated with Haiku and Opus. I report two numbers per rubric instead of accuracy:</p>
+<ul>
+<li><strong>Correct reports passed:</strong> how often the judge lets a good report through.</li>
+<li><strong>Flawed reports caught:</strong> how often it fails a report with a planted flaw.</li>
+</ul>
+<p>The rubrics varied along three axes:</p>
+<ul>
+<li><strong>Content:</strong> no checks at all (a free-form &ldquo;is this report correct?&rdquo;), a generic 1 to 5 scale (groundedness, completeness, actionability), 6 checks I wrote by hand per environment, or 12 checks per environment generated by Opus from the inventory and ranked by importance.</li>
+<li><strong>Count:</strong> the first 2, 4 or 6 hand checks; the first 4, 8 or 12 generated checks. These are nested, so a shorter rubric is a prefix of a longer one.</li>
+<li><strong>Rendering:</strong> the same propositions as a yes/no checklist (all must pass), as one paragraph the judge reads holistically, or each scored 1 to 5 (pass if every score is at least 4).</li>
+</ul>
+
+<h2 id="content">Content decides, rendering doesn&rsquo;t</h2>
+<p>The figure below plots every rubric by the two rates. Step through the views to compare one factor at a time.</p>
+<div data-viz="operating">
+<noscript>
+<img src="assets/rubric-judges/p1_fig1_operating.png" alt="Operating points of each rubric">
+</noscript>
+</div>
+<p>There are two clusters. The hand-written checks sit in the top right whichever way I render them: about 96 to 98% of correct reports pass and every flawed report is caught. The generated checks sit in the top left whichever way I render them: every flaw is caught, but only 2 to 8% of correct reports pass. Rendering the 12 generated checks as a paragraph didn&rsquo;t soften them at all (4% either way), and neither did scoring them 1 to 5 (8%).</p>
+<p>So what makes the generated checks strict? I looked at which checks failed the correct reports. Almost all of them asked for things the task never required: &ldquo;does the report recommend disabling anonymous access?&rdquo;, or a specific secondary detail about who manages a group. The correct reports were correct; they just didn&rsquo;t contain remediation advice. Earlier I measured this directly on a different set of generated rubrics: 16 of 92 checks failed at least three quarters of all reports, good or bad, and those 16 checks alone explained 31 of the 34 correct reports that were wrongly failed.</p>
+<p><strong>Count only hurts when the checks are wrong.</strong> The nested hand checks show the trade you&rsquo;d hope for: going from 2 to 4 to 6 checks raised the catch rate from 52% to 74% to 100%, and correct reports kept passing at 96% throughout. The nested generated checks show the opposite: 4 checks passed 21% of correct reports, 8 checks passed 2%. Adding a check costs you exactly that check&rsquo;s false-fail rate. It&rsquo;s a cheap addition when that rate is zero and an expensive one when it isn&rsquo;t.</p>
+<p>That cost compounds multiplicatively. Under all-must-pass aggregation, the share of correct reports that pass equals the product of each check&rsquo;s pass rate on correct reports. I checked this on 12 rubric versions from a related experiment, and the product predicted the observed pass rate to within 1 point every time. A rubric of 10 checks that each wrongly fail a good report 5% of the time passes only 60% of good reports, and nobody reading the checks one at a time would spot a problem.</p>
+
+<h2 id="judges">The judge model barely matters</h2>
+<div data-viz="judges">
+<noscript>
+<img src="assets/rubric-judges/p1_fig2_judges.png" alt="Correct reports passed by three judge models">
+</noscript>
+</div>
+<p>With the rubric held fixed, Haiku, Sonnet and Opus mostly land within a few points of each other. The free-form judge passed every correct report with all three models. The generated 12-check rubric passed 0 to 4% with all three. The hand checklist passed 96 to 100%.</p>
+<p>The one exception is informative. With a generic 1 to 5 scale and a pass threshold of 5, the judges split wide: Haiku passed 12% of correct reports, Sonnet 56%, Opus 79%. A top-of-scale threshold measures how readily each model hands out a perfect score, which differs between models in a way checks don&rsquo;t. If you use a scale, the threshold is a strictness dial, and it&rsquo;s calibrated differently for every judge: at 3, Sonnet passed 96% of reports with a missing finding; at 4, 58%; at 5, none of them, but also only 56% of correct ones.</p>
+<p>The leniency the literature reports is real, but it belongs to the free-form setting (switch the figure to its second tab). With no rubric content, Sonnet passed every report that left out a real finding, and Haiku and Opus passed 75 to 83% of them. The judge isn&rsquo;t checking completeness because nothing asked it to.</p>
+
+<h2 id="unnoticed">Why this usually goes unnoticed</h2>
+<p>Most judge validation sets are built by planting defects, so most of their items are flawed. On such a set, a rubric that fails everything looks good. Drag the slider to change the mix.</p>
+<div data-viz="prevalence">
+<noscript>
+<img src="assets/rubric-judges/p1_fig3_prevalence.png" alt="Accuracy against defect prevalence">
+</noscript>
+</div>
+<p>The first-draft generated rubric from my earlier experiment passes 6% of correct reports and catches 99% of flawed ones. Its accuracy is 89% when 90% of the set is flawed, 68% at two thirds (my set), 52% at half and 36% at one third. Its balanced accuracy, the mean of the two rates, is 52% everywhere: a coin flip. A hand-written checklist that actually works looks <em>worse</em> than it on a 90%-flawed set.</p>
+<p>The aggregation rule hides in the same way. With the per-check answers held fixed, switching from &ldquo;all checks must pass&rdquo; to &ldquo;at most one check may fail&rdquo; moved that rubric&rsquo;s pass rate on correct reports from 6% to 69%.</p>
+<div data-viz="aggregator">
+<noscript>
+<p class="viz-fallback"><em>Same per-check answers, three aggregation rules: correct reports passed 6%, 69% and 89%; flawed reports caught 99%, 89% and 71%.</em></p>
+</noscript>
+</div>
+<p>Three rounds of rewording its checks moved the same number from 6% to 8%. The aggregator is a bigger lever than the wording, and it&rsquo;s rarely reported.</p>
+
+<h2 id="human-labels">With human labels</h2>
+<p>My recon labels come from defects I planted, so I repeated the count experiment on a set with human labels: 146 summaries from the SummEdits benchmark, half judged consistent with their source by human annotators. Here the checks were generic (one ranked list of 10 consistency checks, written once and applied to every item), so I&rsquo;d expect a much milder effect than with scenario-specific generated checks.</p>
+<div data-viz="summedits">
+<noscript>
+<img src="assets/rubric-judges/p1_fig4_summedits.png" alt="Checklist length on human-labeled summaries">
+</noscript>
+</div>
+<p>The direction holds: each added check trades correct passes for catches. Free-form passed 91% of consistent summaries and caught 76% of inconsistent ones. Ten checks passed 77% and caught 84%. The magnitude is far smaller, because generic checks rarely demand something a correct summary lacks. One difference from the recon task: the same 10 checks rendered as a paragraph were somewhat more lenient here (83% versus 77% passed), so rendering isn&rsquo;t always irrelevant, just second-order.</p>
+
+<h2 id="practice">What I&rsquo;d change in practice</h2>
+<ol>
+<li><strong>Report two numbers, never accuracy alone.</strong> Correct outputs passed and flawed outputs caught. Accuracy and raw agreement on a defect-heavy set will flatter a rubric that fails everything.</li>
+<li><strong>Audit every check&rsquo;s fail rate on real, unlabeled outputs.</strong> A check that fails nearly all outputs is almost always asking for something the task doesn&rsquo;t require. You don&rsquo;t need labels to find it.</li>
+<li><strong>Pick the aggregation rule deliberately and report it.</strong> All-must-pass compounds every small false-fail rate.</li>
+<li><strong>Give the rubric author the output contract.</strong> Generated checks invent requirements (remediation advice, in my case) when the author doesn&rsquo;t know what the agent was told to produce.</li>
+<li><strong>If you use a scale, treat the threshold as a calibration parameter per judge model,</strong> not a fixed convention.</li>
+</ol>
+
+<h2 id="caveats">Caveats</h2>
+<p>The recon environments and their labels are synthetic and mine, which is why I added the human-labeled replication. All three judges and the rubric author are Claude models, so &ldquo;the judge barely matters&rdquo; is shown within one model family. Each condition ran twice; run-to-run differences were within a few points. The set has 24 correct reports, so differences under about 5 points shouldn&rsquo;t be read as real.</p>
+<p>A companion post looks at what happens when a model is asked to improve a rubric: <a href="2026-10-self-review-erases-what-you-taught-your-rubric.html">Self-review erases what you taught your rubric</a>.</p>
+
+</main>
+<footer>© Saeid Asgari</footer>
+</body>
+</html>
