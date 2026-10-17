@@ -1,0 +1,152 @@
+/* asgsaeid.github.io/blog: "the grader's red pen" */
+:root {
+  --paper:#F8FAFC;
+  --ink:#1B2B4B;       /* fountain-pen navy: headings, links */
+  --text:#2E3440;
+  --muted:#667085;
+  --rule:#CFDCEC;      /* ledger blue */
+  --red:#C62828;       /* grader's pen, used only for marks */
+  --serif:'Newsreader', 'Iowan Old Style', Georgia, serif;
+  --pen:'Nanum Pen Script', 'Bradley Hand', 'Segoe Print', cursive;
+  --mono:ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  --margin:180px;      /* marginalia column */
+  --gutter:44px;       /* space holding the red margin line */
+  --measure:660px;
+}
+* { box-sizing:border-box; margin:0; padding:0; }
+body { background:var(--paper); color:var(--text); font-family:var(--serif); font-size:19px; line-height:1.72;
+       font-optical-sizing:auto; -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility; }
+a { color:var(--ink); text-decoration:underline; text-decoration-color:var(--rule); text-decoration-thickness:1.5px; text-underline-offset:3px; }
+a:hover { text-decoration-color:var(--red); }
+a:focus-visible, button:focus-visible, summary:focus-visible { outline:2px solid var(--red); outline-offset:3px; border-radius:2px; }
+
+/* the sheet: margin column, double red margin line, text column */
+.sheet { position:relative; max-width:calc(var(--margin) + var(--gutter) + var(--measure) + 80px); margin:0 auto;
+         padding:0 40px 0 calc(var(--margin) + var(--gutter)); min-height:100vh; }
+.sheet::before { content:""; position:absolute; top:0; bottom:0; left:calc(var(--margin) + var(--gutter) / 2 - 3px);
+                 width:1px; background:var(--red); opacity:.55; box-shadow:5px 0 0 rgba(198,40,40,.55); }
+main { max-width:var(--measure); padding:34px 0 64px; position:relative; }
+
+/* marginalia: floats out into the margin column */
+.mn { float:left; clear:left; width:var(--margin); margin-left:calc(-1 * (var(--margin) + var(--gutter))); padding-right:18px;
+      text-align:right; position:relative; }
+.pen { font-family:var(--pen); color:var(--red); font-weight:400; line-height:1; }
+.mn .pen { font-size:37px; display:inline-block; }
+.mn-cap { display:block; font-size:13.5px; line-height:1.4; font-style:italic; color:var(--muted); margin:8px 0 22px; }
+
+/* a red pen circle around a mark */
+.circled { position:relative; padding:6px 12px; white-space:nowrap; }
+.circled .ring { position:absolute; inset:-4px -6px -2px -8px; width:calc(100% + 14px); height:calc(100% + 6px); overflow:visible; pointer-events:none; }
+.circled .ring path { fill:none; stroke:var(--red); stroke-width:1.8; stroke-linecap:round; vector-effect:non-scaling-stroke; }
+
+/* top bar */
+.topnav { display:flex; justify-content:space-between; align-items:baseline; font-size:16px; color:var(--muted); margin-bottom:56px; }
+.topnav a { text-decoration:none; color:var(--ink); }
+.topnav .home { font-weight:600; }
+.topnav .here { font-style:italic; }
+.topnav a:hover { text-decoration:underline; text-decoration-color:var(--red); }
+
+/* post header */
+.series { font-style:italic; color:var(--muted); font-size:16px; margin-bottom:10px; }
+h1 { font-weight:500; color:var(--ink); font-size:48px; line-height:1.08; letter-spacing:-0.018em; margin-bottom:16px; }
+.byline { font-size:16px; color:var(--muted); margin-bottom:34px; }
+
+/* summary as a graded checklist */
+.grader { margin:0 0 44px; padding:6px 0 4px; border-top:1px solid var(--rule); border-bottom:1px solid var(--rule); }
+.grader .pen-label { font-family:var(--pen); color:var(--red); font-size:28px; line-height:1; margin:14px 0 6px; }
+.stats-mobile { display:none; }
+ul.checks { list-style:none; margin:0 0 12px; }
+ul.checks li { position:relative; padding-left:34px; margin-bottom:10px; font-size:18px; line-height:1.6; }
+ul.checks li::before { content:""; position:absolute; left:2px; top:5px; width:22px; height:18px;
+  background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 22 18'%3E%3Cpath d='M2 10.5c2 .8 4 3 5.6 5.4C10 9.6 14.5 4.2 20.5 1.2' fill='none' stroke='%23C62828' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") no-repeat center/contain; }
+
+/* body text */
+h2 { font-weight:600; color:var(--ink); font-size:29px; line-height:1.2; letter-spacing:-0.01em; margin:54px 0 16px; position:relative; }
+h3 { font-weight:600; color:var(--ink); font-size:21px; margin:30px 0 10px; }
+.anchor { position:absolute; left:-1.1em; color:var(--red); font-weight:400; opacity:0; text-decoration:none; transition:opacity .15s; }
+h2:hover .anchor, .anchor:focus-visible { opacity:.8; }
+p { margin-bottom:18px; } p strong, li strong { color:var(--ink); font-weight:600; }
+ul, ol { margin:0 0 18px 24px; } li { margin-bottom:8px; }
+img { max-width:100%; height:auto; display:block; margin:24px auto 10px; border:1px solid var(--rule); background:#fff; }
+figure { margin:0 0 26px; } figcaption { font-size:15px; font-style:italic; color:var(--muted); }
+table { border-collapse:collapse; width:100%; font-size:15px; margin:12px 0 24px; font-variant-numeric:tabular-nums lining-nums; }
+th, td { border-bottom:1px solid var(--rule); padding:6px 8px; text-align:left; vertical-align:top; }
+th { color:var(--ink); font-weight:600; border-bottom:1.5px solid var(--ink); }
+code { font-family:var(--mono); font-size:.8em; background:#EEF2F7; padding:1px 5px; border-radius:3px; }
+pre { background:#EEF2F7; border-radius:4px; padding:12px 14px; overflow-x:auto; font-size:13px; line-height:1.5; margin-bottom:16px; }
+pre code { background:none; padding:0; }
+hr { border:0; border-top:1px solid var(--rule); margin:40px 0; }
+
+/* a line the grader underlined */
+p.pull { font-size:27px; line-height:1.45; font-style:italic; color:var(--ink); margin:36px 0 34px; }
+p.pull span { padding-bottom:7px; -webkit-box-decoration-break:clone; box-decoration-break:clone;
+  background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='8' viewBox='0 0 48 8'%3E%3Cpath d='M0 5c6-3 10-3 16 0s10 3 16 0 10-3 16 0' fill='none' stroke='%23C62828' stroke-width='1.5' stroke-linecap='round'/%3E%3C/svg%3E") repeat-x left bottom / 48px 8px; }
+
+/* end of post */
+.endcap { margin-top:60px; padding-top:28px; border-top:1px solid var(--rule); font-size:17px; }
+.signoff { font-family:var(--pen); color:var(--ink); font-size:40px; line-height:1; margin-bottom:10px; }
+.endcap p { margin-bottom:14px; }
+.endcap .quiet { color:var(--muted); font-style:italic; }
+.linkbtn { font:inherit; color:var(--ink); background:none; border:0; padding:0; cursor:pointer;
+           text-decoration:underline; text-decoration-color:var(--rule); text-decoration-thickness:1.5px; text-underline-offset:3px; }
+.linkbtn:hover { text-decoration-color:var(--red); }
+.linkbtn.done { color:var(--red); text-decoration:none; }
+details.cite { margin:22px 0 30px; }
+details.cite summary { cursor:pointer; color:var(--ink); }
+details.cite pre { margin:12px 0 8px; white-space:pre-wrap; word-break:break-word; background:#EEF2F7; }
+.also h3 { font-size:21px; margin:34px 0 8px; }
+.also ul { list-style:none; margin:0; }
+.also li { padding:12px 0; border-bottom:1px solid var(--rule); margin:0; }
+.also li a { font-size:19px; }
+.also li span { display:block; font-size:15px; font-style:italic; color:var(--muted); }
+
+/* index: the booklet cover */
+.cover { margin-bottom:46px; }
+.cover h1 { font-size:66px; line-height:1.0; letter-spacing:-0.025em; margin-bottom:28px; }
+.fields { display:grid; grid-template-columns:auto 1fr; column-gap:14px; row-gap:6px; align-items:end; margin-bottom:28px; max-width:520px; }
+.fields dt { font-size:16px; font-style:italic; color:var(--muted); padding-bottom:4px; }
+.fields dd { font-family:var(--pen); color:var(--ink); font-size:32px; line-height:1.1; border-bottom:1px solid var(--rule); padding:0 4px 1px; }
+.cover .lead { font-size:20px; line-height:1.65; }
+.entries { list-style:none; margin:0; border-top:1px solid var(--rule); }
+.entry { padding:30px 0 22px; border-bottom:1px solid var(--rule); margin:0; }
+.entry::after { content:""; display:block; clear:both; }
+.entry .mn { margin-top:4px; }
+.entry h2 { font-size:30px; margin:0 0 10px; }
+.entry h2 a { text-decoration:none; }
+.entry h2 a:hover { text-decoration:underline; text-decoration-color:var(--red); text-decoration-thickness:2px; }
+.entry p { margin-bottom:8px; }
+.entry .filed { font-size:15.5px; font-style:italic; color:var(--muted); }
+.follow { margin-top:34px; font-size:17px; color:var(--muted); font-style:italic; }
+
+/* the one orchestrated moment: circles on the index draw once */
+.draw .ring path { stroke-dasharray:1; stroke-dashoffset:1; animation:ink .9s cubic-bezier(.5,.1,.3,1) forwards; }
+.entry:nth-child(1) .draw .ring path { animation-delay:.25s; }
+.entry:nth-child(2) .draw .ring path { animation-delay:.75s; }
+.entry:nth-child(3) .draw .ring path { animation-delay:1.25s; }
+@keyframes ink { to { stroke-dashoffset:0; } }
+@media (prefers-reduced-motion:reduce) { .draw .ring path { animation:none; stroke-dashoffset:0; } }
+
+footer { max-width:var(--measure); padding:22px 0 40px; border-top:1px solid var(--rule); font-size:15px; color:var(--muted);
+         display:flex; flex-wrap:wrap; gap:16px; justify-content:space-between; }
+footer nav { display:flex; gap:18px; }
+
+/* narrow screens: the margin collapses, marks move inline */
+@media (max-width:980px) {
+  :root { --margin:0px; --gutter:0px; }
+  body { font-size:18px; }
+  .sheet { padding:0 20px 0 36px; }
+  .sheet::before { left:14px; }
+  .mn { float:none; width:auto; margin:0 0 6px; padding:0; text-align:left; }
+  .mn .pen { font-size:33px; }
+  .mn-cap { display:inline; margin:0 0 0 10px; }
+  .grader .mn { display:none; }
+  .stats-mobile { display:grid; gap:10px; margin:12px 0 16px; }
+  .stats-mobile div { display:grid; grid-template-columns:128px 1fr; align-items:baseline; gap:8px; }
+  .stats-mobile .pen { font-size:29px; white-space:nowrap; }
+  .stats-mobile .mn-cap { display:block; margin:0; }
+  h1 { font-size:36px; } .cover h1 { font-size:46px; }
+  h2 { font-size:25px; } .entry h2 { font-size:25px; }
+  p.pull { font-size:22px; }
+  .anchor { display:none; }
+  .fields dd { font-size:28px; }
+}
