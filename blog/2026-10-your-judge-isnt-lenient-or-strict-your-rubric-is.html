@@ -3,55 +3,53 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Your judge isn&rsquo;t lenient or strict. Your rubric is. · Saeid Asgari</title>
+<title>Your judge isn’t lenient or strict. Your rubric is. · Saeid Asgari</title>
 <meta name="author" content="Saeid Asgari">
 <meta name="description" content="Holding the judge and the outputs fixed, rubric content moved the pass rate on correct outputs from 2% to 98%. Swapping the judge model or rendering the same checks as a paragraph barely moved it.">
 <link rel="icon" type="image/png" href="../images/web_icon_.png">
 <link rel="canonical" href="https://asgsaeid.github.io/blog/2026-10-your-judge-isnt-lenient-or-strict-your-rubric-is.html">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Your judge isn&rsquo;t lenient or strict. Your rubric is.">
+<meta property="og:title" content="Your judge isn’t lenient or strict. Your rubric is.">
 <meta property="og:description" content="Holding the judge and the outputs fixed, rubric content moved the pass rate on correct outputs from 2% to 98%. Swapping the judge model or rendering the same checks as a paragraph barely moved it.">
 <meta property="og:url" content="https://asgsaeid.github.io/blog/2026-10-your-judge-isnt-lenient-or-strict-your-rubric-is.html">
 <meta property="og:image" content="https://asgsaeid.github.io/blog/assets/rubric-judges/p1_fig1_operating.png">
 <meta name="twitter:card" content="summary_large_image">
-<style>
-  :root { --bg:#ffffff; --ink:#1a1a1a; --text:#333333; --muted:#666666; --line:#e5e5e5; --link:#1a4d8c; --link-hover:#0d2c5e;
-          --serif: Georgia, 'Times New Roman', Times, serif;
-          --sans: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif; }
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-  body { font-family: var(--sans); background: var(--bg); color: var(--text); font-size: 16px; line-height: 1.6; -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; }
-  a { color: var(--link); text-decoration: none; } a:hover { color: var(--link-hover); text-decoration: underline; }
-  main { max-width: 740px; margin: 0 auto; padding: 48px 28px 80px; }
-  .topnav { font-size: 14px; color: var(--muted); margin-bottom: 36px; }
-  .topnav a { color: var(--link); } .topnav .sep { color: var(--line); margin: 0 8px; }
-  h1 { font-family: var(--sans); font-size: 30px; font-weight: 700; color: var(--ink); line-height: 1.2; letter-spacing: -0.01em; margin-bottom: 10px; }
-  .byline { color: var(--muted); font-size: 14px; margin-bottom: 28px; padding-bottom: 16px; border-bottom: 1px solid var(--line); }
-  h2 { font-family: var(--sans); font-size: 22px; font-weight: 700; color: var(--ink); margin: 40px 0 14px; letter-spacing: -0.005em; }
-  h3 { font-family: var(--sans); font-size: 17px; font-weight: 700; color: var(--ink); margin: 28px 0 10px; }
-  p { margin-bottom: 14px; color: var(--text); } p strong { color: var(--ink); font-weight: 600; } p em { font-style: italic; }
-  ul, ol { margin: 0 0 14px 22px; } li { margin-bottom: 6px; }
-  img { max-width: 100%; height: auto; display: block; margin: 20px auto 8px; border: 1px solid var(--line); border-radius: 8px; }
-  figure { margin: 0 0 22px; } figcaption { font-size: 13.5px; color: var(--muted); }
-  table { border-collapse: collapse; width: 100%; font-size: 14px; margin: 12px 0 22px; font-variant-numeric: tabular-nums; }
-  th, td { border-bottom: 1px solid var(--line); padding: 6px 8px; text-align: left; vertical-align: top; }
-  th { color: var(--ink); font-weight: 600; border-bottom: 2px solid #ccc; }
-  code { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 0.88em; background: #f4f4f4; padding: 1px 4px; border-radius: 3px; }
-  pre { background: #f6f6f6; border: 1px solid var(--line); border-radius: 6px; padding: 12px 14px; overflow-x: auto; font-size: 13px; line-height: 1.5; margin-bottom: 14px; }
-  pre code { background: none; padding: 0; }
-  hr { border: 0; border-top: 1px solid var(--line); margin: 32px 0; }
-  .posts { list-style: none; margin: 8px 0 0; } .posts li { padding: 12px 0; border-bottom: 1px solid var(--line); }
-  .posts .date { color: var(--muted); font-size: 13.5px; } .posts .title { font-size: 17px; font-weight: 600; } .posts .summary { color: var(--text); font-size: 15px; margin-top: 4px; }
-  footer { max-width: 740px; margin: 40px auto 0; padding: 24px 28px 36px; color: var(--muted); font-size: 13px; border-top: 1px solid var(--line); }
-  @media (max-width: 640px) { main { padding: 32px 22px 60px; } h1 { font-size: 26px; } footer { padding: 20px 22px 28px; } table { font-size: 12.5px; } }
-</style>
+<meta property="og:site_name" content="Saeid Asgari">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Your judge isn’t lenient or strict. Your rubric is.", "datePublished": "2026-10", "author": {"@type": "Person", "name": "Saeid Asgari", "url": "https://asgsaeid.github.io/"}, "image": "https://asgsaeid.github.io/blog/assets/rubric-judges/p1_fig1_operating.png", "url": "https://asgsaeid.github.io/blog/2026-10-your-judge-isnt-lenient-or-strict-your-rubric-is.html", "keywords": "LLM judges, Rubrics, Evaluation"}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/blog.css">
+<link rel="alternate" type="application/rss+xml" title="Saeid Asgari, notes on judging agents" href="feed.xml">
+<meta name="theme-color" content="#F8FAFC">
 <link rel="stylesheet" href="assets/rubric-judges/interactive.css">
 <script src="assets/rubric-judges/interactive.js" defer></script>
 </head>
 <body>
+<div class="sheet">
 <main>
-<div class="topnav"><a href="../">Saeid Asgari</a><span class="sep">·</span><a href="../blog/">Blog</a></div>
+<nav class="topnav" aria-label="Site"><span><a class="home" href="../">Saeid Asgari</a>, <a class="here" href="../blog/">notes on judging agents</a></span><a href="feed.xml">RSS feed</a></nav>
+<p class="series">Part 1 of 2 on rubric judges</p>
 <h1>Your judge isn&rsquo;t lenient or strict. Your rubric is.</h1>
-<div class="byline">Saeid Asgari · October, 2026 · 8 min read</div>
+<p class="byline">Saeid Asgari, October 2026. 8 minute read.</p>
+<section class="grader" aria-label="Summary">
+  <div class="mn">
+    <span class="pen circled">2% → 98%<svg class="ring" viewBox="0 0 200 80" preserveAspectRatio="none" aria-hidden="true"><path pathLength="1" d="M58 9C104 1 172 3 192 30C206 52 160 76 98 77C42 78 4 64 6 40C8 20 44 9 84 6"/></svg></span><span class="mn-cap">correct reports passed, changing only the rubric</span>
+    <span class="pen circled">6% → 69%<svg class="ring" viewBox="0 0 200 80" preserveAspectRatio="none" aria-hidden="true"><path pathLength="1" d="M58 9C104 1 172 3 192 30C206 52 160 76 98 77C42 78 4 64 6 40C8 20 44 9 84 6"/></svg></span><span class="mn-cap">same per-check answers, different aggregation rule</span>
+    <span class="pen circled">52%<svg class="ring" viewBox="0 0 200 80" preserveAspectRatio="none" aria-hidden="true"><path pathLength="1" d="M58 9C104 1 172 3 192 30C206 52 160 76 98 77C42 78 4 64 6 40C8 20 44 9 84 6"/></svg></span><span class="mn-cap">balanced accuracy of a rubric that scores 89% accuracy on a 90%-flawed test set</span>
+  </div>
+  <p class="pen-label">In short</p>
+  <div class="stats-mobile">
+    <div><span class="pen">2% → 98%</span><span class="mn-cap">correct reports passed, changing only the rubric</span></div>
+    <div><span class="pen">6% → 69%</span><span class="mn-cap">same per-check answers, different aggregation rule</span></div>
+    <div><span class="pen">52%</span><span class="mn-cap">balanced accuracy of a rubric that scores 89% accuracy on a 90%-flawed test set</span></div>
+  </div>
+  <ul class="checks">
+    <li>What the rubric asks for decides strictness. The judge model and the rendering (checklist, paragraph, 1 to 5 scale) barely move it.</li>
+    <li>Under all-must-pass, small per-check false-fail rates multiply: 10 checks at 5% each pass only 60% of good outputs.</li>
+    <li>Accuracy on a defect-heavy test set flatters a rubric that fails everything. Report correct outputs passed and flawed outputs caught.</li>
+  </ul>
+</section>
 <p>Large language model (LLM) judges have a reputation for leniency: they pass outputs a careful human would reject. Checklist rubrics are the usual fix. Break &ldquo;is this good?&rdquo; into atomic yes/no checks, require all of them to pass, and the judge can no longer wave things through.</p>
 <p>When I generated checklists this way for a security task, the judge went from lenient to failing almost everything, including outputs that were correct. That made me suspect leniency and strictness aren&rsquo;t properties of the judge at all. So I held the judge and the outputs fixed and varied only the rubric.</p>
 <p><strong>Short version:</strong> what the rubric asks for decides strictness. Swapping the judge model barely matters, and so does rendering the same checks as a checklist, a paragraph or a 1 to 5 scale. The way most people validate judges, a single accuracy number on a defect-heavy test set, can&rsquo;t see any of this.</p>
@@ -81,6 +79,7 @@
 <p>So what makes the generated checks strict? I looked at which checks failed the correct reports. Almost all of them asked for things the task never required: &ldquo;does the report recommend disabling anonymous access?&rdquo;, or a specific secondary detail about who manages a group. The correct reports were correct; they just didn&rsquo;t contain remediation advice. Earlier I measured this directly on a different set of generated rubrics: 16 of 92 checks failed at least three quarters of all reports, good or bad, and those 16 checks alone explained 31 of the 34 correct reports that were wrongly failed.</p>
 <p><strong>Count only hurts when the checks are wrong.</strong> The nested hand checks show the trade you&rsquo;d hope for: going from 2 to 4 to 6 checks raised the catch rate from 52% to 74% to 100%, and correct reports kept passing at 96% throughout. The nested generated checks show the opposite: 4 checks passed 21% of correct reports, 8 checks passed 2%. Adding a check costs you exactly that check&rsquo;s false-fail rate. It&rsquo;s a cheap addition when that rate is zero and an expensive one when it isn&rsquo;t.</p>
 <p>That cost compounds multiplicatively. Under all-must-pass aggregation, the share of correct reports that pass equals the product of each check&rsquo;s pass rate on correct reports. I checked this on 12 rubric versions from a related experiment, and the product predicted the observed pass rate to within 1 point every time. A rubric of 10 checks that each wrongly fail a good report 5% of the time passes only 60% of good reports, and nobody reading the checks one at a time would spot a problem.</p>
+<p class="pull"><span>A rubric of 10 checks that each wrongly fail a good report 5% of the time passes only 60% of good reports.</span></p>
 
 <h2 id="judges">The judge model barely matters</h2>
 <div data-viz="judges">
@@ -130,7 +129,28 @@
 <p>The recon environments and their labels are synthetic and mine, which is why I added the human-labeled replication. All three judges and the rubric author are Claude models, so &ldquo;the judge barely matters&rdquo; is shown within one model family. Each condition ran twice; run-to-run differences were within a few points. The set has 24 correct reports, so differences under about 5 points shouldn&rsquo;t be read as real.</p>
 <p>A companion post looks at what happens when a model is asked to improve a rubric: <a href="2026-10-self-review-erases-what-you-taught-your-rubric.html">Self-review erases what you taught your rubric</a>.</p>
 
+<section class="endcap">
+  <p class="signoff">Saeid</p>
+  <p>I lead a science team at Microsoft working on how we evaluate agents, and I am an Adjunct Research Professor at Simon Fraser University (SFU). If this was useful, pass it on: <a data-share="linkedin" href="#" target="_blank" rel="noopener">LinkedIn</a>, <a data-share="x" href="#" target="_blank" rel="noopener">X</a>, or <button class="linkbtn" type="button" data-share="copy">copy the link</button>.</p>
+  <p class="quiet">Filed under LLM judges, rubrics, evaluation. New posts arrive in the <a href="feed.xml">RSS feed</a>.</p>
+  <details class="cite"><summary>Cite this post</summary>
+<pre><code>@misc{asgari2026judge,
+  author       = {Asgari, Saeid},
+  title        = {Your judge isn&#x27;t lenient or strict. Your rubric is.},
+  year         = {2026},
+  month        = {oct},
+  howpublished = {\url{https://asgsaeid.github.io/blog/2026-10-your-judge-isnt-lenient-or-strict-your-rubric-is.html}}
+}</code></pre>
+    <button class="linkbtn" type="button" data-copy-cite>Copy BibTeX</button>
+  </details>
+  <div class="also"><h3>Also in this notebook</h3><ul>
+    <li><a href="2026-10-self-review-erases-what-you-taught-your-rubric.html">Self-review erases what you taught your rubric</a><span>October 2026. Four rounds of model self-review pulled two good rubrics toward the reviewer’s own standard. Only delete-only revision was safe.</span></li>
+    <li><a href="2026-09-agents-that-design-their-own-judges.html">Letting agents design their own evaluators: lessons from 20,000+ agent eval runs</a><span>September 2026. Five findings from a matched, five-repeat benchmark of self-designed evaluators, ACE and a ten-label expert calibration on tau2-bench and AppWorld.</span></li>
+  </ul></div>
+</section>
 </main>
-<footer>© Saeid Asgari</footer>
+<footer><span>© 2026 Saeid Asgari</span><nav><a href="../">Home</a><a href="../blog/">Notebook</a><a href="https://scholar.google.com/citations?user=SuePM1sAAAAJ">Google Scholar</a><a href="feed.xml">RSS</a></nav></footer>
+</div>
+<script src="assets/blog.js" defer></script>
 </body>
 </html>

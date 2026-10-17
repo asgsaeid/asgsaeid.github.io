@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<channel>
+  <title>Who grades the grader? Saeid Asgari's notes on judging agents</title>
+  <link>https://asgsaeid.github.io/blog/</link>
+  <atom:link href="https://asgsaeid.github.io/blog/feed.xml" rel="self" type="application/rss+xml"/>
+  <description>Notes on evaluating and improving tool-using agents.</description>
+  <language>en</language>
+  <item>
+    <title>Your judge isn’t lenient or strict. Your rubric is.</title>
+    <link>https://asgsaeid.github.io/blog/2026-10-your-judge-isnt-lenient-or-strict-your-rubric-is.html</link>
+    <guid>https://asgsaeid.github.io/blog/2026-10-your-judge-isnt-lenient-or-strict-your-rubric-is.html</guid>
+    <pubDate>Fri, 16 Oct 2026 09:00:00 -0700</pubDate>
+    <description>Holding the judge and the outputs fixed, what the rubric asks for moved the pass rate on correct outputs from 2% to 98%. Swapping the judge model barely mattered.</description>
+  </item>
+  <item>
+    <title>Self-review erases what you taught your rubric</title>
+    <link>https://asgsaeid.github.io/blog/2026-10-self-review-erases-what-you-taught-your-rubric.html</link>
+    <guid>https://asgsaeid.github.io/blog/2026-10-self-review-erases-what-you-taught-your-rubric.html</guid>
+    <pubDate>Thu, 15 Oct 2026 09:00:00 -0700</pubDate>
+    <description>Four rounds of model self-review pulled two good rubrics toward the reviewer’s own standard. Only delete-only revision was safe.</description>
+  </item>
+  <item>
+    <title>Letting agents design their own evaluators: lessons from 20,000+ agent eval runs</title>
+    <link>https://asgsaeid.github.io/blog/2026-09-agents-that-design-their-own-judges.html</link>
+    <guid>https://asgsaeid.github.io/blog/2026-09-agents-that-design-their-own-judges.html</guid>
+    <pubDate>Tue, 15 Sep 2026 09:00:00 -0700</pubDate>
+    <description>Five findings from a matched, five-repeat benchmark of self-designed evaluators, ACE and a ten-label expert calibration on tau2-bench and AppWorld.</description>
+  </item>
+</channel>
+</rss>

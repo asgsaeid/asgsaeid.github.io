@@ -3,65 +3,60 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Blog · Saeid Asgari</title>
+<title>Who grades the grader? · Saeid Asgari</title>
 <meta name="author" content="Saeid Asgari">
-<meta name="description" content="Blog posts by Saeid Asgari on agent evaluation and self-improvement.">
+<meta name="description" content="Saeid Asgari's notes on evaluating tool-using agents: LLM judges, rubrics, and agents that learn without a hidden test.">
 <link rel="icon" type="image/png" href="../images/web_icon_.png">
-<style>
-  :root { --bg:#ffffff; --ink:#1a1a1a; --text:#333333; --muted:#666666; --line:#e5e5e5; --link:#1a4d8c; --link-hover:#0d2c5e;
-          --serif: Georgia, 'Times New Roman', Times, serif;
-          --sans: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif; }
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-  body { font-family: var(--sans); background: var(--bg); color: var(--text); font-size: 16px; line-height: 1.6; -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; }
-  a { color: var(--link); text-decoration: none; } a:hover { color: var(--link-hover); text-decoration: underline; }
-  main { max-width: 740px; margin: 0 auto; padding: 48px 28px 80px; }
-  .topnav { font-size: 14px; color: var(--muted); margin-bottom: 36px; }
-  .topnav a { color: var(--link); } .topnav .sep { color: var(--line); margin: 0 8px; }
-  h1 { font-family: var(--sans); font-size: 30px; font-weight: 700; color: var(--ink); line-height: 1.2; letter-spacing: -0.01em; margin-bottom: 10px; }
-  .byline { color: var(--muted); font-size: 14px; margin-bottom: 28px; padding-bottom: 16px; border-bottom: 1px solid var(--line); }
-  h2 { font-family: var(--sans); font-size: 22px; font-weight: 700; color: var(--ink); margin: 40px 0 14px; letter-spacing: -0.005em; }
-  h3 { font-family: var(--sans); font-size: 17px; font-weight: 700; color: var(--ink); margin: 28px 0 10px; }
-  p { margin-bottom: 14px; color: var(--text); } p strong { color: var(--ink); font-weight: 600; } p em { font-style: italic; }
-  ul, ol { margin: 0 0 14px 22px; } li { margin-bottom: 6px; }
-  img { max-width: 100%; height: auto; display: block; margin: 20px auto 8px; border: 1px solid var(--line); border-radius: 8px; }
-  figure { margin: 0 0 22px; } figcaption { font-size: 13.5px; color: var(--muted); }
-  table { border-collapse: collapse; width: 100%; font-size: 14px; margin: 12px 0 22px; font-variant-numeric: tabular-nums; }
-  th, td { border-bottom: 1px solid var(--line); padding: 6px 8px; text-align: left; vertical-align: top; }
-  th { color: var(--ink); font-weight: 600; border-bottom: 2px solid #ccc; }
-  code { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 0.88em; background: #f4f4f4; padding: 1px 4px; border-radius: 3px; }
-  pre { background: #f6f6f6; border: 1px solid var(--line); border-radius: 6px; padding: 12px 14px; overflow-x: auto; font-size: 13px; line-height: 1.5; margin-bottom: 14px; }
-  pre code { background: none; padding: 0; }
-  hr { border: 0; border-top: 1px solid var(--line); margin: 32px 0; }
-  .posts { list-style: none; margin: 8px 0 0; } .posts li { padding: 12px 0; border-bottom: 1px solid var(--line); }
-  .posts .date { color: var(--muted); font-size: 13.5px; } .posts .title { font-size: 17px; font-weight: 600; } .posts .summary { color: var(--text); font-size: 15px; margin-top: 4px; }
-  footer { max-width: 740px; margin: 40px auto 0; padding: 24px 28px 36px; color: var(--muted); font-size: 13px; border-top: 1px solid var(--line); }
-  @media (max-width: 640px) { main { padding: 32px 22px 60px; } h1 { font-size: 26px; } footer { padding: 20px 22px 28px; } table { font-size: 12.5px; } }
-</style>
+<link rel="canonical" href="https://asgsaeid.github.io/blog/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Who grades the grader? Saeid Asgari's notes on judging agents">
+<meta property="og:description" content="Experiments on LLM judges, rubrics, and agents that learn without a hidden test.">
+<meta property="og:url" content="https://asgsaeid.github.io/blog/">
+<meta property="og:image" content="https://asgsaeid.github.io/blog/assets/rubric-judges/p1_fig1_operating.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/blog.css">
+<link rel="alternate" type="application/rss+xml" title="Saeid Asgari, notes on judging agents" href="feed.xml">
+<meta name="theme-color" content="#F8FAFC">
 </head>
 <body>
+<div class="sheet">
 <main>
-<div class="topnav"><a href="../">Saeid Asgari</a><span class="sep">·</span><a href="../blog/">Blog</a></div>
-<h1>Blog</h1>
-<p class="lead">Notes on evaluating and improving tool-using agents.</p>
-<ul class="posts">
-  <li>
-    <div class="date">October, 2026</div>
-    <div class="title"><a href="2026-10-your-judge-isnt-lenient-or-strict-your-rubric-is.html">Your judge isn&rsquo;t lenient or strict. Your rubric is.</a></div>
-    <div class="summary">Holding the judge and the outputs fixed, what the rubric asks for moved the pass rate on correct outputs from 2% to 98%; swapping the judge model or rendering the checks as a paragraph barely mattered. Plus why accuracy on defect-heavy validation sets hides it.</div>
-  </li>
-  <li>
-    <div class="date">October, 2026</div>
-    <div class="title"><a href="2026-10-self-review-erases-what-you-taught-your-rubric.html">Self-review erases what you taught your rubric</a></div>
-    <div class="summary">Four rounds of model self-review pulled two good rubrics toward the reviewer&rsquo;s own standard: one went from passing 97% of correct reports to 6%, the other lost the coverage check its labels had taught it. Only delete-only revision was safe.</div>
-  </li>
-  <li>
-    <div class="date">September, 2026</div>
-    <div class="title"><a href="2026-09-agents-that-design-their-own-judges.html">Letting agents design their own evaluators: lessons from 20,000+ agent eval runs</a></div>
-    <div class="summary">Five findings from a matched, five-repeat benchmark of ACE variants, a self-designed frozen evaluator (SelfSuite) and a ten-label evaluator calibration on tau2-bench and AppWorld, with a link to the paper.</div>
-  </li>
+<nav class="topnav" aria-label="Site"><span><a class="home" href="../">Saeid Asgari</a>, <a class="here" href="../blog/">notebook</a></span><a href="feed.xml">RSS feed</a></nav>
+<header class="cover">
+  <h1>Who grades the grader?</h1>
+  <dl class="fields">
+    <dt>Name</dt><dd>Saeid Asgari</dd>
+    <dt>Subject</dt><dd>Judges, rubrics, and agents that learn</dd>
+  </dl>
+  <p class="lead">Before an agent can improve, something has to tell it whether it did the job. I run experiments on that something: what makes a large language model (LLM) judge strict or lenient, why rubrics drift when a model revises them, and how an agent can learn without a hidden test. These are the write-ups, with the numbers.</p>
+</header>
+<ul class="entries">
+<li class="entry">
+  <div class="mn"><span class="pen circled draw">2% → 98%<svg class="ring" viewBox="0 0 200 80" preserveAspectRatio="none" aria-hidden="true"><path pathLength="1" d="M58 9C104 1 172 3 192 30C206 52 160 76 98 77C42 78 4 64 6 40C8 20 44 9 84 6"/></svg></span><span class="mn-cap">October 2026</span></div>
+  <h2><a href="2026-10-your-judge-isnt-lenient-or-strict-your-rubric-is.html">Your judge isn’t lenient or strict. Your rubric is.</a></h2>
+  <p>Holding the judge and the outputs fixed, what the rubric asks for moved the pass rate on correct outputs from 2% to 98%. Swapping the judge model barely mattered.</p>
+  <p class="filed">Part 1 of 2 on rubric judges. 8 minute read.</p>
+</li>
+<li class="entry">
+  <div class="mn"><span class="pen circled draw">97% → 6%<svg class="ring" viewBox="0 0 200 80" preserveAspectRatio="none" aria-hidden="true"><path pathLength="1" d="M58 9C104 1 172 3 192 30C206 52 160 76 98 77C42 78 4 64 6 40C8 20 44 9 84 6"/></svg></span><span class="mn-cap">October 2026</span></div>
+  <h2><a href="2026-10-self-review-erases-what-you-taught-your-rubric.html">Self-review erases what you taught your rubric</a></h2>
+  <p>Four rounds of model self-review pulled two good rubrics toward the reviewer’s own standard. Only delete-only revision was safe.</p>
+  <p class="filed">Part 2 of 2 on rubric judges. 7 minute read.</p>
+</li>
+<li class="entry">
+  <div class="mn"><span class="pen circled draw">20,000+ runs<svg class="ring" viewBox="0 0 200 80" preserveAspectRatio="none" aria-hidden="true"><path pathLength="1" d="M58 9C104 1 172 3 192 30C206 52 160 76 98 77C42 78 4 64 6 40C8 20 44 9 84 6"/></svg></span><span class="mn-cap">September 2026</span></div>
+  <h2><a href="2026-09-agents-that-design-their-own-judges.html">Letting agents design their own evaluators: lessons from 20,000+ agent eval runs</a></h2>
+  <p>Five findings from a matched, five-repeat benchmark of self-designed evaluators, ACE and a ten-label expert calibration on tau2-bench and AppWorld.</p>
+  <p class="filed">On self-improving agents. 12 minute read.</p>
+</li>
 </ul>
-
+<p class="follow">New posts arrive in the <a href="feed.xml">RSS feed</a>.</p>
 </main>
-<footer>© Saeid Asgari</footer>
+<footer><span>© 2026 Saeid Asgari</span><nav><a href="../">Home</a><a href="../blog/">Notebook</a><a href="https://scholar.google.com/citations?user=SuePM1sAAAAJ">Google Scholar</a><a href="feed.xml">RSS</a></nav></footer>
+</div>
+<script src="assets/blog.js" defer></script>
 </body>
 </html>
