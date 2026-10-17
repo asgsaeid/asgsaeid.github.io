@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Saeid Asgari</title>
+<meta name="author" content="Saeid Asgari">
+<meta name="description" content="Saeid Asgari, Enterprise AI Evals at Microsoft, building enterprise evaluations for AI agents in security.">
+<link rel="icon" type="image/png" href="images/web_icon_.png">
+<link rel="canonical" href="https://asgsaeid.github.io/">
+<meta property="og:type" content="profile">
+<meta property="og:title" content="Saeid Asgari">
+<meta property="og:description" content="Enterprise AI Evals at Microsoft: evaluations for AI agents in security.">
+<meta property="og:url" content="https://asgsaeid.github.io/">
+<meta property="og:image" content="https://asgsaeid.github.io/images/20250728_2039456.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="blog/assets/blog.css">
+<link rel="alternate" type="application/rss+xml" title="Who grades the grader? Saeid Asgari's notes on judging agents" href="blog/feed.xml">
+<meta name="theme-color" content="#F8FAFC">
+<style>
+  /* homepage additions to the shared blog styles */
+  .home-hero { margin:20px 0 10px; }
+  .home-hero::after { content:""; display:block; clear:both; }
+  .home-hero .portrait img { width:150px; height:150px; object-fit:cover; margin:6px 0 0 auto; border:1px solid var(--rule); background:#fff; }
+  .home-hero h1 { font-size:58px; line-height:1; letter-spacing:-0.022em; margin-bottom:18px; }
+  .role { font-size:19px; line-height:1.55; margin-bottom:14px; }
+  .role strong { font-weight:600; }
+  .role .quiet, .contact { color:var(--muted); }
+  .contact { font-size:16px; font-style:italic; line-height:1.7; }
+  .contact a { font-style:normal; }
+  h3 { font-size:22px; margin:36px 0 10px; }
+  ul.papers, ul.talks, ul.service { list-style:none; margin:4px 0 16px; }
+  ul.papers li, ul.talks li, ul.service li { margin:0 0 14px; font-size:17.5px; line-height:1.6; }
+  ul.papers li::after, ul.talks li::after { content:""; display:block; clear:both; }
+  ul.papers .mn-cap, ul.talks .mn-cap { margin:3px 0 0; }
+  .venue { color:var(--muted); font-style:italic; }
+  .talk-title { font-style:italic; color:var(--ink); }
+  .scholar-link { margin-top:24px; padding-top:14px; border-top:1px solid var(--rule); color:var(--muted); font-style:italic; font-size:16px; }
+  .note { text-decoration:none; }
+  .note .pen { font-size:30px; line-height:1.05; }
+  .note:hover .pen { text-decoration:underline; text-decoration-thickness:1px; }
+  @media (max-width:980px) {
+    .home-hero .portrait img { width:120px; height:120px; margin:0 0 18px; }
+    .home-hero h1 { font-size:42px; }
+    ul.papers .mn-cap, ul.talks .mn-cap { display:block; margin:0 0 2px; }
+    .note { display:block; margin-bottom:10px; }
+  }
+</style>
+</head>
+<body>
+<div class="sheet">
+<main>
+
+<header class="home-hero">
+  <div class="mn portrait"><img src="images/20250728_2039456.jpg" alt="Portrait of Saeid Asgari"></div>
+  <h1>Saeid Asgari</h1>
+  <p class="role"><strong>Enterprise AI Evals</strong><br>
+    Principal Research Manager, Microsoft<br>
+    <span class="quiet">Adjunct Research Professor, Simon Fraser University</span></p>
+  <p class="contact">asgt.saeid at gmail dot com<br>
+    <a href="https://scholar.google.com/citations?user=SuePM1sAAAAJ&amp;hl=en">Google Scholar</a>,
+    <a href="https://www.linkedin.com/in/saeid-asgari-a55a5b5a/">LinkedIn</a>,
+    <a href="https://x.com/saeid_asg">X</a>,
+    <a href="blog/">Blog</a></p>
+</header>
+
+<h2 id="about">About</h2>
+<p>
+  My science team at Microsoft Security builds <strong>enterprise evals</strong> for Security AI agents:
+  evaluations of how security agents perform on the open-ended, messy tasks of real enterprise
+  environments, where there is rarely a single correct answer.
+</p>
+<p>
+  Previously, my team built general enterprise evals for <strong>Copilot Tuning</strong>,
+  where I established <strong>closed-loop evaluation</strong>: evaluation
+  signals feed directly into agent improvement, through inference-time optimization or
+  reinforcement fine-tuning (RFT), and the improved agent is then evaluated again.
+</p>
+<p>
+  One idea runs through my work: evaluation is a central constraint on foundation-model
+  reliability. Deployed systems face open-ended tasks, long multi-step trajectories, and
+  sustained optimization pressure against the evaluation itself. Static benchmarks with fixed
+  answer keys describe a different regime.
+</p>
+<p>
+  Before Microsoft I worked on reliable AI at Autodesk Research, where I contributed to
+  Generative AI Content Authentication at the U.S. AI Safety Institute Consortium (NIST AISIC).
+  Before that, I worked in startup environments.
+  I completed my PhD in Computer Science at Simon Fraser University (Vancouver, Canada), with
+  research visits at <a href="https://mila.quebec/en/">MILA</a> (Montréal, Canada) and
+  <a href="https://www.siemens-healthineers.com/en-ca">Siemens Healthineers</a> (Princeton, US).
+</p>
+
+<h2 id="research">Research</h2>
+<a class="mn note" href="blog/"><span class="pen">new: notes on<br>judging agents</span></a>
+<p>
+  My work sits at the intersection of <strong>evaluation</strong> and
+  <a href="blog/2026-09-agents-that-design-their-own-judges.html"><strong>self-improving long-horizon agents</strong></a> <span class="venue">(blog)</span>. The threads below share one framing: as models become more capable,
+  evaluation becomes the binding constraint on real-world reliability.
+</p>
+
+<h3>Security evaluations for agentic systems</h3>
+<p>
+  My current focus. Security poses distinct challenges for agent evaluation: tasks are open ended,
+  ground truth is scarce, real customer environments cannot simply be copied into a test harness,
+  and both attackers and defenders adapt. My team builds enterprise evals for security agents
+  under these constraints, aiming to measure agents against the environments they actually
+  operate in rather than against generic benchmarks.
+</p>
+
+<h3>Closed-loop evaluation and capability assessment</h3>
+<p>
+  Previously at Microsoft, I led the team that built the agentic evaluation infrastructure for
+  Copilot Tuning. There I established a closed-loop system connecting customer-facing evaluation
+  to agent improvement: evaluation results drive reinforcement fine-tuning (RFT) or inference-time
+  optimization, and the updated agent goes back through evaluation. The focus was long-horizon,
+  tool-using agents and evaluation signals that stay meaningful inside such a loop.
+</p>
+<p>
+  Two questions run through this work. First, <em>what to measure</em>: models can pass tests by
+  exploiting structure in the test rather than by reasoning. Second, <em>what happens to an
+  evaluation once a system is trained against it</em>: rubrics, judges, and synthetic evaluators
+  can drift, saturate, or get gamed under sustained optimization pressure.
+</p>
+<ul class="papers">
+  <li><span class="mn"><span class="mn-cap">Blog 2026</span></span><a href="blog/2026-09-agents-that-design-their-own-judges.html"><strong>Letting Agents Design Their Own Evaluators</strong></a> lets an agent's own model write, freeze and use its evaluation suite with no labels, and measures how much ten subject-matter-expert labels add on tau2-bench and AppWorld.</li>
+  <li><span class="mn"><span class="mn-cap">Blog 2026</span></span><a href="blog/2026-10-your-judge-isnt-lenient-or-strict-your-rubric-is.html"><strong>Your Judge Isn&rsquo;t Lenient or Strict. Your Rubric Is.</strong></a> holds the judge and the outputs fixed and shows that what a rubric asks for, not the judge model or how the checks are phrased, decides how strict grading is, and why accuracy on defect-heavy validation sets hides it.</li>
+  <li><span class="mn"><span class="mn-cap">Blog 2026</span></span><a href="blog/2026-10-self-review-erases-what-you-taught-your-rubric.html"><strong>Self-Review Erases What You Taught Your Rubric</strong></a> shows that asking a model to improve a grading rubric pulls it toward the model&rsquo;s own standard: it adds requirements nobody asked for and deletes checks learned from labels, and only delete-only revision is safe.</li>
+  <li><span class="mn"><span class="mn-cap">arXiv 2026</span></span><a href="https://arxiv.org/abs/2602.20751"><strong>SibylSense</strong></a> adapts a rubric generator through a tunable memory bank and an adversarial policy loop, to slow rubric saturation under optimization.</li>
+  <li><span class="mn"><span class="mn-cap">arXiv 2026</span></span><a href="https://arxiv.org/abs/2604.27547"><strong>GoalCover</strong></a> decomposes a high-level goal into subgoals to expose capability gaps in fine-tuning data before training.</li>
+  <li><span class="mn"><span class="mn-cap">ICLR 2025</span></span><a href="https://arxiv.org/abs/2501.11721"><strong>Explain-Query-Test (EQT)</strong></a> proposes a label-free capability signal: the gap between how well a model explains a concept and how well it comprehends its own explanation.</li>
+  <li><span class="mn"><span class="mn-cap">NeurIPS 2024</span></span><a href="http://arxiv.org/abs/2409.02257"><strong>MMLU-Pro+</strong></a> studies shortcut selection in benchmark design, where models score well without the reasoning the benchmark is meant to test.</li>
+</ul>
+
+<h3>Memorization and content provenance</h3>
+<p>
+  Generative models can memorize training data and reproduce parts of it, sometimes verbatim,
+  which raises overlapping copyright, privacy, and reliability concerns.
+</p>
+<ul class="papers">
+  <li><span class="mn"><span class="mn-cap">CVPR 2024</span></span><a href="https://arxiv.org/abs/2403.19050"><strong>Detecting Generative Parroting</strong></a> flags probable verbatim reproduction at inference time using overfit masked autoencoders, without access to the training set.</li>
+</ul>
+<p>
+  A longer discussion of why memorization happens, how to detect it, and what to do about it
+  appears in a three-part essay series I wrote for Autodesk Research
+  (<a href="https://www.research.autodesk.com/blog/the-problem-of-generative-parroting-navigating-toward-responsible-ai-part-1/">part 1</a>,
+  <a href="https://www.research.autodesk.com/blog/the-problem-of-generative-parroting-navigating-toward-responsible-ai-part-2/">part 2</a>,
+  <a href="https://www.research.autodesk.com/blog/the-problem-of-generative-parroting-navigating-toward-responsible-ai-part-3/">part 3</a>).
+  Related to this work, I contributed to Generative AI Content Authentication at the
+  <a href="https://www.nist.gov/aisi/artificial-intelligence-safety-institute-consortium-aisic">NIST AISIC</a>.
+</p>
+
+<h3>Vision-language and multimodal understanding</h3>
+<ul class="papers">
+  <li><span class="mn"><span class="mn-cap">NeurIPS 2024</span></span><a href="http://arxiv.org/abs/2409.02253"><strong>Determining the Preferred Image Distribution of a Black-Box VLM</strong></a> estimates a vision-language model's preferred input distribution without access to weights or training data, useful where input distribution matters (computer-aided design, medical, and industrial imagery).</li>
+  <li><span class="mn"><span class="mn-cap">ICLR 2024, 2025</span></span><a href="https://arxiv.org/abs/2309.03179"><strong>SLiMe</strong></a> and <a href="https://segment-me-in-time.github.io"><strong>SMITE</strong></a> optimize textual embeddings for one-shot segmentation in images and video, respectively.</li>
+  <li><span class="mn"><span class="mn-cap">ICLR 2024</span></span><a href="https://arxiv.org/abs/2309.00733"><strong>Learned Visual Features to Textual Explanations</strong></a> bridges learned visual features and natural-language explanations.</li>
+</ul>
+
+<h3>Robustness and earlier foundations</h3>
+<p>
+  Earlier threads that shaped how I think about evaluation today.
+</p>
+<ul class="papers">
+  <li><span class="mn"><span class="mn-cap">NeurIPS 2022</span></span><a href="https://arxiv.org/abs/2210.00055"><strong>MaskTune</strong></a> reduces reliance on spurious correlations by masking salient features, forcing models to find alternative discriminative signals.</li>
+  <li><span class="mn"><span class="mn-cap">ICML 2021, Spotlight</span></span><a href="https://arxiv.org/abs/2106.06620"><strong>Robust Representation Learning via Perceptual Similarity Metrics</strong></a> proposes perceptual similarity as a robustness objective for self-supervised representations.</li>
+  <li><span class="mn"><span class="mn-cap">CVPR 2019</span></span><a href="https://arxiv.org/abs/1903.01015"><strong>A Kernelized Manifold Mapping</strong></a> studies adversarial perturbations through learned manifold projection.</li>
+</ul>
+<p>
+  My PhD focused on reliable deep learning for medical imaging. Work from that period includes a
+  <a href="https://arxiv.org/abs/1910.07655"><strong>Deep Semantic Segmentation review</strong></a> <span class="venue">(AI Review 2020)</span>,
+  widely cited in medical-image segmentation, and
+  <a href="https://arxiv.org/abs/1903.11741"><strong>InfoMask</strong></a> <span class="venue">(MICCAI 2019, Early Accept)</span>,
+  which used masked variational latent representations for weakly-supervised chest disease
+  localization during a research visit at MILA.
+</p>
+
+<p class="scholar-link">
+  Full publication list on
+  <a href="https://scholar.google.com/citations?user=SuePM1sAAAAJ&amp;hl=en">Google Scholar</a>.
+</p>
+
+<h2 id="service">Service</h2>
+<ul class="service">
+  <li>Contributed to <strong>Generative AI Content Authentication</strong> at the U.S. AI Safety Institute Consortium (NIST AISIC).</li>
+  <li><strong>Adjunct Research Professor</strong>, Simon Fraser University. Co-supervising PhD and Master's students on foundation models and reliable AI.</li>
+  <li>Reviewer for <strong>NeurIPS, ICML, ICLR, CVPR, MICCAI</strong>, and <strong>NSERC Canada</strong>.</li>
+</ul>
+
+<h2 id="talks">Selected Talks</h2>
+<ul class="talks">
+  <li><span class="mn"><span class="mn-cap">2025</span></span><span class="talk-title">Towards More Reliable Generative AI: Evaluation and Mitigation Strategies</span>, at Microsoft</li>
+  <li><span class="mn"><span class="mn-cap">2024</span></span><span class="talk-title">The Parroting Problem of Generative AI</span>, at Autodesk TechX</li>
+  <li><span class="mn"><span class="mn-cap">2022</span></span><span class="talk-title">Spurious Correlations in Computer Vision</span>, at Sony AI</li>
+  <li><span class="mn"><span class="mn-cap">2022</span></span><span class="talk-title">Input Space Modifications for Reducing Spurious Correlations</span>, at Google Research</li>
+  <li><span class="mn"><span class="mn-cap">2021</span></span><span class="talk-title">Robust Representation Learning via Perceptual Similarity Metrics</span>, at ICML</li>
+  <li><span class="mn"><span class="mn-cap">2020</span></span><span class="talk-title">Towards Interpretable and Bias-Resilient Point Cloud Processing</span>, at ICML</li>
+</ul>
+
+</main>
+<footer><span>&copy; 2026 Saeid Asgari</span><nav><a href="https://scholar.google.com/citations?user=SuePM1sAAAAJ&amp;hl=en">Google Scholar</a><a href="https://www.linkedin.com/in/saeid-asgari-a55a5b5a/">LinkedIn</a><a href="blog/">Blog</a></nav></footer>
+</div>
+<script src="blog/assets/blog.js" defer></script>
+</body>
+</html>
