@@ -20,10 +20,10 @@
     var seq = Array.prototype.slice.call(document.querySelectorAll(".page .cmd, .page .out, .page .body"));
     var reduce = window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches;
     if (!seq.length || reduce || !("IntersectionObserver" in window)) return;
-    document.documentElement.classList.add("js");
+    if (!document.documentElement.classList.contains("js")) return;
+    window.__termStarted = true;
     seq.forEach(function (el) {
-      el.classList.add("wait");
-      var t = el.classList.contains("cmd") && el.querySelector(".c[data-text]"); if (t) t.textContent = "";
+      var t = el.classList.contains("cmd") && el.querySelector(".c[data-text]"); if (t) { t.textContent = ""; t.classList.add("started"); }
     });
     document.querySelectorAll(".out").forEach(function (o) {
       o.querySelectorAll(".papers li, ul.blog li, ul.posts li").forEach(function (li, i) { li.style.transitionDelay = (0.04 * i) + "s"; });
