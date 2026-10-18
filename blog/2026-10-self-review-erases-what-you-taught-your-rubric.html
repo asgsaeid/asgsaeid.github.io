@@ -6,7 +6,6 @@
 <title>Self-review erases what you taught your rubric · Saeid Asgari</title>
 <meta name="author" content="Saeid Asgari">
 <meta name="description" content="Asking a model to improve a grading rubric pulled it back toward the model&rsquo;s own idea of a good answer: it added requirements nobody asked for and deleted the check that came from human labels.">
-<link rel="icon" type="image/png" href="../images/web_icon_.png">
 <link rel="canonical" href="https://asgsaeid.github.io/blog/2026-10-self-review-erases-what-you-taught-your-rubric.html">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Self-review erases what you taught your rubric">
@@ -14,42 +13,21 @@
 <meta property="og:url" content="https://asgsaeid.github.io/blog/2026-10-self-review-erases-what-you-taught-your-rubric.html">
 <meta property="og:image" content="https://asgsaeid.github.io/blog/assets/rubric-judges/p2_fig1_loops.png">
 <meta name="twitter:card" content="summary_large_image">
-<meta property="og:site_name" content="Saeid Asgari">
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Self-review erases what you taught your rubric", "datePublished": "2026-10", "author": {"@type": "Person", "name": "Saeid Asgari", "url": "https://asgsaeid.github.io/"}, "image": "https://asgsaeid.github.io/blog/assets/rubric-judges/p2_fig1_loops.png", "url": "https://asgsaeid.github.io/blog/2026-10-self-review-erases-what-you-taught-your-rubric.html", "keywords": "Rubrics, Self-review, Evaluation"}</script>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/blog.css">
-<link rel="alternate" type="application/rss+xml" title="Saeid Asgari, notes on judging agents" href="feed.xml">
-<meta name="theme-color" content="#F8FAFC">
 <link rel="stylesheet" href="assets/rubric-judges/interactive.css">
 <script src="assets/rubric-judges/interactive.js" defer></script>
+<link rel="icon" type="image/png" href="../images/web_icon_.png">
+<link rel="alternate" type="application/rss+xml" href="feed.xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Sans:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>* { box-sizing:border-box; margin:0; padding:0; } a:focus-visible, button:focus-visible, summary:focus-visible { outline:2px solid currentColor; outline-offset:3px; }</style>
+<link rel="stylesheet" href="assets/terminal.css">
 </head>
 <body>
-<div class="sheet">
-<main>
-<nav class="topnav" aria-label="Site"><span><a class="home" href="../">Saeid Asgari</a>, <a class="here" href="../blog/">notes on judging agents</a></span><a href="feed.xml">RSS feed</a></nav>
-<p class="series">Part 2 of 2 on rubric judges</p>
-<h1>Self-review erases what you taught your rubric</h1>
-<p class="byline">Saeid Asgari, October 2026. 7 minute read.</p>
-<section class="grader" aria-label="Summary">
-  <div class="mn">
-    <span class="pen circled">97% → 6%<svg class="ring" viewBox="0 0 200 80" preserveAspectRatio="none" aria-hidden="true"><path pathLength="1" d="M58 9C104 1 172 3 192 30C206 52 160 76 98 77C42 78 4 64 6 40C8 20 44 9 84 6"/></svg></span><span class="mn-cap">correct reports passed after four rounds of free self-review</span>
-    <span class="pen circled">100% → 8%<svg class="ring" viewBox="0 0 200 80" preserveAspectRatio="none" aria-hidden="true"><path pathLength="1" d="M58 9C104 1 172 3 192 30C206 52 160 76 98 77C42 78 4 64 6 40C8 20 44 9 84 6"/></svg></span><span class="mn-cap">unplanned misses caught after the reviewer deleted the label-taught check</span>
-    <span class="pen circled">0<svg class="ring" viewBox="0 0 200 80" preserveAspectRatio="none" aria-hidden="true"><path pathLength="1" d="M58 9C104 1 172 3 192 30C206 52 160 76 98 77C42 78 4 64 6 40C8 20 44 9 84 6"/></svg></span><span class="mn-cap">metrics lost when revision could only delete or merge checks</span>
-  </div>
-  <p class="pen-label">In short</p>
-  <div class="stats-mobile">
-    <div><span class="pen">97% → 6%</span><span class="mn-cap">correct reports passed after four rounds of free self-review</span></div>
-    <div><span class="pen">100% → 8%</span><span class="mn-cap">unplanned misses caught after the reviewer deleted the label-taught check</span></div>
-    <div><span class="pen">0</span><span class="mn-cap">metrics lost when revision could only delete or merge checks</span></div>
-  </div>
-  <ul class="checks">
-    <li>Self-review adds the reviewer’s beliefs (here, “should recommend a fix”) and deletes checks it did not write, including ones taught by labels.</li>
-    <li>Holding the check count fixed did not help. Rewrites alone carried the drift.</li>
-    <li>Freeze checks that came from labels or experts, make unattended revision delete-only, and regression-test every revision.</li>
-  </ul>
-</section>
+<div class="page post"><div class="blogtop"><a href="../">~/saeid-asgari</a><a href="./">cd blog/</a></div>
+<div class="cmd first"><span class="ps">~ $</span><span class="c" data-text="cat rubric-judges-2.md">cat rubric-judges-2.md</span></div><div class="out"><p class="series">Rubric judges · Part 2 of 2</p><h1>Self-review erases what you taught your rubric</h1><p class="byline">Saeid Asgari, October 2026. 7 minute read.</p></div>
+<div class="cmd"><span class="ps">~ $</span><span class="c" data-text="tldr">tldr</span></div><div class="out"><aside class="tldr"><ul class="stats"><li><b>97% → 6%</b><span>correct reports passed after four rounds of free self-review</span></li><li><b>100% → 8%</b><span>unplanned misses caught after the reviewer deleted the label-taught check</span></li><li><b>0</b><span>metrics lost when revision could only delete or merge checks</span></li></ul><ul class="take"><li>Self-review adds the reviewer’s beliefs (here, “should recommend a fix”) and deletes checks it did not write, including ones taught by labels.</li><li>Holding the check count fixed did not help. Rewrites alone carried the drift.</li><li>Freeze checks that came from labels or experts, make unattended revision delete-only, and regression-test every revision.</li></ul></aside></div>
+<div class="body">
 <p>A common step in building model-graded evaluations is a refinement loop: generate a rubric, then ask a model to review it for ambiguity, gaps and flaws no check would catch, and repeat. Each round feels like progress. The rubric gets more thorough, and nobody objects to &ldquo;more thorough.&rdquo;</p>
 <p>I expected that loop to ratchet: under all-must-pass grading, every added check can only lower the pass rate, and reviewers add far more than they delete. What I found is more specific, and worse. <strong>Self-review pulls a rubric back toward the reviewer&rsquo;s own idea of a good answer.</strong> It adds the requirements the reviewer believes in, and it deletes the requirements it didn&rsquo;t originate, including the ones you put there on purpose. Check count turned out not to be the mechanism at all.</p>
 
@@ -87,7 +65,6 @@
 <p><strong>The label-taught rubric lost what the labels had taught it.</strong> Free revision deleted the open coverage check in 11 of 12 environments, describing it in one change note as &ldquo;the vague completeness check.&rdquo; Unplanned misses caught fell from 100% to 25% with one seed and 8% with the other, and the overall catch rate fell from 100% to about 86%. Remediation checks crept back in too. The rubric got <em>shorter</em>, from 7.9 to 7.0 checks per environment, and still got worse.</p>
 <p><strong>Holding the count fixed didn&rsquo;t protect either rubric.</strong> Fixed-count revision dropped the hand checklist&rsquo;s pass rate on correct reports to 72%, and took the label-taught rubric&rsquo;s unplanned-miss catch rate down to 17%. Rewrites alone carried the drift.</p>
 <p><strong>Only delete-or-merge was safe.</strong> It shrank the hand checklist from 6 to 4 checks per environment and the label-taught one from 7.9 to 5.8, and left every metric where it started (the hand checklist&rsquo;s correct-pass rate even ticked up from 97% to 100%). Removing a requirement can&rsquo;t import a new belief.</p>
-<p class="pull"><span>Self-review pulls a rubric back toward the reviewer’s own idea of a good answer.</span></p>
 <div data-viz="counts">
 <noscript>
 <img src="assets/rubric-judges/p2_fig2_counts.png" alt="Checks per environment across revision rounds">
@@ -111,28 +88,19 @@
 <p>The environments and labels are synthetic and mine. One model wrote and revised all the rubrics, and judges came from the same model family, so I can&rsquo;t yet separate this reviewer&rsquo;s specific beliefs from a general tendency of self-review; repeating with a different reviewer family is the next experiment. Free revision ran with two seeds and the constrained variants with one, and each rubric was graded once per round, so small differences (a few points) aren&rsquo;t meaningful. The large effects (97% to 6%, 100% to 8%) are well outside that noise.</p>
 <p>The companion post covers what sets a judge&rsquo;s strictness in the first place: <a href="2026-10-your-judge-isnt-lenient-or-strict-your-rubric-is.html">Your judge isn&rsquo;t lenient or strict. Your rubric is.</a></p>
 
-<section class="endcap">
-  <p class="signoff">Saeid</p>
-  <p>I lead a science team at Microsoft working on how we evaluate agents, and I am an Adjunct Research Professor at Simon Fraser University (SFU). If this was useful, pass it on: <a data-share="linkedin" href="#" target="_blank" rel="noopener">LinkedIn</a>, <a data-share="x" href="#" target="_blank" rel="noopener">X</a>, or <button class="linkbtn" type="button" data-share="copy">copy the link</button>.</p>
-  <p class="quiet">Filed under rubrics, self-review, evaluation. New posts arrive in the <a href="feed.xml">RSS feed</a>.</p>
-  <details class="cite"><summary>Cite this post</summary>
-<pre><code>@misc{asgari2026selfreview,
+</div>
+<section class="endcap"><div class="cmd"><span class="ps">~ $</span><span class="c" data-text="share --post">share --post</span></div><div class="out">
+<p>If this was useful, pass it on: <a data-share="linkedin" href="#" target="_blank" rel="noopener">LinkedIn</a>, <a data-share="x" href="#" target="_blank" rel="noopener">X</a>, or <button class="linkbtn" type="button" data-share="copy">copy the link</button>. New posts arrive in the <a href="feed.xml">RSS feed</a>.</p>
+<details class="cite"><summary>Cite this post</summary><pre><code>@misc{asgari2026selfreview,
   author       = {Asgari, Saeid},
   title        = {Self-review erases what you taught your rubric},
   year         = {2026},
   month        = {oct},
   howpublished = {\url{https://asgsaeid.github.io/blog/2026-10-self-review-erases-what-you-taught-your-rubric.html}}
-}</code></pre>
-    <button class="linkbtn" type="button" data-copy-cite>Copy BibTeX</button>
-  </details>
-  <div class="also"><h3>Also in this notebook</h3><ul>
-    <li><a href="2026-10-your-judge-isnt-lenient-or-strict-your-rubric-is.html">Your judge isn’t lenient or strict. Your rubric is.</a><span>October 2026. Holding the judge and the outputs fixed, what the rubric asks for moved the pass rate on correct outputs from 2% to 98%. Swapping the judge model barely mattered.</span></li>
-    <li><a href="2026-09-agents-that-design-their-own-judges.html">Letting agents design their own evaluators: lessons from 20,000+ agent eval runs</a><span>September 2026. Five findings from a matched, five-repeat benchmark of self-designed evaluators, ACE and a ten-label expert calibration on tau2-bench and AppWorld.</span></li>
-  </ul></div>
+}</code></pre><button class="linkbtn" type="button" data-copy-cite>copy BibTeX</button></details>
+<h3 class="also">More notes</h3><ul class="blog"><li><a href="2026-10-your-judge-isnt-lenient-or-strict-your-rubric-is.html">Your judge isn’t lenient or strict. Your rubric is.</a><span class="d">October 2026. Holding the judge and the outputs fixed, what the rubric asks for moved the pass rate on correct outputs from 2% to 98%. Swapping the judge model barely mattered.</span></li><li><a href="2026-09-agents-that-design-their-own-judges.html">Letting agents design their own evaluators: lessons from 20,000+ agent eval runs</a><span class="d">September 2026. Five findings from a matched, five-repeat benchmark of self-designed evaluators, ACE and a ten-label expert calibration on tau2-bench and AppWorld.</span></li></ul></div>
 </section>
-</main>
-<footer><span>© 2026 Saeid Asgari</span><nav><a href="../">Home</a><a href="../blog/">Notebook</a><a href="https://scholar.google.com/citations?user=SuePM1sAAAAJ">Google Scholar</a><a href="feed.xml">RSS</a></nav></footer>
-</div>
-<script src="assets/blog.js" defer></script>
+<div class="cmd end"><span class="ps">~ $</span><span class="caret blink" aria-hidden="true"></span></div><footer>© 2026 Saeid Asgari</footer></div>
+<script src="assets/site.js" defer></script>
 </body>
 </html>

@@ -3,60 +3,23 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Who grades the grader? · Saeid Asgari</title>
+<title>Notes on judging agents · Saeid Asgari</title>
 <meta name="author" content="Saeid Asgari">
-<meta name="description" content="Saeid Asgari's notes on evaluating tool-using agents: LLM judges, rubrics, and agents that learn without a hidden test.">
+<meta name="description" content="Notes on evaluating and improving tool-using agents by Saeid Asgari.">
 <link rel="icon" type="image/png" href="../images/web_icon_.png">
 <link rel="canonical" href="https://asgsaeid.github.io/blog/">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Who grades the grader? Saeid Asgari's notes on judging agents">
-<meta property="og:description" content="Experiments on LLM judges, rubrics, and agents that learn without a hidden test.">
-<meta property="og:url" content="https://asgsaeid.github.io/blog/">
-<meta property="og:image" content="https://asgsaeid.github.io/blog/assets/rubric-judges/p1_fig1_operating.png">
-<meta name="twitter:card" content="summary_large_image">
+<link rel="alternate" type="application/rss+xml" title="Saeid Asgari, notes on judging agents" href="feed.xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/blog.css">
-<link rel="alternate" type="application/rss+xml" title="Saeid Asgari, notes on judging agents" href="feed.xml">
-<meta name="theme-color" content="#F8FAFC">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Sans:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>* { box-sizing:border-box; margin:0; padding:0; } a:focus-visible, button:focus-visible, summary:focus-visible { outline:2px solid currentColor; outline-offset:3px; }</style>
+<link rel="stylesheet" href="assets/terminal.css">
 </head>
 <body>
-<div class="sheet">
-<main>
-<nav class="topnav" aria-label="Site"><span><a class="home" href="../">Saeid Asgari</a>, <a class="here" href="../blog/">notebook</a></span><a href="feed.xml">RSS feed</a></nav>
-<header class="cover">
-  <h1>Who grades the grader?</h1>
-  <dl class="fields">
-    <dt>Name</dt><dd>Saeid Asgari</dd>
-    <dt>Subject</dt><dd>Judges, rubrics, and agents that learn</dd>
-  </dl>
-  <p class="lead">Before an agent can improve, something has to tell it whether it did the job. I run experiments on that something: what makes a large language model (LLM) judge strict or lenient, why rubrics drift when a model revises them, and how an agent can learn without a hidden test. These are the write-ups, with the numbers.</p>
-</header>
-<ul class="entries">
-<li class="entry">
-  <div class="mn"><span class="pen circled draw">2% → 98%<svg class="ring" viewBox="0 0 200 80" preserveAspectRatio="none" aria-hidden="true"><path pathLength="1" d="M58 9C104 1 172 3 192 30C206 52 160 76 98 77C42 78 4 64 6 40C8 20 44 9 84 6"/></svg></span><span class="mn-cap">October 2026</span></div>
-  <h2><a href="2026-10-your-judge-isnt-lenient-or-strict-your-rubric-is.html">Your judge isn’t lenient or strict. Your rubric is.</a></h2>
-  <p>Holding the judge and the outputs fixed, what the rubric asks for moved the pass rate on correct outputs from 2% to 98%. Swapping the judge model barely mattered.</p>
-  <p class="filed">Part 1 of 2 on rubric judges. 8 minute read.</p>
-</li>
-<li class="entry">
-  <div class="mn"><span class="pen circled draw">97% → 6%<svg class="ring" viewBox="0 0 200 80" preserveAspectRatio="none" aria-hidden="true"><path pathLength="1" d="M58 9C104 1 172 3 192 30C206 52 160 76 98 77C42 78 4 64 6 40C8 20 44 9 84 6"/></svg></span><span class="mn-cap">October 2026</span></div>
-  <h2><a href="2026-10-self-review-erases-what-you-taught-your-rubric.html">Self-review erases what you taught your rubric</a></h2>
-  <p>Four rounds of model self-review pulled two good rubrics toward the reviewer’s own standard. Only delete-only revision was safe.</p>
-  <p class="filed">Part 2 of 2 on rubric judges. 7 minute read.</p>
-</li>
-<li class="entry">
-  <div class="mn"><span class="pen circled draw">20,000+ runs<svg class="ring" viewBox="0 0 200 80" preserveAspectRatio="none" aria-hidden="true"><path pathLength="1" d="M58 9C104 1 172 3 192 30C206 52 160 76 98 77C42 78 4 64 6 40C8 20 44 9 84 6"/></svg></span><span class="mn-cap">September 2026</span></div>
-  <h2><a href="2026-09-agents-that-design-their-own-judges.html">Letting agents design their own evaluators: lessons from 20,000+ agent eval runs</a></h2>
-  <p>Five findings from a matched, five-repeat benchmark of self-designed evaluators, ACE and a ten-label expert calibration on tau2-bench and AppWorld.</p>
-  <p class="filed">On self-improving agents. 12 minute read.</p>
-</li>
-</ul>
-<p class="follow">New posts arrive in the <a href="feed.xml">RSS feed</a>.</p>
-</main>
-<footer><span>© 2026 Saeid Asgari</span><nav><a href="../">Home</a><a href="../blog/">Notebook</a><a href="https://scholar.google.com/citations?user=SuePM1sAAAAJ">Google Scholar</a><a href="feed.xml">RSS</a></nav></footer>
-</div>
-<script src="assets/blog.js" defer></script>
+<div class="page bi"><div class="blogtop"><a href="../">~/saeid-asgari</a><a href="feed.xml">rss</a></div>
+<div class="cmd first"><span class="ps">~ $</span><span class="c" data-text="cat blog/README.md">cat blog/README.md</span></div><div class="out"><h1>Notes on judging agents</h1><p>Experiments on evaluating and improving tool-using agents: what makes a large language model (LLM) judge strict or lenient, why rubrics drift when a model revises them, and how an agent can learn without a hidden test.</p></div>
+<div class="cmd"><span class="ps">~ $</span><span class="c" data-text="ls -t blog/">ls -t blog/</span></div><div class="out"><ul class="posts"><li><span class="m">2026-10</span><span><a href="2026-10-your-judge-isnt-lenient-or-strict-your-rubric-is.html">Your judge isn’t lenient or strict. Your rubric is.</a><span class="k">2% → 98%</span><p>Holding the judge and the outputs fixed, what the rubric asks for moved the pass rate on correct outputs from 2% to 98%. Swapping the judge model barely mattered.</p></span></li><li><span class="m">2026-10</span><span><a href="2026-10-self-review-erases-what-you-taught-your-rubric.html">Self-review erases what you taught your rubric</a><span class="k">97% → 6%</span><p>Four rounds of model self-review pulled two good rubrics toward the reviewer’s own standard. Only delete-only revision was safe.</p></span></li><li><span class="m">2026-09</span><span><a href="2026-09-agents-that-design-their-own-judges.html">Letting agents design their own evaluators: lessons from 20,000+ agent eval runs</a><span class="k">+8.0 pts</span><p>Five findings from a matched, five-repeat benchmark of self-designed evaluators, ACE and a ten-label expert calibration on tau2-bench and AppWorld.</p></span></li></ul></div>
+<div class="cmd end"><span class="ps">~ $</span><span class="caret blink" aria-hidden="true"></span></div><footer>© 2026 Saeid Asgari</footer></div>
+<script src="assets/site.js" defer></script>
 </body>
 </html>
