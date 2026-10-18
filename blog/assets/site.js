@@ -15,29 +15,44 @@
     var cp = document.querySelector("[data-share=copy]"); if (cp) cp.addEventListener("click", function () { copy(url, cp, "link copied"); });
     var cb = document.querySelector("[data-copy-cite]"); if (cb) cb.addEventListener("click", function () { copy(document.querySelector("details.cite pre").textContent, cb); });
 
-    /* terminal typing: each .cmd types its command when it scrolls into view, then reveals the .out after it */
-    var cmds = Array.prototype.slice.call(document.querySelectorAll(".cmd .c[data-text]"));
+    /* terminal: prompts appear one at a time. A command types itself when it is on screen,
+       its output appears, and only then does the next prompt show up. */
+    var seq = Array.prototype.slice.call(document.querySelectorAll(".page .cmd, .page .out, .page .body"));
     var reduce = window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches;
-    if (!cmds.length || reduce || !("IntersectionObserver" in window)) return;
+    if (!seq.length || reduce || !("IntersectionObserver" in window)) return;
     document.documentElement.classList.add("js");
-    cmds.forEach(function (c) { c.textContent = ""; });
-    document.querySelectorAll(".out").forEach(function (o) {
-      o.querySelectorAll(".papers li, ul.blog li, ul.posts li").forEach(function (li, i) { li.style.transitionDelay = (0.05 * i) + "s"; });
+    seq.forEach(function (el) {
+      el.classList.add("wait");
+      var t = el.classList.contains("cmd") && el.querySelector(".c[data-text]"); if (t) t.textContent = "";
     });
-    function type(c, done) {
-      var text = c.getAttribute("data-text"), i = 0, line = c.parentNode;
+    document.querySelectorAll(".out").forEach(function (o) {
+      o.querySelectorAll(".papers li, ul.blog li, ul.posts li").forEach(function (li, i) { li.style.transitionDelay = (0.04 * i) + "s"; });
+    });
+    function type(line, done) {
+      var c = line.querySelector(".c[data-text]"), text = c.getAttribute("data-text"), i = 0;
       var caret = document.createElement("span"); caret.className = "caret"; line.appendChild(caret);
       (function step() {
         c.textContent = text.slice(0, ++i);
-        if (i < text.length) setTimeout(step, 34 + Math.random() * 38);
-        else setTimeout(function () { caret.remove(); var o = line.nextElementSibling; if (o && o.classList.contains("out")) o.classList.add("shown"); done(); }, 160);
+        if (i < text.length) setTimeout(step, 30 + Math.random() * 35);
+        else setTimeout(function () { caret.remove(); done(); }, 150);
       })();
     }
-    var queue = [], busy = false;
-    function run() { if (busy || !queue.length) return; busy = true; type(queue.shift(), function () { busy = false; run(); }); }
     var io = new IntersectionObserver(function (es) {
-      es.forEach(function (en) { if (en.isIntersecting) { io.unobserve(en.target); queue.push(en.target); run(); } });
-    }, { rootMargin: "0px 0px -10% 0px" });
-    cmds.forEach(function (c) { io.observe(c); });
+      es.forEach(function (en) { if (en.isIntersecting) { io.unobserve(en.target); en.target._go(); } });
+    }, { rootMargin: "0px 0px -8% 0px" });
+    function activate(i) {
+      var line = seq[i]; line.classList.remove("wait");
+      if (!line.querySelector(".c[data-text]")) return;            /* the final blinking prompt */
+      line._go = function () {
+        type(line, function () {
+          var j = i + 1;
+          for (; j < seq.length && !seq[j].classList.contains("cmd"); j++) { seq[j].classList.remove("wait"); seq[j].classList.add("shown"); }
+          if (j < seq.length) setTimeout(function () { activate(j); }, 380);
+        });
+      };
+      io.observe(line);
+    }
+    var first = 0; while (first < seq.length && !seq[first].classList.contains("cmd")) { seq[first].classList.remove("wait"); first++; }
+    if (first < seq.length) activate(first);
   });
 })();

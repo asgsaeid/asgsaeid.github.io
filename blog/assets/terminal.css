@@ -90,5 +90,7 @@ ul.posts .k { font:500 13.5px var(--mono); color:var(--prompt); margin-left:8px;
 .body h2 { margin-left:-27px; padding:2px 0; background:#FCFCFB; position:relative; }
 .body h2::before { content:"## "; }
 @media (max-width:600px) { .out, .body { padding-left:14px; margin-left:3px; } .out ul.papers, .out .service ul, .out .talks ul, .out ul.blog, .out ul.posts, .body ul, .body ol { margin-left:14px; } .out .papers li::before, .out .service li::before { left:-12px; } .body h2 { margin-left:-17px; } }
+.js .wait { visibility:hidden; }
+.js .body { opacity:0; transition:opacity .45s ease; } .js .body.shown { opacity:1; }
 .top { grid-template-columns:1fr 150px; align-items:center; } .top .portrait { width:150px; height:150px; }
 @media (max-width:600px) { .top { grid-template-columns:1fr 96px; gap:16px; } .top .portrait { width:96px; height:96px; } }
