@@ -20,14 +20,18 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Sans:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<script>(function () { try { var d = document.documentElement;
+  if ((window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches) || !("IntersectionObserver" in window)) return;
+  d.classList.add("js"); setTimeout(function () { if (!window.__termStarted) d.classList.remove("js"); }, 4000);
+} catch (e) {} })();</script>
 <style>* { box-sizing:border-box; margin:0; padding:0; } a:focus-visible, button:focus-visible, summary:focus-visible { outline:2px solid currentColor; outline-offset:3px; }</style>
 <link rel="stylesheet" href="assets/terminal.css">
 </head>
 <body>
 <div class="page post"><div class="blogtop"><a href="../">~/saeid-asgari</a><a href="./">cd blog/</a></div>
-<div class="cmd first"><span class="ps">~ $</span><span class="c" data-text="cat rubric-judges-2.md">cat rubric-judges-2.md</span></div><div class="out"><p class="series">Rubric judges · Part 2 of 2</p><h1>Self-review erases what you taught your rubric</h1><p class="byline">Saeid Asgari, October 2026. 7 minute read.</p></div>
-<div class="cmd"><span class="ps">~ $</span><span class="c" data-text="tldr">tldr</span></div><div class="out"><aside class="tldr"><ul class="stats"><li><b>97% → 6%</b><span>correct reports passed after four rounds of free self-review</span></li><li><b>100% → 8%</b><span>unplanned misses caught after the reviewer deleted the label-taught check</span></li><li><b>0</b><span>metrics lost when revision could only delete or merge checks</span></li></ul><ul class="take"><li>Self-review adds the reviewer’s beliefs (here, “should recommend a fix”) and deletes checks it did not write, including ones taught by labels.</li><li>Holding the check count fixed did not help. Rewrites alone carried the drift.</li><li>Freeze checks that came from labels or experts, make unattended revision delete-only, and regression-test every revision.</li></ul></aside></div>
-<div class="body">
+<div class="cmd first"><span class="ps">~ $</span><span class="c" data-text="cat rubric-judges-2.md">cat rubric-judges-2.md</span></div><div class="out wait"><p class="series">Rubric judges · Part 2 of 2</p><h1>Self-review erases what you taught your rubric</h1><p class="byline">Saeid Asgari, October 2026. 7 minute read.</p></div>
+<div class="cmd wait"><span class="ps">~ $</span><span class="c" data-text="tldr">tldr</span></div><div class="out wait"><aside class="tldr"><ul class="stats"><li><b>97% → 6%</b><span>correct reports passed after four rounds of free self-review</span></li><li><b>100% → 8%</b><span>unplanned misses caught after the reviewer deleted the label-taught check</span></li><li><b>0</b><span>metrics lost when revision could only delete or merge checks</span></li></ul><ul class="take"><li>Self-review adds the reviewer’s beliefs (here, “should recommend a fix”) and deletes checks it did not write, including ones taught by labels.</li><li>Holding the check count fixed did not help. Rewrites alone carried the drift.</li><li>Freeze checks that came from labels or experts, make unattended revision delete-only, and regression-test every revision.</li></ul></aside></div>
+<div class="body wait">
 <p>A common step in building model-graded evaluations is a refinement loop: generate a rubric, then ask a model to review it for ambiguity, gaps and flaws no check would catch, and repeat. Each round feels like progress. The rubric gets more thorough, and nobody objects to &ldquo;more thorough.&rdquo;</p>
 <p>I expected that loop to ratchet: under all-must-pass grading, every added check can only lower the pass rate, and reviewers add far more than they delete. What I found is more specific, and worse. <strong>Self-review pulls a rubric back toward the reviewer&rsquo;s own idea of a good answer.</strong> It adds the requirements the reviewer believes in, and it deletes the requirements it didn&rsquo;t originate, including the ones you put there on purpose. Check count turned out not to be the mechanism at all.</p>
 
@@ -89,7 +93,7 @@
 <p>The companion post covers what sets a judge&rsquo;s strictness in the first place: <a href="2026-10-your-judge-isnt-lenient-or-strict-your-rubric-is.html">Your judge isn&rsquo;t lenient or strict. Your rubric is.</a></p>
 
 </div>
-<section class="endcap"><div class="cmd"><span class="ps">~ $</span><span class="c" data-text="share --post">share --post</span></div><div class="out">
+<section class="endcap"><div class="cmd wait"><span class="ps">~ $</span><span class="c" data-text="share --post">share --post</span></div><div class="out wait">
 <p>If this was useful, pass it on: <a data-share="linkedin" href="#" target="_blank" rel="noopener">LinkedIn</a>, <a data-share="x" href="#" target="_blank" rel="noopener">X</a>, or <button class="linkbtn" type="button" data-share="copy">copy the link</button>. New posts arrive in the <a href="feed.xml">RSS feed</a>.</p>
 <details class="cite"><summary>Cite this post</summary><pre><code>@misc{asgari2026selfreview,
   author       = {Asgari, Saeid},
@@ -100,7 +104,7 @@
 }</code></pre><button class="linkbtn" type="button" data-copy-cite>copy BibTeX</button></details>
 <h3 class="also">More notes</h3><ul class="blog"><li><a href="2026-10-your-judge-isnt-lenient-or-strict-your-rubric-is.html">Your judge isn’t lenient or strict. Your rubric is.</a><span class="d">October 2026. Holding the judge and the outputs fixed, what the rubric asks for moved the pass rate on correct outputs from 2% to 98%. Swapping the judge model barely mattered.</span></li><li><a href="2026-09-agents-that-design-their-own-judges.html">Letting agents design their own evaluators: lessons from 20,000+ agent eval runs</a><span class="d">September 2026. Five findings from a matched, five-repeat benchmark of self-designed evaluators, ACE and a ten-label expert calibration on tau2-bench and AppWorld.</span></li></ul></div>
 </section>
-<div class="cmd end"><span class="ps">~ $</span><span class="caret blink" aria-hidden="true"></span></div><footer>© 2026 Saeid Asgari</footer></div>
+<div class="cmd end wait"><span class="ps">~ $</span><span class="caret blink" aria-hidden="true"></span></div><footer>© 2026 Saeid Asgari</footer></div>
 <script src="assets/site.js" defer></script>
 </body>
 </html>

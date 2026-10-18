@@ -20,14 +20,18 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Sans:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<script>(function () { try { var d = document.documentElement;
+  if ((window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches) || !("IntersectionObserver" in window)) return;
+  d.classList.add("js"); setTimeout(function () { if (!window.__termStarted) d.classList.remove("js"); }, 4000);
+} catch (e) {} })();</script>
 <style>* { box-sizing:border-box; margin:0; padding:0; } a:focus-visible, button:focus-visible, summary:focus-visible { outline:2px solid currentColor; outline-offset:3px; }</style>
 <link rel="stylesheet" href="assets/terminal.css">
 </head>
 <body>
 <div class="page post"><div class="blogtop"><a href="../">~/saeid-asgari</a><a href="./">cd blog/</a></div>
-<div class="cmd first"><span class="ps">~ $</span><span class="c" data-text="cat agent-evaluators.md">cat agent-evaluators.md</span></div><div class="out"><p class="series">Self-improving agents</p><h1>Letting agents design their own evaluators: lessons from 20,000+ agent eval runs</h1><p class="byline">Saeid Asgari, September 2026. 12 minute read.</p></div>
-<div class="cmd"><span class="ps">~ $</span><span class="c" data-text="tldr">tldr</span></div><div class="out"><aside class="tldr"><ul class="stats"><li><b>20,000+</b><span>agent task runs, five independent repeats per method</span></li><li><b>+8.0 pp</b><span>percentage points (pp) over the plain agent: self-designed judges plus ten expert labels</span></li><li><b>−7.8 pp</b><span>lost when the second attempt was removed, the most consistent component</span></li></ul><ul class="take"><li>A frozen evaluation suite written by the agent’s own model beats the plain agent without any labels.</li><li>With ten expert labels, calibrating that suite ties a warm-started ACE playbook (84.4% vs 84.0%).</li><li>The agent often makes a correct attempt its judges do not pick: better selection is worth 7.4 pp on average.</li></ul></aside></div>
-<div class="body">
+<div class="cmd first"><span class="ps">~ $</span><span class="c" data-text="cat agent-evaluators.md">cat agent-evaluators.md</span></div><div class="out wait"><p class="series">Self-improving agents</p><h1>Letting agents design their own evaluators: lessons from 20,000+ agent eval runs</h1><p class="byline">Saeid Asgari, September 2026. 12 minute read.</p></div>
+<div class="cmd wait"><span class="ps">~ $</span><span class="c" data-text="tldr">tldr</span></div><div class="out wait"><aside class="tldr"><ul class="stats"><li><b>20,000+</b><span>agent task runs, five independent repeats per method</span></li><li><b>+8.0 pp</b><span>percentage points (pp) over the plain agent: self-designed judges plus ten expert labels</span></li><li><b>−7.8 pp</b><span>lost when the second attempt was removed, the most consistent component</span></li></ul><ul class="take"><li>A frozen evaluation suite written by the agent’s own model beats the plain agent without any labels.</li><li>With ten expert labels, calibrating that suite ties a warm-started ACE playbook (84.4% vs 84.0%).</li><li>The agent often makes a correct attempt its judges do not pick: better selection is worth 7.4 pp on average.</li></ul></aside></div>
+<div class="body wait">
 <p>Most published results on self-improving agents rely on the benchmark
 to say whether the agent succeeded. The agent tries a task, a hidden
 test says pass or fail, the agent writes a lesson into its playbook, and
@@ -231,7 +235,7 @@ to Agentic Context Engineering (Zhang et al., 2025); the main
 comparisons use the memory code released by its authors.</em></p>
 
 </div>
-<section class="endcap"><div class="cmd"><span class="ps">~ $</span><span class="c" data-text="share --post">share --post</span></div><div class="out">
+<section class="endcap"><div class="cmd wait"><span class="ps">~ $</span><span class="c" data-text="share --post">share --post</span></div><div class="out wait">
 <p>If this was useful, pass it on: <a data-share="linkedin" href="#" target="_blank" rel="noopener">LinkedIn</a>, <a data-share="x" href="#" target="_blank" rel="noopener">X</a>, or <button class="linkbtn" type="button" data-share="copy">copy the link</button>. New posts arrive in the <a href="feed.xml">RSS feed</a>.</p>
 <details class="cite"><summary>Cite this post</summary><pre><code>@misc{asgari2026selfsuite,
   author       = {Asgari, Saeid},
@@ -242,7 +246,7 @@ comparisons use the memory code released by its authors.</em></p>
 }</code></pre><button class="linkbtn" type="button" data-copy-cite>copy BibTeX</button></details>
 <h3 class="also">More notes</h3><ul class="blog"><li><a href="2026-10-your-judge-isnt-lenient-or-strict-your-rubric-is.html">Your judge isn’t lenient or strict. Your rubric is.</a><span class="d">October 2026. Holding the judge and the outputs fixed, what the rubric asks for moved the pass rate on correct outputs from 2% to 98%. Swapping the judge model barely mattered.</span></li><li><a href="2026-10-self-review-erases-what-you-taught-your-rubric.html">Self-review erases what you taught your rubric</a><span class="d">October 2026. Four rounds of model self-review pulled two good rubrics toward the reviewer’s own standard. Only delete-only revision was safe.</span></li></ul></div>
 </section>
-<div class="cmd end"><span class="ps">~ $</span><span class="caret blink" aria-hidden="true"></span></div><footer>© 2026 Saeid Asgari</footer></div>
+<div class="cmd end wait"><span class="ps">~ $</span><span class="caret blink" aria-hidden="true"></span></div><footer>© 2026 Saeid Asgari</footer></div>
 <script src="assets/site.js" defer></script>
 </body>
 </html>

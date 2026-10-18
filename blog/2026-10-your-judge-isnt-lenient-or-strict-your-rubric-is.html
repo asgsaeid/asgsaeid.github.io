@@ -20,14 +20,18 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Sans:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<script>(function () { try { var d = document.documentElement;
+  if ((window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches) || !("IntersectionObserver" in window)) return;
+  d.classList.add("js"); setTimeout(function () { if (!window.__termStarted) d.classList.remove("js"); }, 4000);
+} catch (e) {} })();</script>
 <style>* { box-sizing:border-box; margin:0; padding:0; } a:focus-visible, button:focus-visible, summary:focus-visible { outline:2px solid currentColor; outline-offset:3px; }</style>
 <link rel="stylesheet" href="assets/terminal.css">
 </head>
 <body>
 <div class="page post"><div class="blogtop"><a href="../">~/saeid-asgari</a><a href="./">cd blog/</a></div>
-<div class="cmd first"><span class="ps">~ $</span><span class="c" data-text="cat rubric-judges-1.md">cat rubric-judges-1.md</span></div><div class="out"><p class="series">Rubric judges · Part 1 of 2</p><h1>Your judge isn’t lenient or strict. Your rubric is.</h1><p class="byline">Saeid Asgari, October 2026. 8 minute read.</p></div>
-<div class="cmd"><span class="ps">~ $</span><span class="c" data-text="tldr">tldr</span></div><div class="out"><aside class="tldr"><ul class="stats"><li><b>2% → 98%</b><span>correct reports passed, changing only the rubric</span></li><li><b>6% → 69%</b><span>same per-check answers, different aggregation rule</span></li><li><b>52%</b><span>balanced accuracy of a rubric that scores 89% accuracy on a 90%-flawed test set</span></li></ul><ul class="take"><li>What the rubric asks for decides strictness. The judge model and the rendering (checklist, paragraph, 1 to 5 scale) barely move it.</li><li>Under all-must-pass, small per-check false-fail rates multiply: 10 checks at 5% each pass only 60% of good outputs.</li><li>Accuracy on a defect-heavy test set flatters a rubric that fails everything. Report correct outputs passed and flawed outputs caught.</li></ul></aside></div>
-<div class="body">
+<div class="cmd first"><span class="ps">~ $</span><span class="c" data-text="cat rubric-judges-1.md">cat rubric-judges-1.md</span></div><div class="out wait"><p class="series">Rubric judges · Part 1 of 2</p><h1>Your judge isn’t lenient or strict. Your rubric is.</h1><p class="byline">Saeid Asgari, October 2026. 8 minute read.</p></div>
+<div class="cmd wait"><span class="ps">~ $</span><span class="c" data-text="tldr">tldr</span></div><div class="out wait"><aside class="tldr"><ul class="stats"><li><b>2% → 98%</b><span>correct reports passed, changing only the rubric</span></li><li><b>6% → 69%</b><span>same per-check answers, different aggregation rule</span></li><li><b>52%</b><span>balanced accuracy of a rubric that scores 89% accuracy on a 90%-flawed test set</span></li></ul><ul class="take"><li>What the rubric asks for decides strictness. The judge model and the rendering (checklist, paragraph, 1 to 5 scale) barely move it.</li><li>Under all-must-pass, small per-check false-fail rates multiply: 10 checks at 5% each pass only 60% of good outputs.</li><li>Accuracy on a defect-heavy test set flatters a rubric that fails everything. Report correct outputs passed and flawed outputs caught.</li></ul></aside></div>
+<div class="body wait">
 <p>Large language model (LLM) judges have a reputation for leniency: they pass outputs a careful human would reject. Checklist rubrics are the usual fix. Break &ldquo;is this good?&rdquo; into atomic yes/no checks, require all of them to pass, and the judge can no longer wave things through.</p>
 <p>When I generated checklists this way for a security task, the judge went from lenient to failing almost everything, including outputs that were correct. That made me suspect leniency and strictness aren&rsquo;t properties of the judge at all. So I held the judge and the outputs fixed and varied only the rubric.</p>
 <p><strong>Short version:</strong> what the rubric asks for decides strictness. Swapping the judge model barely matters, and so does rendering the same checks as a checklist, a paragraph or a 1 to 5 scale. The way most people validate judges, a single accuracy number on a defect-heavy test set, can&rsquo;t see any of this.</p>
@@ -107,7 +111,7 @@
 <p>A companion post looks at what happens when a model is asked to improve a rubric: <a href="2026-10-self-review-erases-what-you-taught-your-rubric.html">Self-review erases what you taught your rubric</a>.</p>
 
 </div>
-<section class="endcap"><div class="cmd"><span class="ps">~ $</span><span class="c" data-text="share --post">share --post</span></div><div class="out">
+<section class="endcap"><div class="cmd wait"><span class="ps">~ $</span><span class="c" data-text="share --post">share --post</span></div><div class="out wait">
 <p>If this was useful, pass it on: <a data-share="linkedin" href="#" target="_blank" rel="noopener">LinkedIn</a>, <a data-share="x" href="#" target="_blank" rel="noopener">X</a>, or <button class="linkbtn" type="button" data-share="copy">copy the link</button>. New posts arrive in the <a href="feed.xml">RSS feed</a>.</p>
 <details class="cite"><summary>Cite this post</summary><pre><code>@misc{asgari2026judge,
   author       = {Asgari, Saeid},
@@ -118,7 +122,7 @@
 }</code></pre><button class="linkbtn" type="button" data-copy-cite>copy BibTeX</button></details>
 <h3 class="also">More notes</h3><ul class="blog"><li><a href="2026-10-self-review-erases-what-you-taught-your-rubric.html">Self-review erases what you taught your rubric</a><span class="d">October 2026. Four rounds of model self-review pulled two good rubrics toward the reviewer’s own standard. Only delete-only revision was safe.</span></li><li><a href="2026-09-agents-that-design-their-own-judges.html">Letting agents design their own evaluators: lessons from 20,000+ agent eval runs</a><span class="d">September 2026. Five findings from a matched, five-repeat benchmark of self-designed evaluators, ACE and a ten-label expert calibration on tau2-bench and AppWorld.</span></li></ul></div>
 </section>
-<div class="cmd end"><span class="ps">~ $</span><span class="caret blink" aria-hidden="true"></span></div><footer>© 2026 Saeid Asgari</footer></div>
+<div class="cmd end wait"><span class="ps">~ $</span><span class="caret blink" aria-hidden="true"></span></div><footer>© 2026 Saeid Asgari</footer></div>
 <script src="assets/site.js" defer></script>
 </body>
 </html>
