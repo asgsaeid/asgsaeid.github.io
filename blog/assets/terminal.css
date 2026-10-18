@@ -1,0 +1,94 @@
+
+:root { --ink:#1E2124; --text:#3B4046; --muted:#858B91; --line:#E6E7E4; --prompt:#2F8F5B; --link:#1F6B45;
+  --mono:'IBM Plex Mono', ui-monospace, monospace; --sans:'IBM Plex Sans', Arial, sans-serif; }
+body { background:#FCFCFB; color:var(--text); font:16px/1.62 var(--sans); -webkit-font-smoothing:antialiased; }
+a { color:var(--link); text-decoration:none; } a:hover { text-decoration:underline; }
+.page { max-width:680px; margin:0 auto; padding:44px 24px 64px; }
+.cmd { font:500 15px/1.5 var(--mono); color:var(--ink); margin:36px 0 12px; min-height:1.5em; }
+.cmd .ps { color:var(--prompt); margin-right:8px; }
+.cmd.first { margin-top:0; }
+.top { display:grid; grid-template-columns:1fr 96px; gap:24px; align-items:start; }
+.portrait { width:96px; height:96px; border-radius:50%; background:linear-gradient(135deg,#C3CAD2,#9AA4AF); }
+h1 { font:600 32px/1.15 var(--sans); color:var(--ink); letter-spacing:-0.015em; margin-bottom:8px; }
+.role b { color:var(--ink); } .role { margin-bottom:8px; }
+.contact { font:400 13.5px/1.7 var(--mono); color:var(--muted); }
+.story h3 { font:600 17px/1.35 var(--sans); color:var(--ink); }
+.story h3::before { content:"# "; color:var(--prompt); font-family:var(--mono); font-weight:400; }
+.story .venue-text { color:var(--muted); }
+.story a strong { font-weight:600; color:var(--ink); } .story a:hover strong { color:var(--link); }
+ul.blog .k { color:var(--prompt); font-weight:500; }
+.caret { display:inline-block; width:8px; height:1.05em; background:var(--prompt); vertical-align:-2px; margin-left:2px; }
+.caret.blink { animation:blink 1s steps(1) infinite; }
+@keyframes blink { 50% { opacity:0; } }
+/* animation states, applied only when JavaScript runs */
+.js .out { opacity:0; transform:translateY(6px); transition:opacity .45s ease, transform .45s ease; }
+.js .out.shown { opacity:1; transform:none; }
+.js .story .papers li, .js ul.blog li { opacity:0; transition:opacity .35s ease; }
+.js .out.shown .papers li, .js .out.shown ul.blog li { opacity:1; }
+footer { margin-top:44px; font:400 12.5px var(--mono); color:var(--muted); }
+@media (max-width:600px) { .page { padding:28px 18px 48px; } .top { grid-template-columns:1fr 64px; } .portrait { width:64px; height:64px; } h1 { font-size:27px; } }
+@media (prefers-reduced-motion:reduce) { .js .out, .js .story .papers li, .js ul.blog li { opacity:1; transform:none; transition:none; } .caret.blink { animation:none; } }
+
+.story p { margin-bottom:12px; }
+.story h3 { margin:22px 0 8px; }
+.story ul { list-style:none; margin:4px 0 12px; }
+.story .papers li { padding:5px 0; font-size:15.5px; line-height:1.55; }
+.story .papers li > a:first-child strong, .story .papers a strong { color:var(--ink); }
+.story .venue-text { font-family:var(--mono); font-size:12.5px; }
+.story .scholar-link { margin-top:18px; padding-top:10px; border-top:1px solid var(--line); color:var(--muted); font-size:15px; }
+.story .service li { padding:4px 0; font-size:15.5px; } .story .service li strong { color:var(--ink); }
+.story .talks li { display:grid; grid-template-columns:52px 1fr; gap:10px; padding:3px 0; font-size:15.5px; }
+.story .talks .year { font-family:var(--mono); font-size:13px; color:var(--muted); line-height:1.9; }
+.story .talks .talk-title { font-style:italic; color:var(--ink); } .story .talks .talk-venue { color:var(--muted); }
+ul.blog { list-style:none; } ul.blog li { padding:7px 0; } ul.blog a { color:var(--ink); font-weight:600; }
+ul.blog .k { font-family:var(--mono); font-size:13.5px; margin-left:8px; white-space:nowrap; } ul.blog .d { display:block; color:var(--muted); font-size:15px; }
+
+.post p, .post li { font-size:16.5px; }
+.post h2 { scroll-margin-top:20px; }
+.post ul, .post ol { margin:0 0 14px 22px; } .post li { margin-bottom:6px; }
+.post img { max-width:100%; height:auto; display:block; margin:16px auto 8px; border:1px solid var(--line); border-radius:4px; background:#fff; }
+.post figure { margin:0 0 18px; } .post figcaption { font-size:14px; color:var(--muted); font-style:italic; }
+.post table { border-collapse:collapse; width:100%; font-size:14px; margin:10px 0 20px; font-variant-numeric:tabular-nums; }
+.post th, .post td { border-bottom:1px solid var(--line); padding:6px 8px; text-align:left; vertical-align:top; }
+.post code { font-family:var(--mono); font-size:.86em; background:#F1F2F4; padding:1px 4px; border-radius:3px; }
+.post strong { color:var(--ink); font-weight:600; }
+.series { font:400 14px var(--mono); color:var(--muted); margin-bottom:6px; }
+.byline { font-size:14.5px; color:var(--muted); margin:6px 0 20px; }
+.tldr { margin:0 0 26px; padding:14px 0 6px; border-top:1px solid var(--line); border-bottom:1px solid var(--line); }
+.tldr .stats { list-style:none; margin:0 0 10px; } .tldr .stats li { display:grid; grid-template-columns:118px 1fr; gap:12px; margin:0 0 6px; font-size:15px; }
+.tldr .stats b { font-family:var(--mono); font-size:15px; white-space:nowrap; }
+.tldr .take { margin:0 0 6px 20px; } .tldr .take li { font-size:15.5px; margin-bottom:5px; }
+.endcap { margin-top:44px; padding-top:18px; border-top:1px solid var(--line); font-size:15.5px; }
+.endcap .also { font-size:17px; margin:22px 0 4px; }
+.linkbtn { font:inherit; color:var(--link, var(--lapis)); background:none; border:0; padding:0; cursor:pointer; }
+.linkbtn:hover { text-decoration:underline; }
+details.cite { margin:12px 0; } details.cite summary { cursor:pointer; color:var(--ink); }
+details.cite pre { margin:10px 0 6px; padding:10px 12px; background:#F1F2F4; border-radius:4px; font:400 12.5px/1.5 var(--mono); white-space:pre-wrap; word-break:break-word; }
+.blogtop { font:400 14px var(--mono); color:var(--muted); display:flex; justify-content:space-between; margin-bottom:22px; }
+@media (max-width:600px) { .tldr .stats li { grid-template-columns:1fr; gap:0; } }
+
+img.portrait { object-fit:cover; }
+.post h1, .bi h1 { font-size:30px; line-height:1.2; }
+.post h2 { font:600 21px/1.3 var(--sans); color:var(--ink); margin:34px 0 10px; }
+.post h2::before { content:"## "; color:var(--prompt); font-family:var(--mono); font-weight:400; }
+.series { color:var(--prompt); }
+.tldr .stats b { color:var(--prompt); } .tldr .take { list-style:none; margin-left:0; } .tldr .take li::before { content:"- "; color:var(--prompt); font-family:var(--mono); }
+ul.posts { list-style:none; } ul.posts li { display:grid; grid-template-columns:76px 1fr; gap:14px; padding:10px 0; }
+ul.posts .m { font:400 13px/1.9 var(--mono); color:var(--muted); } ul.posts a { font-weight:600; color:var(--ink); font-size:17px; }
+ul.posts .k { font:500 13.5px var(--mono); color:var(--prompt); margin-left:8px; white-space:nowrap; } ul.posts p { font-size:15px; color:var(--muted); margin:2px 0 0; }
+.js ul.posts li { opacity:0; transition:opacity .35s ease; } .js .out.shown ul.posts li { opacity:1; }
+.endcap .cmd { margin-top:0; }
+@media (max-width:600px) { ul.posts li { grid-template-columns:1fr; gap:0; } }
+/* indented output, like a terminal or code editor */
+.out, .body { margin-left:5px; padding-left:22px; border-left:1px solid #E4E6E2; }
+.cmd.first + .out { border-left-color:transparent; }
+.out ul.papers, .out .service ul, .out .talks ul, .out ul.blog, .out ul.posts, .out .tldr .take, .body ul, .body ol { margin-left:22px; }
+.out .papers li, .out .service li { position:relative; }
+.out .papers li::before, .out .service li::before { content:"-"; position:absolute; left:-16px; color:var(--prompt); font-family:var(--mono); }
+.out .talks li { margin-left:0; }
+.body p, .out p { margin-bottom:12px; }
+.body h2 { margin-left:-27px; padding:2px 0; background:#FCFCFB; position:relative; }
+.body h2::before { content:"## "; }
+@media (max-width:600px) { .out, .body { padding-left:14px; margin-left:3px; } .out ul.papers, .out .service ul, .out .talks ul, .out ul.blog, .out ul.posts, .body ul, .body ol { margin-left:14px; } .out .papers li::before, .out .service li::before { left:-12px; } .body h2 { margin-left:-17px; } }
+.top { grid-template-columns:1fr 150px; align-items:center; } .top .portrait { width:150px; height:150px; }
+@media (max-width:600px) { .top { grid-template-columns:1fr 96px; gap:16px; } .top .portrait { width:96px; height:96px; } }
